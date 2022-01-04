@@ -269,18 +269,29 @@ span.badge::before {
   bottom: 0;
   left: 0;
 }
-
-.search_bar input {
-  border-radius: 8px;
+.search_bar input.form-control {
+  height: 54px;
+  border-radius: 110px !important;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 10px 30px;
+  font-size: 17px;
+  line-height: 21px;
 }
 .search_bar {
   position: relative;
+}
+.search_bar .input-group {
+  width: 500px;
+  margin: auto;
 }
 
 .search_bar i {
   position: absolute;
   right: 15px;
-  top: 10px;
+  top: 50%;
+  transform: translateY(-50%);
   color: #ff851b;
 }
 .hero_content h1 {
@@ -292,11 +303,13 @@ span.badge::before {
 .hero_content p {
   color: #fff;
   margin: 1.5em 0em;
+  font-size: 15px;
+  line-height: 25px;
 }
 .hero_content {
   position: relative;
   z-index: 1;
-  width: 50vw;
+  width: 45vw;
   margin: auto;
   text-align: center;
 }
@@ -315,7 +328,7 @@ span.badge::before {
 .search_tags ul li a {
   padding: 0.7em 1.2em;
   border-radius: 35px;
-  font-size: 13px;
+  font-size: 10px;
   display: inline-block;
   text-transform: capitalize;
   color: #fff;
@@ -374,16 +387,19 @@ p.cate_name {
   font-weight: 400;
 }
 .cm-btn {
-  color: orange;
+  color: #ff851b;
   display: inline-block;
   background: #fff7f7;
   border-radius: 50px;
   padding: 0.6em 1.2em;
+  transition: 0.5s;
+  text-decoration: none;
 }
 .cm-btn:hover {
-  background: #000;
-  color: #fff;
-  text-decoration: none;
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px 0 rgb(0 0 0 / 15%);
+  transition: 0.5s;
+  color: #ff851b;
 }
 
 /* .cate_img::after {
@@ -403,6 +419,13 @@ p.cate_name {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+}
+.about_outer .about_img {
+  background-image: url(../assets/images/about_img_bg.png);
+  background-size: 100%;
+  background-position: right center;
+  padding: 50px 0;
+  background-repeat: no-repeat;
 }
 .about_content span {
   color: #fff;
@@ -715,6 +738,8 @@ section.download_app {
 /* Footer Styling End  */
 
 /* Responsive Styling Start */
+@media screen and (min-width: 1440px) {
+}
 @media screen and (max-width: 1199px) {
   .hero_content {
     width: 63vw;
