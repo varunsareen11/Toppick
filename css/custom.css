@@ -274,7 +274,7 @@ span.badge::before {
 }
 .search_bar input.form-control {
   height: 54px;
-  border-radius: 110px !important;
+  border-radius: 8px 8px 0 0 !important;
   border: none;
   outline: none;
   box-shadow: none;
@@ -284,10 +284,6 @@ span.badge::before {
 }
 .search_bar {
   position: relative;
-}
-.search_bar .input-group {
-  width: 500px;
-  margin: auto;
 }
 
 .search_bar i {
@@ -335,6 +331,50 @@ span.badge::before {
   display: inline-block;
   text-transform: capitalize;
   color: #fff;
+}
+.search_results {
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #0000001a;
+  /* position: absolute;
+  top: 54px;
+  width: 100%;
+  left: 0; */
+}
+.search_results .search_result_item {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+}
+.search_results .search_result_item p {
+  margin: 0;
+  color: #797979;
+  text-align: left;
+  font-size: 11px;
+  line-height: 17px;
+}
+.search_result_img {
+  margin-right: 9px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 7px;
+}
+.search_result_img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff851b54;
+}
+.search_results .search_result_item h6 {
+  font-size: 12px;
+  line-height: 18px;
+}
+.search_results .search_result_item:not(:last-child) {
+  border-bottom: 1px solid #0000001a;
+}
+.search_bar {
+  width: 500px;
+  margin: 0 auto;
 }
 /* Home Body Styling End */
 /* category image */
@@ -421,13 +461,13 @@ p.cate_name {
 /* category image */
 /* about section starts here */
 .about_outer {
-  background-image: url("../assets/images/about_bg.png");
+  background-image: url("../assets/images/home-about_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
 }
 .about_outer .about_img {
-  background-image: url(../assets/images/about_img_bg.png);
+  background-image: url(../assets/images/home-about_img_bg.png);
   background-size: 100%;
   background-position: right center;
   padding: 50px 0;
@@ -761,8 +801,8 @@ section.download_app {
 
 /* About here section starts here  */
 
-.about_hero {
-  background-image: url("/assets/images/about_bg.png");
+.about_hero.inner_cmn_hero {
+  background-image: url("../assets/images/about-banner_bg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -813,6 +853,7 @@ section.about_section {
   background-color: #fff;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 .offercard::before {
   content: "";
@@ -857,7 +898,7 @@ section.about_section {
 
 /* Company Info SSeciton Start */
 .company_info {
-  background-image: url(../assets/images/story_bg.png);
+  background-image: url(../assets/images/about-story_bg.png);
   background-size: cover;
   background-position: right;
   position: relative;
@@ -1228,7 +1269,7 @@ section.about_section {
     flex: 0 0 100%;
   }
 
-  .search_bar .input-group {
+  .search_bar {
     width: auto;
   }
   .search_tags h5 {
