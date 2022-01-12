@@ -9,22 +9,27 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-    />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body>
+    <!-- Loader -->
+    <!-- <div class="loader_wrap">
+      <div class="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>    
+    </div> -->
     <!-- Wrapper Start -->
     <div class="wrapper">
       <!-- Header Start -->
@@ -103,7 +108,7 @@
                   <a class="nav-link" href="#">Dialogs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Blog</a>
+                  <a class="nav-link" href="blog.html">Blog</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/about.html">About</a>
@@ -161,7 +166,7 @@
                   </div>
                   <div class="search_result_cont">
                     <h6 class="montM">Lorem Ipsum Adventure</h6>
-                    <p>Category <span class="cm-color">/</span> Topic </p>
+                    <p>Category </p>
                   </div>
                 </div>
                 <div class="search_result_item">
@@ -170,7 +175,7 @@
                   </div>
                   <div class="search_result_cont">
                     <h6 class="montM">Lorem Ipsum Adventure</h6>
-                    <p>Category <span class="cm-color">/</span> Topic </p>
+                    <p> Topic </p>
                   </div>
                 </div>
                 <div class="search_result_item">
@@ -179,7 +184,7 @@
                   </div>
                   <div class="search_result_cont">
                     <h6 class="montM">Lorem Ipsum Adventure</h6>
-                    <p>Category <span class="cm-color">/</span> Topic </p>
+                    <p>Category  </p>
                   </div>
                 </div>
                 <div class="search_result_item">
@@ -188,7 +193,7 @@
                   </div>
                   <div class="search_result_cont">
                     <h6 class="montM">Lorem Ipsum Adventure</h6>
-                    <p>Category <span class="cm-color">/</span> Topic </p>
+                    <p> Topic </p>
                   </div>
                 </div>
               </div>
@@ -224,12 +229,13 @@
         <!-- Hero section ends here -->
         <!-- Category carousal starts here -->
         <section class="category_carousal space">
-          <div class="cmn_heading_area">
+          <div class="cmn_heading_area text-center">
             <h2 class="heading sairaR container-fluid">Top <span class="cm-color">Categories<span></h2>
           </div>
-            <div class="responsive">
-              <div class="cate_carousal">
-                <a href="">
+          <div class="slider" id="slider">
+            <div class="slide" id="slide">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
@@ -239,128 +245,111 @@
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>02</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>03</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>04</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>05</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>06</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>07</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>08</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>09</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
-              <div class="cate_carousal">
-                <a href="">
+              <div class="item">
+                <a href="#">
                   <div class="cate_img">
                     <img src="assets/images/home-category.png" alt="" />
                   </div>
                   <div class="cate_text">
-                    <h3>01</h3>
-                    <p class="cate_name">Adventure</p>
-                  </div>
-                </a>
-              </div>
-              <div class="cate_carousal">
-                <a href="">
-                  <div class="cate_img">
-                    <img src="assets/images/home-category.png" alt="" />
-                  </div>
-                  <div class="cate_text">
-                    <h3>01</h3>
-                    <p class="cate_name">Adventure</p>
-                  </div>
-                </a>
-              </div>
-              <div class="cate_carousal">
-                <a href="">
-                  <div class="cate_img">
-                    <img src="assets/images/home-category.png" alt="" />
-                  </div>
-                  <div class="cate_text">
-                    <h3>01</h3>
+                    <h3>10</h3>
                     <p class="cate_name">Adventure</p>
                   </div>
                 </a>
               </div>
             </div>
+            <button class="ctrl-btn pro-prev"><i class="	fa fa-angle-left"></i></button>
+            <div class="hovered_btn">
+              <button class="ctrl-btn pro-next"><i class="	fa fa-angle-right"></i></button>
+            </div>
+          </div>
         </section>
         <!-- category carousal ends here -->
         <!-- about section starts here -->
@@ -381,10 +370,8 @@
                     TopPick is a platform that can improve many aspects of your personal and professional life.  Find out his uses and goals to get the best experience ever
                   </p>
                   <a class="cm-btn" href=""
-                    >Learn More<i
-                      class="fa fa-long-arrow-right ml-2"
-                      aria-hidden="true"
-                    ></i>
+                    >Learn More
+                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1">
                   </a>
                 </div>
               </div>
@@ -832,48 +819,66 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     <script>
-      $(".responsive").slick({
-        dots: false,
-        arrows: true,
-        nav: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 8,
-        slidesToScroll: 8,
-        centerMode: true,
-        centerPadding: "80px",
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 6,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ],
-      });
+      productScroll();
+
+      function productScroll() {
+        let slider = document.getElementById("slider");
+        let next = document.getElementsByClassName("pro-next");
+        let prev = document.getElementsByClassName("pro-prev");
+        let slide = document.getElementById("slide");
+        let item = document.getElementById("slide");
+
+        for (let i = 0; i < next.length; i++) {
+          //refer elements by class name
+
+          let position = 0; //slider postion
+
+          prev[i].addEventListener("click", function () {
+            //click previos button
+            if (position > 0) {
+              //avoid slide left beyond the first item
+              position -= 1;
+              translateX(position); //translate items
+            }
+          });
+
+          next[i].addEventListener("click", function () {
+            if (position >= 0 && position < hiddenItems()) {
+              //avoid slide right beyond the last item
+              position += 1;
+              translateX(position); //translate items
+            }
+          });
+        }
+
+        function hiddenItems() {
+          //get hidden items
+          let items = getCount(item, false);
+          let visibleItems = slider.offsetWidth / 210;
+          return items - Math.ceil(visibleItems);
+        }
+      }
+
+      function translateX(position) {
+        //translate items
+        slide.style.left = position * -149 + "px";
+      }
+
+      function getCount(parent, getChildrensChildren) {
+        //count no of items
+        let relevantChildren = 0;
+        let children = parent.childNodes.length;
+        for (let i = 0; i < children; i++) {
+          if (parent.childNodes[i].nodeType != 3) {
+            if (getChildrensChildren)
+              relevantChildren += getCount(parent.childNodes[i], true);
+            relevantChildren++;
+          }
+        }
+        return relevantChildren;
+      }
     </script>
   </body>
 </html>
