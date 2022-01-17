@@ -498,6 +498,28 @@ span.badge::before {
   width: 500px;
   margin: 0 auto;
 }
+.last-result .search_result_img i {
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: translate(0, 0px);
+  width: 20px;
+  color: #000;
+}
+
+.last-result .search_result_img::before {
+  display: none;
+}
+
+.search_result_item.last-result {
+  padding: 17px;
+}
+.last-result .search_result_cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
 /* Home Body Styling End */
 /* category image */
 .cate_img {
