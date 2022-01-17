@@ -18,17 +18,11 @@
    </head>
    <body>
       <!-- Loader -->
-      <div class="loader_wrap">
-         <div class="loader">
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-           <span></span>
-         </div>    
-         </div>
+      <div class="loader">
+         <div class="loader-inner">
+            <div class="circle"></div>
+          </div>
+         </div>         
       <!-- Wrapper Start -->
       <div class="wrapper">
                <!-- Header Start -->
@@ -872,31 +866,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
       <script src="js/crousal.js"></script>
-      <script>
-         const options1 = {
-         slidesPerView: 1,
-         spacing: 10,
-         loop: true,
-         transitionSpeed: 1500,
-         breakpoints: {
-         768: {
-         slidesPerView: 2,
-         },
-         1024: {
-         slidesPerView: 8,
-         }
-         }
-         };
-         
-         // INIT CAROUSEL
-         const carousel1 = new CgCarousel('#js-carousel-1', options1, {});
-         
-         // Navigation
-         const next1 = document.getElementById('js-carousel__next-1');
-         next1.addEventListener('click', () => carousel1.next());
-         
-         const prev1 = document.getElementById('js-carousel__prev-1');
-         prev1.addEventListener('click', () => carousel1.prev());
-      </script>
+      <script src="js/custom.js"></script>
    </body>
 </html>

@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="css/responsive.css">
   </head>
   <body>
+          <!-- Loader -->
+          <div class="loader">
+            <div class="loader-inner">
+              <div class="circle"></div>
+            </div>
+            </div>   
     <!-- Wrapper Start -->
     <div class="wrapper">
          <!-- Header Start -->
@@ -427,47 +433,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-
-    <script>
-      $(".responsive").slick({
-        dots: false,
-        arrows: true,
-        nav: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 8,
-        slidesToScroll: 8,
-        centerMode: true,
-        centerPadding: "80px",
-        responsive: [
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: 6,
-              slidesToScroll: 1,
-              infinite: true,
-              dots: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
-        ],
-      });
-    </script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
