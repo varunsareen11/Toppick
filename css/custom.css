@@ -130,7 +130,17 @@ ul {
   text-transform: capitalize;
 }
 .cmn_heading_area {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
+  position: relative;
+}
+span.headUnderlne {
+  width: 150px;
+  height: 3px;
+  background: #ff851b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -12px;
 }
 .cmn_heading_area .small_desc {
   color: #777777;
@@ -1392,6 +1402,8 @@ ul.tags li.tag_block {
   box-sizing: border-box;
   position: relative;
   width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 @-webkit-keyframes slideIn {
@@ -1549,25 +1561,56 @@ ul.tags li.tag_block {
   justify-content: center;
   text-decoration: none;
   margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .see_more i {
   font-size: 26px;
 }
 
-/* Article Page design */
+/* Category Page design */
 .article_banner .banner_inner_wrap {
   width: 40vw;
 }
 
 .article_banner .banner_inner_wrap h1 {
-  font-size: 90px;
+  font-size: 50px;
   line-height: 60px;
   letter-spacing: 0.03em;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 .article_banner .banner_inner_wrap p {
   font-size: 15px;
   line-height: 25px;
+}
+span.badge.hardBadge,
+span.badge.mediumBadge,
+span.badge.smallBadge::before {
+  padding: 10px 18px;
+}
+span.badge.hardBadge::before,
+span.badge.mediumBadge::before,
+span.badge.smallBadge::before {
+  display: none;
+}
+
+span.badge.hardBadge {
+  background: rgba(255, 58, 68, 0.9);
+}
+span.badge.mediumBadge {
+  background: rgba(255, 189, 0, 0.9);
+}
+span.badge.smallBadge {
+  background: rgba(50, 160, 113, 0.9);
+}
+.reltTopics {
+  padding-top: 0;
+}
+.category_page .about_hero.inner_cmn_hero.blog_sec {
+  background-image: url(../assets/images/category-bannerbg.png);
+}
+.category_page .about_hero.inner_cmn_hero.blog_sec::before {
+  background: rgba(0, 0, 0, 0.5);
 }

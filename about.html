@@ -1,284 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TopPick</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
-    />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="./css/custom.css" />
-    <link rel="stylesheet" href="css/responsive.css">
-  </head>
-  <body>
-          <!-- Loader -->
-          <div class="loader">
-            <div class="loader-inner">
-              <div class="circle"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopPick</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/custom.css" />
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="circle"></div>
+    </div>
+  </div>
+  <!-- Wrapper Start -->
+  <div class="wrapper">
+    <!-- Header Start -->
+    <header class="header">
+      <!-- Topbar -->
+      <div class="topbar cm_bg">
+        <div class="container">
+          <div class="ticker">
+            <div class="title">
+              <h5>Latest news</h5>
             </div>
-            </div>   
-    <!-- Wrapper Start -->
-    <div class="wrapper">
-         <!-- Header Start -->
-         <header class="header">
-          <!-- Topbar -->
-          <div class="topbar cm_bg">
-             <div class="container">
-                <div class="ticker">
-                   <div class="title">
-                      <h5>Latest news</h5>
-                   </div>
-                   <div class="news">
-                      <marquee class="news-content">
-                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud
-                         </p>
-                         <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptatem accusantium doloremque laudantium, totam rem
-                            aperiam, eaque ipsa quae ab illo inventore veritatis et
-                            quasi architecto
-                         </p>
-                         <p>
-                            Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                            amet, consectetur, adipisci velit, sed quia non numquam eius
-                            modi tempora incidunt ut labore et dolore magnam aliquam
-                            quaerat voluptatem. Ut enim ad minima veniam
-                         </p>
-                      </marquee>
-                   </div>
-                </div>
-             </div>
-          </div>
-          <!-- Menu bar -->
-          <nav class="navbar navbar-expand-lg navbar-light py-3">
-             <div class="container">
-                <a class="navbar-brand cm-color" href="index.html">TopPick</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                   aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="fa fa-reorder"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                   <span class="fa fa-remove"></span>
-                   </button>
-                   <div class="header_overlay"></div>
-                   <ul class="navbar-nav ml-auto">
-                      <li class="menu_logo">
-                         <a href="index.html" class="text-white"> TopPick </a>
-                      </li>
-                      <li class="nav-item active">
-                         <a class="nav-link" href="index.html">Home</a>
-                      </li>
-                      <li class="nav-item">
-                         <a class="nav-link" href="#">Topics</a>
-                      </li>
-                      <li class="nav-item">
-                         <a class="nav-link" href="#">Dialogs</a>
-                      </li>
-                      <li class="nav-item">
-                         <a class="nav-link" href="blog.html">Blog</a>
-                      </li>
-                      <li class="nav-item">
-                         <a class="nav-link" href="/about.html">About</a>
-                      </li>
-                      <li class="nav-item btn">
-                         <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
-                            class="img-fluid" /></a>
-                      </li>
-                      <li class="nav-item btn">
-                         <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
-                            class="img-fluid" /></a>
-                      </li>
-                   </ul>
-                </div>
-             </div>
-          </nav>
-       </header>
-       <!-- Header End -->
-
-      <!-- Main Body Start -->
-      <div class="body_wrap about_page">
-        <!-- Hero section starts here -->
-        <section class="space about_hero inner_cmn_hero text-center">
-          <div class="container">
-            <h1>About Us</h1>
-            <div class="Breadcrums">
-              <a href="index.html"
-                >Home <img src="assets/images/right-arrow-black.svg" alt="" class="mx-2"></i>
-              </a>
-              <a class="active" href="About Us">About Us</a>
+            <div class="news">
+              <marquee class="news-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud
+                </p>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit
+                  voluptatem accusantium doloremque laudantium, totam rem
+                  aperiam, eaque ipsa quae ab illo inventore veritatis et
+                  quasi architecto
+                </p>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet, consectetur, adipisci velit, sed quia non numquam eius
+                  modi tempora incidunt ut labore et dolore magnam aliquam
+                  quaerat voluptatem. Ut enim ad minima veniam
+                </p>
+              </marquee>
             </div>
           </div>
-        </section>
-        <!-- about section starts here -->
-        <section class="about_outer about_section space">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-6">
-                <div class="about_img">
-                  <img src="assets/images/about-about_sec_img.png" alt="" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="about_content">
-                  <h2 class="tittle_cm">
-                    Discover Our <span>Story</span><br />
-                    and Get in Touch With <span>Us</span>
-                  </h2>
-                  <p class="mt-3 mb-4">
-                    TopPick is realized by a team of talented people working
-                    tirelessly to give you the best experience possible.
-                    Discover our story, goals, and why we believe this platform
-                    will prove itself useful to everyone who wants to take their
-                    communication skills to the next level.
-                  </p>
-                  <a class="cm-btn cm_bg" href=""
-                    >Contact Us<i
-                      class="fa fa-long-arrow-right ml-2"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- about section ends here -->
-
-        <!-- about offers starts here -->
-        <section class="space philosphy_outer">
-          <div class="container">
-            <div class="cmn_heading_area">
-              <h2 class="heading">What We <span class="cm-color">Offer<span></h2>
-              <p class="small_desc text-dark montM">Lorem Ipsum is simply dummy text of the printing and typesetting <br> industry. Lorem Ipsum has been the industry's standard dummy text </p>
-            </div>
-            <div class="row">
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Topics </figure-caption>
-                  <p>
-                    We offer a massive library of topics that we encourage you
-                    to explore. Our topics are tailored to inspire and help you
-                    learn new languages.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Questions </figure-caption>
-                  <p>
-                    Within each topic, you're going to find a variety of
-                    questions that are sure to prevent any conversation from
-                    becoming stale or awkward.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Articles </figure-caption>
-                  <p>
-                    Most of our questions are accompanied by informative
-                    articles, ensuring that you always know exactly what you're
-                    talking about.
-                  </p>
-                </div>
-              </div>
-              <!-- second column -->
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Example </figure-caption>
-                  <p>
-                    Our goal is to give you simple examples that spark your
-                    creativity and motivate you to ask the questions in
-                    real-life situations.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Icebreakers </figure-caption>
-                  <p>
-                    You definitely don't want to get off on the wrong foot.
-                    TopPick offers you many icebreakers. This allows you to
-                    comfortably initiate a conversation.
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 mb-4">
-                <div class="offercard">
-                  <figure>
-                    <img src="assets/images/offer_icon.png" alt="" />
-                  </figure>
-                  <figure-caption> Related Words </figure-caption>
-                  <p>
-                    You no longer need to spend hours looking up words in the
-                    dictionary as we provide you with all the relevant
-                    expressions you're ever going to need.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Feature partners -->
-        <section class="space partners">
-          <div class="container">
-            <div class="cmn_heading_area">
-              <h2 class="heading">Feature <span class="cm-color">Partners<span></h2>
-              <p class="small_desc text-dark montM">Our platform simply wouldn't exist without the assistance received <br> from these companies. TopPick is still brand new so we're always </p>
-            </div>
-            <ul>
-              <li><img src="assets/images/about-partner1.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner1.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
-              <li><img src="assets/images/about-partner2.png" alt="" /></li>
+        </div>
+      </div>
+      <!-- Menu bar -->
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+          <a class="navbar-brand cm-color" href="index.html">TopPick</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-reorder"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="fa fa-remove"></span>
+            </button>
+            <div class="header_overlay"></div>
+            <ul class="navbar-nav ml-auto">
+              <li class="menu_logo">
+                <a href="index.html" class="text-white"> TopPick </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Topics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dialogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+              <li class="nav-item btn">
+                <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                    class="img-fluid" /></a>
+              </li>
+              <li class="nav-item btn">
+                <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                    class="img-fluid" /></a>
+              </li>
             </ul>
           </div>
-        </section>
-        <!-- info section starts here  -->
-        <section class="space company_info">
-          <div class="container">
-            <div class="company_inner_block mb-4">
+        </div>
+      </nav>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Body Start -->
+    <div class="body_wrap about_page">
+      <!-- Hero section starts here -->
+      <section class="space about_hero inner_cmn_hero text-center">
+        <div class="container">
+          <h1>About Us</h1>
+          <div class="Breadcrums">
+            <a href="index.html">Home</i>
+            </a>
+            <img src="assets/images/right-arrow-black.svg" alt="" class="mx-2" />
+            <a class="active" href="About Us">About Us</a>
+          </div>
+        </div>
+      </section>
+      <!-- about section starts here -->
+      <section class="about_outer about_section space">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <div class="about_img">
+                <img src="assets/images/about-about_sec_img.png" alt="" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="about_content">
+                <h2 class="tittle_cm">
+                  Discover Our <span>Story</span><br />
+                  and Get in Touch With <span>Us</span>
+                </h2>
+                <p class="mt-3 mb-4">
+                  TopPick is realized by a team of talented people working
+                  tirelessly to give you the best experience possible.
+                  Discover our story, goals, and why we believe this platform
+                  will prove itself useful to everyone who wants to take their
+                  communication skills to the next level.
+                </p>
+                <a class="cm-btn cm_bg" href="">Contact Us<i class="fa fa-long-arrow-right ml-2" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- about section ends here -->
+
+      <!-- about offers starts here -->
+      <section class="space philosphy_outer">
+        <div class="container">
+          <div class="cmn_heading_area">
+            <h2 class="heading">What We <span class="cm-color">Offer<span></h2>
+            <p class="small_desc text-dark montM">Lorem Ipsum is simply dummy text of the printing and typesetting <br>
+              industry. Lorem Ipsum has been the industry's standard dummy text </p>
+          </div>
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Topics </figure-caption>
+                <p>
+                  We offer a massive library of topics that we encourage you
+                  to explore. Our topics are tailored to inspire and help you
+                  learn new languages.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Questions </figure-caption>
+                <p>
+                  Within each topic, you're going to find a variety of
+                  questions that are sure to prevent any conversation from
+                  becoming stale or awkward.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Articles </figure-caption>
+                <p>
+                  Most of our questions are accompanied by informative
+                  articles, ensuring that you always know exactly what you're
+                  talking about.
+                </p>
+              </div>
+            </div>
+            <!-- second column -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Example </figure-caption>
+                <p>
+                  Our goal is to give you simple examples that spark your
+                  creativity and motivate you to ask the questions in
+                  real-life situations.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Icebreakers </figure-caption>
+                <p>
+                  You definitely don't want to get off on the wrong foot.
+                  TopPick offers you many icebreakers. This allows you to
+                  comfortably initiate a conversation.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="offercard">
+                <figure>
+                  <img src="assets/images/offer_icon.png" alt="" />
+                </figure>
+                <figure-caption> Related Words </figure-caption>
+                <p>
+                  You no longer need to spend hours looking up words in the
+                  dictionary as we provide you with all the relevant
+                  expressions you're ever going to need.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Feature partners -->
+      <section class="space partners">
+        <div class="container">
+          <div class="cmn_heading_area">
+            <h2 class="heading">Feature <span class="cm-color">Partners<span></h2>
+            <p class="small_desc text-dark montM">Our platform simply wouldn't exist without the assistance received
+              <br> from these companies. TopPick is still brand new so we're always </p>
+          </div>
+          <ul>
+            <li><img src="assets/images/about-partner1.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner1.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+            <li><img src="assets/images/about-partner2.png" alt="" /></li>
+          </ul>
+        </div>
+      </section>
+      <!-- info section starts here  -->
+      <section class="space company_info">
+        <div class="container">
+          <div class="company_inner_block mb-4">
             <div class="row align-items-center">
               <div class="col-md-6 company_text_area">
                 <div class="info_content text-white">
@@ -316,7 +301,11 @@
                     <h2 class="heading">Our Mission</h2>
                   </div>
                   <p>
-                    We strive to assist everyone who's as curious as we are by helping them aim that curiosity at the right targets. We do this by providing you with a gigantic library of topics for you to explore at your convenience. By spending some time every day perusing our library you're going to quickly realize that you've acquired a decent amount of knowledge regarding subjects you hadn't put much thought into before.
+                    We strive to assist everyone who's as curious as we are by helping them aim that curiosity at the
+                    right targets. We do this by providing you with a gigantic library of topics for you to explore at
+                    your convenience. By spending some time every day perusing our library you're going to quickly
+                    realize that you've acquired a decent amount of knowledge regarding subjects you hadn't put much
+                    thought into before.
                   </p>
                 </div>
               </div>
@@ -330,7 +319,11 @@
                     <h2 class="heading">Our Vision</h2>
                   </div>
                   <p>
-                    We are quite ambitious here at TopPick. We'll always be doing our best to make sure that every language learner, educator, writer, or even someone who's just fascinated by the world around them finds all the resources needed to satisfy their desires. This guides our vision of improving communication between individuals and always coming out of a conversation with new profound knowledge that'll help us advance as a global society.
+                    We are quite ambitious here at TopPick. We'll always be doing our best to make sure that every
+                    language learner, educator, writer, or even someone who's just fascinated by the world around them
+                    finds all the resources needed to satisfy their desires. This guides our vision of improving
+                    communication between individuals and always coming out of a conversation with new profound
+                    knowledge that'll help us advance as a global society.
                   </p>
                 </div>
               </div>
@@ -341,98 +334,87 @@
               </div>
             </div>
           </div>
-          </div>
-        </section>
-        <!-- about offers ends here -->
-      </div>
+        </div>
+      </section>
+      <!-- about offers ends here -->
+    </div>
 
-      <!-- Main Body End -->
-      <!-- Footer Start -->
-      <footer class="footer">
-        <div class="footer_inner py-5">
-          <div class="container">
-            <div class="footer_blocks">
-              <div class="row">
-                <div class="col-md-4 mb-4">
-                  <div class="footer_box">
-                    <a href="index.html" class="sairaM footer_logo"
-                      >Top<span class="cm-color">Pick</span></a
-                    >
-                    <p>
-                      These people envy me for having a lifestyle they don’t
-                      have, but the truth is, sometimes I envy their lifestyle
-                      instead. Struggling to sell one multi-million
-                    </p>
-                  </div>
+    <!-- Main Body End -->
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer_inner py-5">
+        <div class="container">
+          <div class="footer_blocks">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="footer_box">
+                  <a href="index.html" class="sairaM footer_logo">Top<span class="cm-color">Pick</span></a>
+                  <p>
+                    These people envy me for having a lifestyle they don’t
+                    have, but the truth is, sometimes I envy their lifestyle
+                    instead. Struggling to sell one multi-million
+                  </p>
                 </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box">
-                    <h5 class="sairaM footer_head">CATEGORIES</h5>
-                    <ul class="footer_menu">
-                      <li><a href="#">Fashion</a></li>
-                      <li><a href="#">Food</a></li>
-                      <li><a href="#">Sport</a></li>
-                      <li><a href="#">Technology</a></li>
-                      <li><a href="#">Politics</a></li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box">
+                  <h5 class="sairaM footer_head">CATEGORIES</h5>
+                  <ul class="footer_menu">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Politics</a></li>
+                  </ul>
                 </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box">
-                    <h5 class="sairaM footer_head">INFORMATION</h5>
-                    <ul class="footer_menu">
-                      <li><a href="#">Site Map </a></li>
-                      <li><a href="#">Search Terms </a></li>
-                      <li><a href="#">Advanced Search</a></li>
-                      <li><a href="/about.html">About Us</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box">
+                  <h5 class="sairaM footer_head">INFORMATION</h5>
+                  <ul class="footer_menu">
+                    <li><a href="#">Site Map </a></li>
+                    <li><a href="#">Search Terms </a></li>
+                    <li><a href="#">Advanced Search</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
                 </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box last_footer_box">
-                    <h5 class="sairaM footer_head">Get the App</h5>
-                    <ul class="footer_app_links">
-                      <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/Google Play Badge.svg"
-                            alt=""
-                            class="img-fluid"
-                        /></a>
-                      </li>
-                      <li>
-                        <a href="#"
-                          ><img
-                            src="assets/images/App Store Badge.svg"
-                            alt=""
-                            class="img-fluid"
-                        /></a>
-                      </li>
-                    </ul>
-                  </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box last_footer_box">
+                  <h5 class="sairaM footer_head">Get the App</h5>
+                  <ul class="footer_app_links">
+                    <li>
+                      <a href="#"><img src="assets/images/Google Play Badge.svg" alt="" class="img-fluid" /></a>
+                    </li>
+                    <li>
+                      <a href="#"><img src="assets/images/App Store Badge.svg" alt="" class="img-fluid" /></a>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Copyright -->
-        <div class="copyright cm_bg py-3">
-          <div class="container-fluid">
-            <p class="text-center text-white montM">
-              © 2021 All Rights Reserved.
-            </p>
-          </div>
+      </div>
+      <!-- Copyright -->
+      <div class="copyright cm_bg py-3">
+        <div class="container-fluid">
+          <p class="text-center text-white montM">
+            © 2021 All Rights Reserved.
+          </p>
         </div>
-      </footer>
-      <!-- Footer End -->
-    </div>
-    <!-- Wrapper End -->
+      </div>
+    </footer>
+    <!-- Footer End -->
+  </div>
+  <!-- Wrapper End -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="js/crousal.js"></script>
+  <script src="js/custom.js"></script>
+</body>
+
 </html>
