@@ -34,3 +34,12 @@ next1.addEventListener("click", () => carousel1.next());
 
 const prev1 = document.getElementById("js-carousel__prev-1");
 prev1.addEventListener("click", () => carousel1.prev());
+
+function myFunction() {
+  var x = document.getElementById("report");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
