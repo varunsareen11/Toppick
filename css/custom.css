@@ -456,14 +456,17 @@ span.badge::before {
   text-transform: capitalize;
   color: #fff;
 }
+.topic_tabs a img {
+  width: 24px;
+}
 .search_results {
   background: #fff;
   border-radius: 0 0 8px 8px;
   border-top: 1px solid #0000001a;
-  position: absolute;
+  /* position: absolute;
   top: 54px;
   width: 100%;
-  left: 0;
+  left: 0; */
 }
 .search_results .search_result_item {
   display: flex;
@@ -1081,6 +1084,12 @@ section.download_app {
 .about_hero a {
   color: #fff;
 }
+.about_hero a:hover {
+  text-decoration: underline;
+}
+.about_hero a.active:hover {
+  text-decoration: none;
+}
 .about_hero a.active {
   color: #000;
 }
@@ -1620,6 +1629,7 @@ span.badge.smallBadge {
   background-position: bottom;
   background-size: 100%;
   background-repeat: no-repeat repeat;
+  background-attachment: fixed;
 }
 .topic_area .small_desc {
   display: flex;
@@ -1889,8 +1899,14 @@ div#report p {
 .showFull_list .hideList_item {
   display: block;
 }
+.side_card a.seeLess {
+  display: none;
+}
 .showFull_list a.see_more {
   display: none;
+}
+.side_card.showFull_list a.seeLess {
+  display: block;
 }
 .cmn_topic_heading img {
   width: 20px;
@@ -1953,4 +1969,43 @@ div#report p {
   font-size: 15px;
   font-family: "montR";
   color: #757575;
+}
+.comment_form input.form-control {
+  border: 1px solid #ff851b;
+  border-radius: 50px;
+  height: 44px;
+  color: #000;
+  padding: 8px 140px 8px 20px;
+}
+.comment_form .form-group {
+  position: relative;
+  margin: 0;
+}
+.comment_form .form-group input[type="submit"] {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ff851b;
+  border: none;
+  color: #fff;
+  height: 44px;
+  border-radius: 50px;
+  width: 130px;
+}
+.comment_form input.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
+}
+.comment_form .comment_img {
+  border-radius: 50%;
+  overflow: hidden;
+  flex: 0 0 65px;
+  margin-right: 15px;
+}
+.comment_form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.comment_form form.comment {
+  flex-grow: 1;
 }
