@@ -2124,6 +2124,9 @@ section.innerpage_formCard {
 .login_btns a.gmail_btn {
   background-color: #ea4335;
 }
+.underline_search .search_result_item h6 {
+  border-bottom: 1px solid #ff851b;
+}
 
 .divider {
   text-align: center;
