@@ -173,8 +173,7 @@ span.badge::before {
 
 /* Loader Styling Start Here */
 .fadeout {
-  opacity: 0;
-  filter: alpha(opacity=0);
+  display: none;
 }
 .loader {
   position: fixed;
@@ -186,6 +185,8 @@ span.badge::before {
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
+  opacity: 0;
+  animation: oapcityLoader 2s linear;
 }
 
 .loader-inner {
@@ -239,6 +240,14 @@ span.badge::before {
   -webkit-animation: none;
   animation: none;
 }
+@keyframes oapcityLoader {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 @-webkit-keyframes spinLeft {
   from {
     -webkit-transform: rotate(0deg);
@@ -282,6 +291,50 @@ span.badge::before {
 /* Loader Styling End Here */
 
 /* Header Styling Start */
+.top-ticker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-ticker .login_btn {
+  flex: 0 0 154px;
+  text-align: right;
+  border-left: 1px solid #fff;
+  margin-left: 30px;
+}
+
+.top-ticker .login_btn button {
+  background: #fff;
+  color: #000;
+  border-radius: 50px;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-family: "sairaM";
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+.authenticate_model .modal-dialog {
+  max-width: 800px;
+}
+
+.authenticate_model .modal-dialog .modal-body {
+  padding: 60px;
+}
+
+.authenticate_model .modal-dialog .modal-body ul.login_btns {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+.authenticate_model .modal-dialog .modal-body ul.login_btns a.cm-btn:hover {
+  color: #fff;
+}
+.authenticate_model button.close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
 .menu_logo {
   display: none;
 }
@@ -402,6 +455,22 @@ span.badge::before {
   padding: 10px 30px;
   font-size: 17px;
   line-height: 21px;
+}
+.search_tags ul li a.loogingSomething_result {
+  color: #000;
+  font-size: 14px;
+  padding: 6px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+  border-radius: 0;
+}
+
+.search_tags ul li a.loogingSomething_result:hover {
+  color: #ff851b;
+  border-color: #ff851b;
+}
+.search_bar.underline_search ul {
+  padding-bottom: 20px;
 }
 .search_bar {
   position: relative;
@@ -1659,7 +1728,20 @@ span.badge.smallBadge {
 .topic_area .small_desc p:not(:last-child) {
   margin-right: 18px;
 }
+.search_results .nav-tabs {
+  border: none;
+  margin-left: 20px;
+}
 
+.search_results .nav-tabs a {
+  border: none;
+  font-family: "sairaM";
+  padding: 6px;
+}
+
+.search_results .nav-tabs a.active {
+  color: #ff851b;
+}
 .topic_area .small_desc p {
   font-family: "montM";
 }
@@ -2076,6 +2158,7 @@ section.innerpage_formCard {
   border-radius: 10px;
   background-image: url(../assets/images/philospy.png);
   background-position: center;
+  background-size: contain;
 }
 .formGroup_inner .form-control {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
@@ -2156,4 +2239,7 @@ section.innerpage_formCard {
 }
 .divider::after {
   bottom: 0;
+}
+.dont_have_account {
+  font-size: 16px;
 }
