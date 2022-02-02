@@ -418,5 +418,9 @@
   .search_results {
     top: 40px;
   }
+  .pagination a.page-link.page_link_btn {
+    padding: 10px 17px;
+    font-size: 13px;
+  }
 }
 /* Responsive Styling End */
