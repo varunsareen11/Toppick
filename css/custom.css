@@ -2237,3 +2237,61 @@ ul.login_btns a:hover {
 .dont_have_account {
   font-size: 16px;
 }
+.differ_option span {
+  position: relative;
+  display: block;
+}
+
+.differ_option {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #ff851b;
+}
+
+.differ_option span::before,
+.differ_option span::after {
+  content: "";
+  top: 50%;
+  width: 45%;
+  height: 2px;
+  position: absolute;
+  transform: translateY(-50%);
+  border-bottom: 1px dashed #000;
+}
+
+.differ_option span::before {
+  left: 0;
+}
+
+.differ_option span::after {
+  right: 0;
+}
+
+/* image search results  */
+.images_results ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images_results ul li a {
+  color: #000;
+  text-transform: capitalize;
+}
+a.image_link {
+  font-size: 13px;
+}
+.images_results ul li a img {
+  width: 100%;
+  height: 200px;
+}
+.images_results ul li {
+  padding: 10px;
+  flex: 0 0 33.3%;
+}
+.images_results li:hover .image_name a {
+  color: #ff851b;
+}
+.image_name {
+  margin-top: 10px;
+}
