@@ -1625,15 +1625,18 @@ ul.tags li.tag_block {
   font-size: 16px;
   text-align: center;
   line-height: 10px;
-  color: #ff851b !important;
-  padding: 5px 0 15px;
+  padding: 5px 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  margin-top: 10px;
   border-radius: 8px;
   cursor: pointer;
+  border: none;
+  background: none;
+  color: #ff851b !important;
+  margin: 10px auto 0;
+  outline: none;
 }
 .see_more i {
   font-size: 26px;
@@ -2038,13 +2041,17 @@ div#report p {
   margin-bottom: 9px;
 }
 
-.comment_area .comment_block .comment_cont .comment_top a {
+.comment_area .comment_block .comment_cont .comment_top button {
   text-decoration: none;
   color: #ff851b;
   text-transform: capitalize;
   margin-left: 15px;
   font-family: "montsb";
+  border: none;
   border-bottom: 1px solid;
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
 }
 
 .comment_area .comment_block .comment_cont .comment_top p.comment_date {
@@ -2096,7 +2103,7 @@ div#report p {
   align-items: center;
   margin-bottom: 40px;
 }
-.comment_form form.comment {
+.comment_form .comment {
   flex-grow: 1;
 }
 /* video Page  */
@@ -2294,4 +2301,54 @@ a.image_link {
 }
 .image_name {
   margin-top: 10px;
+}
+/* 05-02-2022 */
+.accord_hover_icons button {
+  border: none;
+  background: transparent;
+  position: relative;
+  outline: none;
+}
+.accord_hover_icons button span.copied_message {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  background: #ff851b;
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 10px;
+  transform: translateX(-50%);
+  font-family: "montSB";
+  text-transform: uppercase;
+  line-height: 19px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  animation: copiedMessage 0.75s ease 0.75s;
+}
+
+.accord_hover_icons button span.copied_message:before {
+  content: "";
+  bottom: -4px;
+  width: 10px;
+  height: 10px;
+  background: #ff851b;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -1;
+}
+@keyframes copiedMessage {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.comment_cont .reply_comment {
+  display: none;
+}
+
+.comment_cont.comment_show .reply_comment {
+  display: block;
 }

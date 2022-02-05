@@ -2,6 +2,9 @@ window.onload = function () {
   setTimeout(function () {
     var loader = document.getElementsByClassName("loader")[0];
     loader.className = "loader fadeout";
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 1000);
   }, 1000);
 };
 

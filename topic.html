@@ -17,12 +17,6 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <!-- Loader -->
-    <div class="loader">
-      <div class="loader-inner">
-        <div class="circle"></div>
-      </div>
-    </div>
     <!-- Wrapper Start -->
     <div class="wrapper">
       <!-- Header Start -->
@@ -190,7 +184,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -276,7 +270,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -362,7 +356,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -448,7 +442,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -534,7 +528,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -621,7 +615,7 @@
                               </button>
                               <div class="accord_hover_icons">
                                 <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a>
-                                <a href="javascript:void(0)"><img src="assets/images/copy-icon.svg" alt=""></a>
+                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                              
                                     <div id="report" style="display: none;">
@@ -1367,7 +1361,20 @@
             coosetsideBar.classList.add("showFull_list");
            }
         } )
-      }
+      };
+      var copy_btn = document.getElementsByClassName("copy");
+      for(var cpy_var = 0; cpy_var < copy_btn.length; cpy_var++){
+          copy_btn[cpy_var].addEventListener('click', function(){
+            var cpy_container = document.createElement("span");
+            var cpy_message = document.createTextNode("Copied");
+            cpy_container.className = "copied_message";
+            cpy_container.appendChild(cpy_message);
+            this.appendChild(cpy_container);
+            setTimeout(() => {
+              cpy_container.remove();
+          }, 1500);
+          });
+      };
     </script>
   </body>
 </html>
