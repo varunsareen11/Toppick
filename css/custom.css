@@ -2185,7 +2185,7 @@ section.innerpage_formCard {
   background-size: contain;
 }
 .formGroup_inner .form-control {
-  height: 49px;
+  height: 49px !important;
   padding-left: 45px;
 }
 
@@ -2206,6 +2206,9 @@ section.innerpage_formCard {
 
 .form_area button.cm-btn {
   border: none;
+  max-width: 150px !important;
+  margin: 0 auto;
+  cursor: pointer;
 }
 .login_btns a img {
   width: 26px;
@@ -2389,4 +2392,32 @@ a.image_link {
 .replybtn_area .reply_quantety {
   margin-left: 13px;
   cursor: pointer;
+}
+.register_form .form-group {
+  padding: 0 10px !important;
+  text-align: left;
+}
+.error_page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.error_page .container {
+  max-width: 45%;
+}
+
+.error_page h1.error_heading {
+  font-size: 50px;
+  font-family: "sairaB";
+}
+.error_page p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+.error_page img {
+  width: 120px;
+  margin-bottom: 30px;
 }
