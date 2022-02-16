@@ -158,53 +158,132 @@
         </div>
       </div>
 
-      <!-- Login form card start here -->
-        <section class="innerpage_formCard">
-            <div class="container">
-                <div class="cmn_cardInner space">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-6">
-                            <div class="form_area text-center mb-5">
-                                <h3 class="sairaR mb-5">Login</h3>
-                              
-                                    <div class="form-group">
-                                      <label for="exampleInputEmail1">Email address</label>
-                                      <div class="formGroup_inner">
-                                        <i class="fa fa-envelope-o"></i>
-                                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                                      </div>
-                                      <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Lorem Ipsum Error Message</small>
+      <!-- profile form card start here -->
+      <section class="profile_outer">
+          <div class="container">
+                <div class="row">
+                        <div class="col-md-4 mb-5">
+                                    <div class="profile_info">
+                                        <div class="cover_img">
+                                            <img src="assets/images/cover_img.png" alt="">
+                                            <button class="edit_icon">
+                                               <img src="assets/images/pencil.svg" alt="">            
+                                            </button>
+                                            <div class="profile_img">
+                                                <div class="my_img">
+                                                    <p>VS</p>
+                                                    <button class="edit_icon">
+                                                        <img src="assets/images/pencil.svg" alt="">            
+                                                     </button>      
+                                                </div>
+                                            <div class="user_name">
+                                                <p>Varun Sareen</p>
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                      <label for="exampleInputPassword1">Password</label>
-                                      <div class="formGroup_inner">
-                                          <i class="fa fa-key"></i>
-                                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                      </div>
-                                      <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Wrong Password</small>
-                                    </div>
-                                    <p class="text-success  p-2 mt-3">Login Successfully</p>
-                                    <small id="forgetPass" class="form-text"><a href="javascript:void(0)" class="cm-color">Forget Password?</a></small>
-                                    <button type="submit" class="cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
-                                
-                            </div>
-                            <div class="differ_option">
-                              <span>OR</span>
-                            </div>
-                            <div class="anotherLogin text-center">
-                              <h3 class="sairaR mb-4">Another Login Options</h3>
-                              <ul class="login_btns">
-                                  <li><a href="javascript:void(0)" class="cm-btn google_btn"><img src="assets/images/google-logo.png" alt="Google Logo image">Sign In With Google</a></li>
-
-                              </ul>
-                              <small id="emailHelp" class="form-text text-muted dont_have_account">Don’t have an account? <a href="javascript:void(0)" class="cm-color">SignUp Now</a></small>
-                          </div>
                         </div>
-                    </div>
+                        <div class="col-md-8 mb-5">
+                                <div class="profile_form">
+                                    <div class="col-lg-12">
+                                        <div class="form_area register_form">
+                                            <h3 class="sairaR mb-5 col-md-12">Proile</h3>
+                                            <!-- First Name -->
+                                            <div class="form-group">
+                                                <label for="firstName">First Name</label>
+                                                <div class="formGroup_inner">
+                                                  <i class="fa fa-user"></i>
+                                                <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First Name">
+                                                </div>
+                                               </div>
+                                              <!-- Last Name -->
+                                              <div class="form-group">
+                                                <label for="lastName">Last Name</label>
+                                                <div class="formGroup_inner">
+                                                  <i class="fa fa-user"></i>
+                                                <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" placeholder="Last Name">
+                                                </div>
+                                             </div>
+                                              <!-- UserName -->
+                                              <div class="form-group">
+                                                <label for="userName">UserName</label>
+                                                <div class="formGroup_inner">
+                                                  <i class="fa fa-user"></i>
+                                                <input type="text" class="form-control" id="userName" aria-describedby="userNameHelp" placeholder="UserName">
+                                                </div>
+                                               </div>
+                                              <!-- Email -->
+                                                <div class="form-group">
+                                                  <label for="exampleInputEmail1">Email address</label>
+                                                  <div class="formGroup_inner">
+                                                    <i class="fa fa-envelope-o"></i>
+                                                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                  </div>
+                                                 </div>
+                                                <!-- Password  -->
+                                                <div class="form-group">
+                                                  <label for="exampleInputPassword1">Password</label>
+                                                  <div class="formGroup_inner">
+                                                      <i class="fa fa-key"></i>
+                                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                  </div>
+                                                 </div>
+                                                <!-- Profession -->
+                                                <div class="form-group">
+                                                    <label for="inputProfession">Profession</label>
+                                                    <div class="formGroup_inner">
+                                                        <i class="fa fa-graduation-cap"></i>
+                                                        <select id="inputProfession" class="form-control">
+                                                            <option selected>Select Profession...</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                                <!-- Country -->
+                                                <div class="form-group">
+                                                    <label for="inputCountry">Country</label>
+                                                    <div class="formGroup_inner">
+                                                        <i class="fa fa-globe"></i>
+                                                        <select id="inputCountry" class="form-control">
+                                                            <option selected>Select Country...</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                          </select>
+                                                    </div>
+                                                  </div>
+                                                <!-- Language -->
+                                                <div class="form-group">
+                                                    <label for="inputlanguage">language</label>
+                                                    <div class="formGroup_inner">
+                                                        <i class="fa fa-language"></i>
+                                                        <select id="inputlanguage" class="form-control">
+                                                            <option selected>Select language...</option>
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                          </select>
+                                                    </div>
+                                                </div>
+                                            <div class="text-right">
+                                                <button type="submit" class="col-md-12 cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
+                                            </div>
+                                            
+                                        </div>
+                                    
+                                    </div>
+                                </div>
+                        </div>
                 </div>
-            </div>
-        </section>
-      <!-- Login form card end here -->
+          </div>
+
+      </section>
+             <!-- profile form card end here -->
     </div>
 
     <!-- Main Body End -->
