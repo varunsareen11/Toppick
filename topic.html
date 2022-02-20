@@ -180,6 +180,9 @@
                                     <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
                                    
                                   </div>
+                                  <div class="avtar">
+                                    <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                  </div>
                                 Are young people generally more selfish than their parents and grandparents?
                               </button>
                               <div class="accord_hover_icons">
@@ -205,10 +208,32 @@
                                     <div class="topAccord_area">
                                         <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
                                         <ul class="example_list">
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                                          <li>
+                                            <div class="avtar">
+                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                            </div>
+                                            Are young people generally more selfish than their parents and 0grandparents?
+                                          </li>
+                                          <li>
+                                            <div class="avtar">
+                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                            </div>
+                                            Are young people generally more selfish than their parents and 0grandparents?
+                                          </li>
+                                          <li>
+                                            <div class="avtar">
+                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                            </div>
+                                            Are young people generally more selfish than their parents and 0grandparents?
+                                          </li>
                                         </ul>
+                                        <div class="add_input_area mb-3">
+                                          <label for="">New Example</label>
+                                          <div class="form-group">
+                                          <input type="text" name="new-example" class="form-control" placeholder="Example....">
+                                          <button type="submit">Submit</button>
+                                        </div>
+                                        </div>
                                         <div class="add_btn">
                                           <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
                                         </div>
@@ -223,13 +248,20 @@
                                             <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
                                            </div>
                                             <div class="media-body">
-                                              <h5 class="mt-0">How living with grandparents looks like</h5>
+                                              <h5 class="mt-0"> <div class="avtar">
+                                                <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                              </div> How living with grandparents looks like</h5>
                                             <p>Are young people generally more selfish than their parents and 0grandparents? Are 
                                               young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
                                             </div>
                                           </div>
-                                          <a href="article.html" class="cm-color sairaM">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                            <div class="add_input_area mb-3">
+                                              <label for="">New Artile Url</label>
+                                              <div class="form-group">
+                                              <input type="text" name="new-article-url" class="form-control" placeholder="add url here">
+                                              <button type="submit">Submit</button>
+                                            </div>
+                                            </div>
                                           <div class="add_btn">
                                             <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
                                           </div>
@@ -1375,6 +1407,20 @@
           }, 1500);
           });
       };
+      var addbtn = document.getElementsByClassName("add_btn");
+      for(var btnI = 0; btnI < addbtn.length; btnI++){
+        addbtn[btnI].addEventListener('click', function(){
+          var showAddTab =  this.previousElementSibling;
+          var findInput = showAddTab.getAttribute('class');
+          if(findInput === 'add_input_area mb-3 show'){
+            console.log("hello");
+            showAddTab.classList.remove("show")
+          }
+          else{
+            showAddTab.classList.add("show");
+          }
+        })
+      }
     </script>
   </body>
 </html>

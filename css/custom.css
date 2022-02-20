@@ -1861,7 +1861,7 @@ ul.example_list li {
   position: relative;
 }
 
-ul.example_list li::before {
+/* ul.example_list li::before {
   position: absolute;
   width: 8px;
   height: 8px;
@@ -1870,12 +1870,11 @@ ul.example_list li::before {
   border-radius: 50%;
   top: 13px;
   left: 6px;
-}
+} */
 
 ul.example_list li {
   font-size: 14px;
   padding: 7px 0px;
-  padding-left: 25px;
 }
 
 ul.example_list {
@@ -1913,7 +1912,9 @@ button.cmn_topic_heading {
   color: #ff851b;
 }
 .add_btn {
-  text-align: right;
+  /* text-align: right; */
+  display: table;
+  margin-left: auto;
 }
 .media {
   margin-bottom: 20px;
@@ -2087,18 +2088,21 @@ div#report p {
   color: #757575;
 }
 .comment_form input.form-control,
-.formGroup_inner .form-control {
+.formGroup_inner .form-control,
+.add_input_area .form-control {
   border: 1px solid #ff851b;
   border-radius: 50px;
   height: 44px;
   color: #000;
   padding: 8px 140px 8px 20px;
 }
-.comment_form .form-group {
+.comment_form .form-group,
+.add_input_area .form-group {
   position: relative;
   margin: 0;
 }
-.comment_form .form-group input[type="submit"] {
+.comment_form .form-group input[type="submit"],
+.add_input_area button[type="submit"] {
   position: absolute;
   right: 0;
   top: 0;
@@ -2446,13 +2450,15 @@ li.nav-item.user ul.user_dropdown {
   right: 0;
   opacity: 0;
   visibility: hidden;
+  border-radius: 6px;
 }
-
+li.nav-item.user ul.user_dropdown a.usermenu_item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
 li.nav-item.user ul.user_dropdown a.usermenu_item {
   color: #000;
   padding: 10px 14px;
   display: block;
-  border-bottom: 1px solid #eee;
   text-decoration: none;
 }
 
@@ -2546,4 +2552,26 @@ button.edit_icon {
 .profile_form h3 {
   padding-left: 10px;
   color: #ff851b;
+}
+.add_input_area.show {
+  opacity: 1;
+  visibility: visible;
+  height: 76px;
+  transition: 0.3s;
+}
+
+.add_input_area {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  transition: 0.3s;
+}
+.avtar {
+  display: inline-block;
+  width: 35px;
+  margin-right: 7px;
+}
+
+.avtar img {
+  border-radius: 50px;
 }
