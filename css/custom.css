@@ -1915,6 +1915,10 @@ button.cmn_topic_heading {
   /* text-align: right; */
   display: table;
   margin-left: auto;
+  cursor: pointer;
+}
+.add_btn button:focus {
+  outline: unset;
 }
 .media {
   margin-bottom: 20px;
@@ -2046,11 +2050,21 @@ div#report p {
   margin-left: 75px;
 }
 
-.comment_area .comment_block .comment_img {
+.comment_area .comment_block .comment_img,
+.avatar_name {
   flex: 0 0 60px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 20px;
+}
+.add_input_area .form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article_link {
+  width: 100%;
+  position: relative;
 }
 
 .comment_area .comment_block .comment_cont .comment_top {
@@ -2112,9 +2126,11 @@ div#report p {
   height: 44px;
   border-radius: 50px;
   width: 130px;
+  cursor: pointer;
 }
 .comment_form input.form-control:focus,
-.formGroup_inner .form-control:focus {
+.formGroup_inner .form-control:focus,
+.add_input_area input.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
 }
 .comment_form .comment_img {
