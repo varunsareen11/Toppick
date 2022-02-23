@@ -2591,3 +2591,26 @@ button.edit_icon {
 .avtar img {
   border-radius: 50px;
 }
+.email-sent h4 {
+  color: inherit;
+  font-size: 30px;
+  font-family: "sairaM";
+}
+.email-sent {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+input.exampleHidden {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+}
+
+.example_list li {
+  display: flex;
+}
+
+.example_list li .avtar {
+  flex: 0 0 35px;
+}
