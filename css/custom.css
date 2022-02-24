@@ -2614,3 +2614,43 @@ input.exampleHidden {
 .example_list li .avtar {
   flex: 0 0 35px;
 }
+/* 24/02/2022 */
+.card-header .add_btn {
+  font-family: "montM";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.add_btn.add-question-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ff851b;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.add_btn.add-question-btn i.fa {
+  color: #fff;
+  font-size: 18px;
+  line-height: 0;
+}
+
+.add_btn.add-question-btn button.cmn_topic_heading {
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.topic_heading .cmn_heading_area {
+  margin-bottom: 30px;
+}
+
+.topic_heading {
+  margin-bottom: 40px;
+}
