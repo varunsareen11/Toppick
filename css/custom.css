@@ -2663,3 +2663,6 @@ input.exampleHidden {
 .card_input {
   padding: 40px 20px 0;
 }
+#accordion .card-header button.btn .avtar {
+  display: none;
+}
