@@ -2654,3 +2654,12 @@ input.exampleHidden {
 .topic_heading {
   margin-bottom: 40px;
 }
+.card_input .add_input_area {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+.card_input {
+  padding: 40px 20px 0;
+}

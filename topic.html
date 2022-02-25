@@ -189,6 +189,20 @@
                      </div>
                      <!-- Question Accordian -->
                      <div id="accordion">
+                       <div class="card_input">
+                        <div class="add_input_area mb-3">
+                          <!-- <label for="">New Example</label> -->
+                          <div class="form-group">
+                            <div class="avatar_name">
+                              <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                           </div>
+                        <div class="article_link">
+                          <input type="text" name="add-question" class="form-control" placeholder="add question">
+                          <button type="submit">Submit</button>
+                        </div>
+                        </div>
+                        </div>
+                       </div>
                         <div class="card">
                           <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
@@ -1458,6 +1472,20 @@
           }
           else{
             showAddTab.classList.add("show");
+          }
+        })
+      }
+      var header_avtar = document.getElementsByClassName("card-header");
+      for(var avtarI = 0; avtarI < header_avtar.length; avtarI++){
+        header_avtar[avtarI].addEventListener('click', function(){
+          var getAvtar = this.querySelector(".btn-link");
+          var getAvtarAttribute = getAvtar.getAttribute('class');
+          var getAvtarImg = getAvtar.querySelector(".avtar");
+          if( getAvtarAttribute === "btn btn-link collapsed"){
+            getAvtarImg.style.display = "none";
+          }
+          else{
+            getAvtarImg.style.display = "inline-block";
           }
         })
       }
