@@ -2374,7 +2374,69 @@ a.image_link {
   border: 1px solid #ff851b;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
+.topic_area .cmn_topic_heading:hover .tootle-tip {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+  top: -40px;
+}
+/* .topic_area .cmn_topic_heading span.tootle-tip:before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -7px;
+  left: 50%;
+  transform: rotate(45deg);
+  background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
+  z-index: -1;
+}
 
+.topic_area .cmn_topic_heading span.tootle-tip:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255 133 27 / 80%);
+  z-index: -1;
+} */
+.topic_area .cmn_topic_heading {
+  position: relative;
+  display: inline-block;
+}
+.topic_area span.tootle-tip {
+  position: absolute;
+  top: -40px;
+  background: #fff;
+  color: #ff851b;
+  font-size: 12px;
+  padding: 6px 10px;
+  font-family: "montSB";
+  text-transform: uppercase;
+  line-height: 19px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  animation: copiedMessage 0.75s ease 0.75s;
+  border: 1px solid #ff851b;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  left: 0;
+  opacity: 0;
+  text-align: center;
+  width: 300px;
+}
+.avtar_name {
+  background: orange;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+}
+.avtar_name p {
+  font-size: 13px;
+}
 .accord_hover_icons button span.copied_message:before {
   content: "";
   bottom: -4px;
@@ -2586,8 +2648,11 @@ button.edit_icon {
 }
 .avtar {
   display: inline-block;
-  width: 35px;
   margin-right: 7px;
+  width: 35px;
+}
+.avtar_outer {
+  display: inline-block;
 }
 
 .avtar img {
@@ -2638,6 +2703,9 @@ input[readonly].exampleHidden {
   height: 50px;
   line-height: 50px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .add_btn.add-question-btn i.fa {
@@ -2703,26 +2771,6 @@ button.like {
   transition: 0.5s;
   top: -40px;
 }
-
-.topAccord_area ul li span.tootle-tip:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  bottom: -7px;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
-  z-index: -1;
-}
-
-.topAccord_area ul li span.tootle-tip:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgb(255 133 27 / 80%);
-  z-index: -1;
-}
 button.accord-item-edit {
   background: none;
   border: none;
@@ -2730,6 +2778,53 @@ button.accord-item-edit {
   outline: none;
   margin-left: 12px;
 }
-button.accord-item-edit .pencilEdit{
+button.accord-item-edit .pencilEdit {
   cursor: pointer;
+}
+.view_avtar_profile_wrap {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.view_avtar_profile_wrap .avtar_name {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.view_avtar_profile_wrap .avtar_name p {
+  font-size: 25px;
+}
+
+.view_avtar_profile {
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 7px;
+  position: absolute;
+  z-index: 9;
+  top: 40px;
+  left: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+.view_avtar_profile .view_avtar_profile_btn a {
+  background: #ffa500;
+  padding: 9px 20px;
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-family: "sairaM";
+}
+
+.avtar_outer .avtar:hover .view_avtar_profile {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
 }
