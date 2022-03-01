@@ -2054,10 +2054,10 @@ div#report p {
 
 .comment_area .comment_block .comment_img,
 .avatar_name {
-  flex: 0 0 60px;
+  flex: 0 0 35px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 20px;
+  margin-right: 5px;
 }
 .add_input_area .form-group {
   display: flex;
@@ -2068,7 +2068,16 @@ div#report p {
   width: 100%;
   position: relative;
 }
-
+div.add_input_area .form-control,
+div.add_input_area button[type="submit"] {
+  height: 35px;
+}
+div.add_input_area button[type="submit"]:focus {
+  outline: unset;
+}
+input.exampleHidden:focus {
+  box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
+}
 .comment_area .comment_block .comment_cont .comment_top {
   display: flex;
   align-items: center;
@@ -2374,54 +2383,9 @@ a.image_link {
   border: 1px solid #ff851b;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
-.topic_area .cmn_topic_heading:hover .tootle-tip {
-  opacity: 1;
-  visibility: visible;
-  transition: 0.5s;
-  top: -40px;
-}
-/* .topic_area .cmn_topic_heading span.tootle-tip:before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  bottom: -7px;
-  left: 50%;
-  transform: rotate(45deg);
-  background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
-  z-index: -1;
-}
-
-.topic_area .cmn_topic_heading span.tootle-tip:after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgb(255 133 27 / 80%);
-  z-index: -1;
-} */
 .topic_area .cmn_topic_heading {
   position: relative;
   display: inline-block;
-}
-.topic_area span.tootle-tip {
-  position: absolute;
-  top: -40px;
-  background: #fff;
-  color: #ff851b;
-  font-size: 12px;
-  padding: 6px 10px;
-  font-family: "montSB";
-  text-transform: uppercase;
-  line-height: 19px;
-  border-radius: 2px;
-  letter-spacing: 1px;
-  animation: copiedMessage 0.75s ease 0.75s;
-  border: 1px solid #ff851b;
-  box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
-  left: 0;
-  opacity: 0;
-  text-align: center;
-  width: 300px;
 }
 .avtar_name {
   background: orange;
@@ -2672,6 +2636,8 @@ input.exampleHidden {
   padding: 0 10px;
   outline: none;
   flex-grow: 1;
+  border-radius: 35px;
+  border: 1px solid #ff851b;
 }
 input[readonly].exampleHidden {
   border: none;
@@ -2748,29 +2714,6 @@ button.like {
 .topAccord_area ul li {
   position: relative;
 }
-
-.topAccord_area ul li span.tootle-tip {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  display: inline-block;
-  font-size: 12px;
-  color: #000;
-  border-radius: 5px;
-  border: 1px solid #ff851b;
-  font-family: "montM";
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.5s;
-}
-.topAccord_area ul li:hover span.tootle-tip {
-  opacity: 1;
-  visibility: visible;
-  transition: 0.5s;
-  top: -40px;
-}
 button.accord-item-edit {
   background: none;
   border: none;
@@ -2785,23 +2728,23 @@ button.accord-item-edit .pencilEdit {
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 
 .view_avtar_profile_wrap .avtar_name {
-  width: 60px;
-  height: 60px;
+  width: 45px;
+  height: 45px;
   margin-right: 10px;
 }
 
 .view_avtar_profile_wrap .avtar_name p {
-  font-size: 25px;
+  font-size: 18px;
 }
 
 .view_avtar_profile {
   background: #fff;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 15px;
   border-radius: 7px;
   position: absolute;
   z-index: 9;
@@ -2810,13 +2753,14 @@ button.accord-item-edit .pencilEdit {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
+  width: 320px;
 }
 
 .view_avtar_profile .view_avtar_profile_btn a {
   background: #ffa500;
-  padding: 9px 20px;
+  padding: 7px 16px;
   display: block;
-  margin-top: 20px;
+  margin-top: 15px;
   color: #fff;
   border-radius: 50px;
   text-align: center;
@@ -2827,4 +2771,62 @@ button.accord-item-edit .pencilEdit {
   opacity: 1;
   visibility: visible;
   transition: 0.5s;
+}
+
+.topAccord_area .cmn_topic_heading span.tootle-tip {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  border: 1px solid #ff851b;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.topAccord_area .cmn_topic_heading:hover span.tootle-tip {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+.topAccord_area .cmn_topic_heading span.tootle-tip::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
+}
+.add_input_area_dropdown ul.inner-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+.add_input_area_dropdown.show ul.inner-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+.add_input_area_dropdown ul.inner-dropdown li.inner-dropdown-item {
+  padding: 12px 40px 12px 20px;
+  cursor: pointer;
+}
+
+.add_input_area_dropdown
+  ul.inner-dropdown
+  li.inner-dropdown-item:not(:last-child) {
+  border-bottom: 1px solid #eee;
 }

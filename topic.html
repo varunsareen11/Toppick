@@ -165,17 +165,23 @@
                                   <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg" alt="level" class="img-fluid"> Hard</p>
                               </div>
                       </div>
-                      <div class="add_input_area mb-3">
-                        <!-- <label for="">New Example</label> -->
-                        <div class="form-group">
-                          <div class="avatar_name">
-                            <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                         </div>
-                      <div class="article_link">
-                        <input type="text" name="add-question" class="form-control" placeholder="add question">
-                        <button type="submit">Submit</button>
-                      </div>
-                      </div>
+                      <div class="add_input_area_dropdown mb-3">
+                        <ul class="inner-dropdown">
+                          <li class="inner-dropdown-item" data-source="addquestion">Add Question</li>
+                          <li class="inner-dropdown-item" data-source="addlist">Add List</li>
+                        </ul>
+                        <div class="add_input_area" data-target="addquestion">
+                          <!-- <label for="">New Example</label> -->
+                          <div class="form-group">
+                            <div class="avatar_name">
+                              <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                          </div>
+                          <div class="article_link">
+                            <input type="text" name="add-question" class="form-control" placeholder="add question">
+                            <button type="submit">Submit</button>
+                          </div>
+                          </div>
+                        </div>
                       </div>
                         <div class="add_btn add-question-btn">
                           <button class="cmn_topic_heading"><img src="assets/images/page.svg" alt="Create Icon"></button>
@@ -209,7 +215,6 @@
                                     </div>
                                     <div class="view_avtar_profile_info">
                                       <h5>Varun Sareen</h5>
-                                      <p>varunsareen11@gmail.com</p>
                                     </div>
                                   </div>
                                     <div class="view_avtar_profile_btn">
@@ -1477,7 +1482,7 @@
         addbtn[btnI].addEventListener('click', function(){
           var showAddTab =  this.previousElementSibling;
           var findInput = showAddTab.getAttribute('class');
-          if(findInput === 'add_input_area mb-3 show'){
+          if(findInput === 'add_input_area_dropdown mb-3 show'){
             console.log("hello");
             showAddTab.classList.remove("show")
           }
@@ -1486,6 +1491,24 @@
           }
         })
       };
+      // add question
+      var adddropbtn = document.querySelectorAll(".add_input_area_dropdown  .inner-dropdown .inner-dropdown-item");
+      for(var adddropbtnI = 0; adddropbtnI < adddropbtn.length; adddropbtnI++){
+        adddropbtn[adddropbtnI].addEventListener('click', function(){
+          var adddropbtnAtr = this.getAttribute('data-source');
+          let closestElement = this.parentNode;
+          let adddropbtnAtrInput = closestElement.nextSibling.nextSibling;
+          let adddropbtnAtrInputAtr = adddropbtnAtrInput.getAttribute("data-target")
+
+          console.log(adddropbtnAtr === adddropbtnAtrInputAtr);
+          if(adddropbtnAtr === adddropbtnAtrInputAtr){
+            
+            adddropbtnAtrInput.classList.toggle("show")
+          }
+        })
+      };
+
+      // avtar
       var header_avtar = document.getElementsByClassName("btn-link");
       for(var avtarI = 0; avtarI < header_avtar.length; avtarI++){
         header_avtar[avtarI].addEventListener('click', function(){
