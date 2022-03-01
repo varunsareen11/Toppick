@@ -2059,6 +2059,9 @@ div#report p {
   overflow: hidden;
   margin-right: 5px;
 }
+.avatar_name {
+  flex: 0 0 50px;
+}
 .add_input_area .form-group {
   display: flex;
   justify-content: center;
