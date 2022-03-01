@@ -2068,10 +2068,6 @@ div#report p {
   width: 100%;
   position: relative;
 }
-div.add_input_area .form-control,
-div.add_input_area button[type="submit"] {
-  height: 35px;
-}
 div.add_input_area button[type="submit"]:focus {
   outline: unset;
 }
@@ -2600,7 +2596,7 @@ button.edit_icon {
 .add_input_area.show {
   opacity: 1;
   visibility: visible;
-  height: 76px;
+  height: 50px;
   transition: 0.3s;
 }
 
@@ -2638,6 +2634,8 @@ input.exampleHidden {
   flex-grow: 1;
   border-radius: 35px;
   border: 1px solid #ff851b;
+  box-shadow: none !important;
+  height: 38px;
 }
 input[readonly].exampleHidden {
   border: none;
@@ -2786,6 +2784,7 @@ button.accord-item-edit .pencilEdit {
   transition: 0.5s;
   opacity: 0;
   visibility: hidden;
+  border-radius: 7px;
 }
 
 .topAccord_area .cmn_topic_heading:hover span.tootle-tip {
@@ -2803,7 +2802,7 @@ button.accord-item-edit .pencilEdit {
   transform: translateX(-50%) rotate(45deg);
   background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
 }
-.add_input_area_dropdown ul.inner-dropdown {
+.add_input_area_dropdown .dropdown-topic ul.inner-dropdown {
   position: absolute;
   top: 60px;
   right: 0;
@@ -2813,14 +2812,18 @@ button.accord-item-edit .pencilEdit {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
+  z-index: 1;
 }
-.add_input_area_dropdown.show ul.inner-dropdown {
+.add_input_area_dropdown.show .dropdown-topic ul.inner-dropdown {
   opacity: 1;
   visibility: visible;
   transition: 0.5s;
 }
 
-.add_input_area_dropdown ul.inner-dropdown li.inner-dropdown-item {
+.add_input_area_dropdown
+  .dropdown-topic
+  ul.inner-dropdown
+  li.inner-dropdown-item {
   padding: 12px 40px 12px 20px;
   cursor: pointer;
 }
@@ -2829,4 +2832,11 @@ button.accord-item-edit .pencilEdit {
   ul.inner-dropdown
   li.inner-dropdown-item:not(:last-child) {
   border-bottom: 1px solid #eee;
+}
+.card-body div.add_input_area button[type="submit"] {
+  width: 100px;
+  height: 38px;
+}
+.card-body div.add_input_area .form-control {
+  height: 38px;
 }

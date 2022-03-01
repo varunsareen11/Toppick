@@ -166,10 +166,12 @@
                               </div>
                       </div>
                       <div class="add_input_area_dropdown mb-3">
-                        <ul class="inner-dropdown">
-                          <li class="inner-dropdown-item" data-source="addquestion">Add Question</li>
-                          <li class="inner-dropdown-item" data-source="addlist">Add List</li>
-                        </ul>
+                        <div class="dropdown-topic">
+                          <ul class="inner-dropdown">
+                            <li class="inner-dropdown-item" data-source="addquestion">Add Question</li>
+                            <li class="inner-dropdown-item" data-source="addlist">Add List</li>
+                          </ul>
+                        </div>
                         <div class="add_input_area" data-target="addquestion">
                           <!-- <label for="">New Example</label> -->
                           <div class="form-group">
@@ -1496,7 +1498,7 @@
       for(var adddropbtnI = 0; adddropbtnI < adddropbtn.length; adddropbtnI++){
         adddropbtn[adddropbtnI].addEventListener('click', function(){
           var adddropbtnAtr = this.getAttribute('data-source');
-          let closestElement = this.parentNode;
+          let closestElement = this.parentNode.parentNode;
           let adddropbtnAtrInput = closestElement.nextSibling.nextSibling;
           let adddropbtnAtrInputAtr = adddropbtnAtrInput.getAttribute("data-target")
 
