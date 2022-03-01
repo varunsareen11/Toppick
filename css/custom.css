@@ -2728,8 +2728,8 @@ button.accord-item-edit .pencilEdit {
 .view_avtar_profile_wrap {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
+  /* border-bottom: 1px solid #eee;
+  padding-bottom: 15px; */
 }
 
 .view_avtar_profile_wrap .avtar_name {
@@ -2754,7 +2754,11 @@ button.accord-item-edit .pencilEdit {
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
-  width: 320px;
+  width: 230px;
+}
+.error_message.text-danger {
+  font-size: 14px;
+  padding: 10px;
 }
 
 .view_avtar_profile .view_avtar_profile_btn a {
@@ -2789,7 +2793,20 @@ button.accord-item-edit .pencilEdit {
   visibility: hidden;
   border-radius: 7px;
 }
-
+span.tootle-tip button {
+  background: transparent;
+  border: transparent;
+  color: #ff851b;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: "montSB";
+}
+.view_avtar_profile_info a {
+  font-size: 13px;
+  color: #ff851b;
+  font-family: "montSB";
+  text-decoration: underline;
+}
 .topAccord_area .cmn_topic_heading:hover span.tootle-tip {
   opacity: 1;
   visibility: visible;
@@ -2801,7 +2818,7 @@ button.accord-item-edit .pencilEdit {
   width: 10px;
   height: 10px;
   bottom: -5px;
-  left: 50%;
+  left: 10px;
   transform: translateX(-50%) rotate(45deg);
   background-image: linear-gradient(135deg, transparent 50%, #ff851b 50%);
 }
