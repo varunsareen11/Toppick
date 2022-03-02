@@ -168,8 +168,8 @@
                       <div class="add_input_area_dropdown mb-3">
                         <div class="dropdown-topic">
                           <ul class="inner-dropdown">
-                            <li class="inner-dropdown-item" data-source="addquestion">Add Question</li>
-                            <li class="inner-dropdown-item" data-source="addlist">Add List</li>
+                            <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <img src="assets/images/question-heading-icon.svg" alt=""></li>
+                            <li class="inner-dropdown-item" data-toggle="modal" data-target="#myModal" data-source="addlist"><span>Add List </span><img src="assets/images/question-heading-icon.svg" alt=""></li>
                           </ul>
                         </div>
                         <div class="add_input_area" data-target="addquestion">
@@ -186,7 +186,7 @@
                         </div>
                       </div>
                         <div class="add_btn add-question-btn">
-                          <button class="cmn_topic_heading"><img src="assets/images/page.svg" alt="Create Icon"></button>
+                          <button class="cmn_topic_heading"><img src="assets/images/plus.svg" alt="Create Icon"></button>
                         </div>
                       </div>
                      <div class="topic_tabs">
@@ -284,7 +284,6 @@
                                             </div>
                                             <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
                                             <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                            
                                           </li>
                                           <li>
                                             <div class="avtar">
@@ -1447,6 +1446,38 @@
         </div>
       </footer>
       <!-- Footer End -->
+      <!-- Add List Model -->
+      <!-- The Modal -->
+      <div class="modal list-model" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <input type="text" name="" id="" class="search-list" placeholder="search here">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="list-form">
+                <label class="list-cont">Watch Later
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="list-cont">Varun
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <div class="new-list">
+                <button class="new-list-btn">+ Create New List </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Wrapper End -->
 
@@ -1483,17 +1514,26 @@
           }, 1500);
           });
       };
+      // Add btn
       var addbtn = document.getElementsByClassName("add_btn");
       for(var btnI = 0; btnI < addbtn.length; btnI++){
+        let addbtnTextNode = document.createElement("button")
+          let addbtnText = document.createTextNode("Cancel");
+          addbtnTextNode.className =  "cancelbtn cmn-accord-btn";
+          addbtnTextNode.append(addbtnText);
         addbtn[btnI].addEventListener('click', function(){
           var showAddTab =  this.previousElementSibling;
           var findInput = showAddTab.getAttribute('class');
+          var rotatebtn = this.querySelector(".cmn_topic_heading");
+          showAddTab.append(addbtnTextNode);
           if(findInput === 'add_input_area_dropdown mb-3 show'){
-            console.log("hello");
-            showAddTab.classList.remove("show")
+            showAddTab.classList.remove("show");
+            rotatebtn.style.transform = "rotate(0deg)";
           }
           else{
             showAddTab.classList.add("show");
+            showAddTab.append(addbtnTextNode);
+            rotatebtn.style.transform = "rotate(45deg)";
           }
         })
       };
@@ -1505,8 +1545,6 @@
           let closestElement = this.parentNode.parentNode;
           let adddropbtnAtrInput = closestElement.nextSibling.nextSibling;
           let adddropbtnAtrInputAtr = adddropbtnAtrInput.getAttribute("data-target")
-
-          console.log(adddropbtnAtr === adddropbtnAtrInputAtr);
           if(adddropbtnAtr === adddropbtnAtrInputAtr){
             
             adddropbtnAtrInput.classList.toggle("show")
@@ -1548,23 +1586,17 @@
 
       // edit accordion items
       var accordEditBtn = document.getElementsByClassName('accord-item-edit');
-      // var accordEditBtnIcon = document.getElementsByClassName('pencilEdit');
-      // for(var pencilIcon2 = 0; pencilIcon2 < accordEditBtnIcon.length; pencilIcon2++){
-      //       accordEditBtnIcon[pencilIcon2].addEventListener('click', function(){
-      //         console.log(this);
-      //       });
-      //     }
       for(var pencil = 0; pencil < accordEditBtn.length; pencil++){
 
         // create save and cancel icon
-        // let saveBtn = document.createElement("button");
-        //   let saveBtnText = document.createTextNode("Update");
-        //   let cancelBtn = document.createElement("button");
-        //   let cancelBtnText = document.createTextNode("Cancel");
-        //   saveBtn.className = "savebtn";
-        //   cancelBtn.className =  "cancelbtn";
-        //   saveBtn.append(saveBtnText);
-        //   cancelBtn.append(cancelBtnText);
+        var saveBtn = document.createElement("button");
+          var saveBtnText = document.createTextNode("Update");
+          var cancelBtn = document.createElement("button");
+          var cancelBtnText = document.createTextNode("Cancel");
+          saveBtn.className = "savebtn cmn-accord-btn";
+          cancelBtn.className =  "cancelbtn cmn-accord-btn";
+          saveBtn.append(saveBtnText);
+          cancelBtn.append(cancelBtnText);
         //   var accordEditBtnIcon = accordEditBtn[pencil].getElementsByClassName('pencilEdit');
         //   // remove readable
         //   for(var pencilIcon2 = 0; pencilIcon2 < accordEditBtnIcon.length; pencilIcon2++){
@@ -1574,11 +1606,16 @@
         //   }
           // on click
         accordEditBtn[pencil].addEventListener('click', function(){
-          // console.log(this);
           let closestElement = this.previousSibling.previousSibling;
           closestElement.removeAttribute('readonly');
-          // this.append(saveBtn);
-          // this.append(cancelBtn);
+          let findParent = this.parentNode;
+          findParent.append(saveBtn);
+          findParent.append(cancelBtn);
+          this.style.display = "none";
+          var cancelbtnclose = findParent.querySelector(".cancelbtn");
+          cancelbtnclose.addEventListener('click', function(){
+            let findParent2 = this.parentNode;
+          });
         })
       }
     </script>

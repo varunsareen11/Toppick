@@ -2637,11 +2637,11 @@ input.exampleHidden {
   flex-grow: 1;
   border-radius: 35px;
   border: 1px solid #ff851b;
-  box-shadow: none !important;
   height: 38px;
 }
 input[readonly].exampleHidden {
   border: none;
+  box-shadow: none !important;
 }
 
 .example_list li {
@@ -2714,6 +2714,7 @@ button.like {
 }
 .topAccord_area ul li {
   position: relative;
+  flex-wrap: wrap;
 }
 button.accord-item-edit {
   background: none;
@@ -2826,9 +2827,6 @@ span.tootle-tip button {
   position: absolute;
   top: 60px;
   right: 0;
-  background: #fff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
   opacity: 0;
   visibility: hidden;
   transition: 0.5s;
@@ -2844,14 +2842,26 @@ span.tootle-tip button {
   .dropdown-topic
   ul.inner-dropdown
   li.inner-dropdown-item {
-  padding: 12px 40px 12px 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.add_input_area_dropdown
+  .dropdown-topic
+  ul.inner-dropdown
+  li.inner-dropdown-item
+  span {
+  padding: 12px 40px 12px 20px;
+  background: #fff;
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
+  flex-grow: 1;
+  margin-right: 12px;
 }
 
 .add_input_area_dropdown
   ul.inner-dropdown
   li.inner-dropdown-item:not(:last-child) {
-  border-bottom: 1px solid #eee;
+  margin-bottom: 12px;
 }
 .card-body div.add_input_area button[type="submit"] {
   width: 100px;
@@ -2859,4 +2869,119 @@ span.tootle-tip button {
 }
 .card-body div.add_input_area .form-control {
   height: 38px;
+}
+.cmn-accord-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  outline: none;
+  color: #ff851b;
+  font-family: "sairaM";
+  margin-right: 11px;
+  margin-top: 10px;
+}
+
+.list-cont {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.list-cont input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.list-cont:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.list-cont input:checked ~ .checkmark {
+  background-color: #ff851b;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.list-cont input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.list-cont .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.list-form label.list-cont {
+  font-family: "montR";
+  font-size: 15px;
+}
+.list-model .modal-dialog {
+  max-width: 280px;
+}
+.list-model .modal-dialog button {
+  cursor: pointer;
+  outline: none;
+}
+button.new-list-btn {
+  background: #ff851b;
+  border: none;
+  color: #fff;
+  width: 100%;
+  border-radius: 50px;
+  height: 46px;
+}
+input.search-list {
+  border: none;
+  outline: none;
+}
+.new-list {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+.topAccord_area ul li input.exampleHidden {
+  flex: 0 0 90%;
+}
+.cmn-accord-btn:not(:last-child) {
+  margin-left: 46px;
+}
+.add_input_area.show button.cmn-accord-btn {
+  margin-top: 0px !important;
+  margin-left: 60px;
 }
