@@ -203,7 +203,7 @@
                               <div class="topAccord_area">
                                 <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
                               </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              <button class="btn my_question btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                  
                                 <div class="avtar_outer">
                                   <div class="avtar">
@@ -1454,7 +1454,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <input type="text" name="" id="" class="search-list" placeholder="search here">
+              <input type="text" name="" id="" class="search-list" placeholder="Add to list">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -1593,10 +1593,15 @@
           var saveBtnText = document.createTextNode("Update");
           var cancelBtn = document.createElement("button");
           var cancelBtnText = document.createTextNode("Cancel");
+          let deletebtn = document.createElement("button");
+          let deletebtntext= document.createTextNode("Delete");
           saveBtn.className = "savebtn cmn-accord-btn";
           cancelBtn.className =  "cancelbtn cmn-accord-btn";
+          deletebtn.className = "deletebtn cmn-accord-btn";
           saveBtn.append(saveBtnText);
           cancelBtn.append(cancelBtnText);
+          deletebtn.append(deletebtntext);
+          
         //   var accordEditBtnIcon = accordEditBtn[pencil].getElementsByClassName('pencilEdit');
         //   // remove readable
         //   for(var pencilIcon2 = 0; pencilIcon2 < accordEditBtnIcon.length; pencilIcon2++){
@@ -1611,6 +1616,7 @@
           let findParent = this.parentNode;
           findParent.append(saveBtn);
           findParent.append(cancelBtn);
+          findParent.append(deletebtn);
           this.style.display = "none";
           var cancelbtnclose = findParent.querySelector(".cancelbtn");
           cancelbtnclose.addEventListener('click', function(){

@@ -169,6 +169,9 @@ span.badge::before {
   transform: translateY(-50%);
   border-radius: 50%;
 }
+button {
+  cursor: pointer;
+}
 /* common css ends here */
 
 /* Loader Styling Start Here */
@@ -1205,7 +1208,8 @@ section.about_section {
   padding: 10px;
   border-radius: 7px;
 }
-.offercard {
+.offercard,
+.topics_card {
   text-align: left;
   padding: 20px;
   box-shadow: 0px 0px 12px rgb(0 0 0 / 9%);
@@ -2111,7 +2115,16 @@ input.exampleHidden:focus {
   font-family: "montR";
   color: #757575;
 }
+div.add_topic_list input.form-control,
+div.add_topic_list button[type="submit"] {
+  height: 35px;
+  font-size: 13px;
+}
+div.add_topic_list button[type="submit"] {
+  width: 80px;
+}
 .comment_form input.form-control,
+.add_topic_list input.form-control,
 .formGroup_inner .form-control,
 .add_input_area .form-control {
   border: 1px solid #ff851b;
@@ -2121,12 +2134,14 @@ input.exampleHidden:focus {
   padding: 8px 140px 8px 20px;
 }
 .comment_form .form-group,
-.add_input_area .form-group {
+.add_input_area .form-group,
+.add_topic_list .form-group {
   position: relative;
   margin: 0;
 }
 .comment_form .form-group input[type="submit"],
-.add_input_area button[type="submit"] {
+.add_input_area button[type="submit"],
+.add_topic_list button[type="submit"] {
   position: absolute;
   right: 0;
   top: 0;
@@ -2139,8 +2154,10 @@ input.exampleHidden:focus {
   cursor: pointer;
 }
 .comment_form input.form-control:focus,
+.add_topic_list input:focus,
 .formGroup_inner .form-control:focus,
-.add_input_area input.form-control:focus {
+.add_input_area input.form-control:focus,
+.list_description textarea.form-control:focus {
   box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
 }
 .comment_form .comment_img {
@@ -2387,7 +2404,7 @@ a.image_link {
   display: inline-block;
 }
 .avtar_name {
-  background: orange;
+  background: #ff851b;
   display: flex;
   width: 35px;
   height: 35px;
@@ -2910,7 +2927,8 @@ span.tootle-tip button {
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  border: 1px solid #686868;
+  border-radius: 4px;
 }
 
 /* On mouse-over, add a grey background color */
@@ -2920,7 +2938,7 @@ span.tootle-tip button {
 
 /* When the checkbox is checked, add a blue background */
 .list-cont input:checked ~ .checkmark {
-  background-color: #ff851b;
+  border: 1px solid #ff851b;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -2941,7 +2959,7 @@ span.tootle-tip button {
   top: 5px;
   width: 5px;
   height: 10px;
-  border: solid white;
+  border: solid #ff851b;
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -2964,7 +2982,7 @@ button.new-list-btn {
   color: #fff;
   width: 100%;
   border-radius: 50px;
-  height: 46px;
+  height: 42px;
 }
 input.search-list {
   border: none;
@@ -2978,10 +2996,122 @@ input.search-list {
 .topAccord_area ul li input.exampleHidden {
   flex: 0 0 90%;
 }
-.cmn-accord-btn:not(:last-child) {
+.savebtn.cmn-accord-btn {
   margin-left: 46px;
 }
 .add_input_area.show button.cmn-accord-btn {
   margin-top: 0px !important;
   margin-left: 60px;
+}
+/* 3  */
+/* my topics css starts here */
+.top_sidebar button {
+  background: transparent;
+  border: transparent;
+  display: block;
+  padding: 10px 0px;
+}
+
+.top_sidebar p {
+  padding: 10px 0px;
+  margin: 0;
+}
+.top_sidebar h2 {
+  padding: 10px 0px;
+  color: #ff851b;
+  font-family: "sairaM";
+}
+
+.top_sidebar img {
+  margin-right: 10px;
+}
+.top_sidebar li {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+.add_list_input {
+  padding: 10px 0px;
+}
+button:focus {
+  outline: unset;
+}
+
+.topic_inner {
+  display: flex;
+  align-items: center;
+}
+
+.article_image {
+  flex: 0 0 110px;
+}
+
+.topics_content span {
+  font-size: 14px;
+  color: #000;
+  font-family: "sairaSB";
+}
+
+.topics_content h5 {
+  color: #ff851b;
+}
+.topic_info {
+  display: flex;
+  align-items: center;
+}
+.topic_info {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+.topic_inner {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.my_info {
+  flex: 0 0 100px;
+  padding: 10px;
+  text-align: center;
+}
+.topic_inner {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-left: 1px solid #ddd;
+}
+.my_info .avtar {
+  margin: auto;
+  margin-bottom: 10px;
+}
+.my-topics {
+  margin-bottom: 20px;
+}
+.list_description textarea.form-control {
+  border: 1px solid #ff851b;
+  margin-top: 15px;
+}
+.list_description button {
+  border: transparent;
+}
+.top_sidebar.topics_card {
+  height: unset;
+}
+.add_topic_list ul li:last-child {
+  border: unset;
+  margin: 0;
+}
+.my_topics_lists .list_head button {
+  border: none;
+  background-color: #ff851b;
+  color: #fff;
+  flex: 0 1 46px;
+  border-radius: 50px;
+  font-size: 27px;
+  height: 45px;
+  line-height: 26px;
+  cursor: pointer;
+}
+#accordion .card-header button.btn.my_question {
+  color: #ff851b;
+  font-family: "montSB";
 }
