@@ -1854,6 +1854,7 @@ p.cmn_topic_heading {
 div#accordion {
   box-shadow: 0px 0px 20px rgb(0 0 0 / 15%);
   border-radius: 40px;
+  overflow: hidden;
 }
 
 #accordion .card:not(:last-child) {
@@ -2848,11 +2849,33 @@ span.tootle-tip button {
   visibility: hidden;
   transition: 0.5s;
   z-index: 1;
+  width: 260px;
 }
 .add_input_area_dropdown.show .dropdown-topic ul.inner-dropdown {
   opacity: 1;
   visibility: visible;
   transition: 0.5s;
+}
+.add_input_area_dropdown
+  .dropdown-topic
+  ul.inner-dropdown
+  li.inner-dropdown-item
+  span.add-img {
+  flex: 0 0 50px;
+  text-align: center;
+  padding: 0;
+  border-radius: 50px;
+  margin: 0;
+  background-color: #ff851b;
+}
+
+.add_input_area_dropdown
+  .dropdown-topic
+  ul.inner-dropdown
+  li.inner-dropdown-item
+  span.add-img
+  img {
+  max-width: 26px;
 }
 
 .add_input_area_dropdown
@@ -2861,7 +2884,6 @@ span.tootle-tip button {
   li.inner-dropdown-item {
   cursor: pointer;
   display: flex;
-  align-items: center;
 }
 .add_input_area_dropdown
   .dropdown-topic
@@ -2873,6 +2895,7 @@ span.tootle-tip button {
   box-shadow: 0 0 20px 0 rgb(0 0 0 / 10%);
   flex-grow: 1;
   margin-right: 12px;
+  border-radius: 8px;
 }
 
 .add_input_area_dropdown
@@ -2929,11 +2952,6 @@ span.tootle-tip button {
   width: 25px;
   border: 1px solid #686868;
   border-radius: 4px;
-}
-
-/* On mouse-over, add a grey background color */
-.list-cont:hover input ~ .checkmark {
-  background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -3112,6 +3130,32 @@ button:focus {
   cursor: pointer;
 }
 #accordion .card-header button.btn.my_question {
-  color: #ff851b;
   font-family: "montSB";
+}
+#accordion .card-highlight {
+  background: rgb(255 133 27 / 10%);
+}
+.create-list-tab h6 {
+  font-size: 18px;
+  font-family: "sairaR";
+  margin-bottom: 11px;
+}
+
+.create-list-tab input {
+  width: 100%;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  height: 40px;
+  padding: 10px 20px;
+  outline: none;
+}
+
+.create-list-tab .btn-list {
+  text-align: right;
+}
+.create-list-tab {
+  display: none;
+}
+.create-list-tab.show {
+  display: block;
 }

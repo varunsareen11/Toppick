@@ -168,8 +168,8 @@
                       <div class="add_input_area_dropdown mb-3">
                         <div class="dropdown-topic">
                           <ul class="inner-dropdown">
-                            <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <img src="assets/images/question-heading-icon.svg" alt=""></li>
-                            <li class="inner-dropdown-item" data-toggle="modal" data-target="#myModal" data-source="addlist"><span>Add List </span><img src="assets/images/question-heading-icon.svg" alt=""></li>
+                            <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <span class="add-img"><img src="assets/images/question-heading-icon-white.svg" alt=""></span></li>
+                            <li class="inner-dropdown-item" data-toggle="modal" data-target="#myModal" data-source="addlist"><span>Add List </span> <span class="add-img"><img src="assets/images/list-white.svg" alt=""></span></li>
                           </ul>
                         </div>
                         <div class="add_input_area" data-target="addquestion">
@@ -197,7 +197,7 @@
                      </div>
                      <!-- Question Accordian -->
                      <div id="accordion">
-                        <div class="card">
+                        <div class="card card-highlight">
                           <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                               <div class="topAccord_area">
@@ -1454,7 +1454,7 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-              <input type="text" name="" id="" class="search-list" placeholder="Add to list">
+              <p>Add to list</p>
               <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -1471,6 +1471,14 @@
                 </label>
               </div>
               <div class="new-list">
+                <div class="create-list-tab">
+                  <h6>New List</h6>
+                  <input type="text" name="listTitle" id="listTitle" placeholder="Title">
+                  <div class="btn-list">
+                    <button class="listcancel cmn-accord-btn">Cancel</button>
+                    <button class="listcreate cmn-accord-btn">Create</button>
+                  </div>
+                </div>
                 <button class="new-list-btn">+ Create New List </button>
               </div>
             </div>
@@ -1624,6 +1632,27 @@
           });
         })
       }
+
+      // create newlist btn
+      var createlist_btn = document.querySelector('.new-list-btn');
+      createlist_btn.addEventListener('click', function(){
+        let createPrevList = this.parentNode;
+        let findChildList = createPrevList.querySelector('.create-list-tab');
+        let findChildListAttr = findChildList.getAttribute('class');
+        console.log(findChildListAttr);
+        if(findChildListAttr !== "create-list-tab show"){
+          findChildList.classList.add("show");
+          this.style.display="none";
+        }
+        let cancellistbtn = findChildList.querySelector(".listcancel ");
+        console.log(cancellistbtn);
+        cancelBtn.addEventListener('click', function(){
+          if(findChildListAttr === "create-list-tab show"){
+            findChildList.classList.remove("show");
+           this.style.display="block";
+          }
+        })
+      })
     </script>
   </body>
 </html>
