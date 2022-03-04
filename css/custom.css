@@ -2079,7 +2079,8 @@ div#report p {
 div.add_input_area button[type="submit"]:focus {
   outline: unset;
 }
-input.exampleHidden:focus {
+input.exampleHidden:focus,
+.create-list-tab input:focus {
   box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
 }
 .comment_area .comment_block .comment_cont .comment_top {
@@ -3129,9 +3130,6 @@ button:focus {
   line-height: 26px;
   cursor: pointer;
 }
-#accordion .card-header button.btn.my_question {
-  font-family: "montSB";
-}
 #accordion .card-highlight {
   background: rgb(255 133 27 / 10%);
 }
@@ -3143,7 +3141,7 @@ button:focus {
 
 .create-list-tab input {
   width: 100%;
-  border: 1px solid #eee;
+  border: 1px solid #ff851b;
   border-radius: 50px;
   height: 40px;
   padding: 10px 20px;
@@ -3158,4 +3156,21 @@ button:focus {
 }
 .create-list-tab.show {
   display: block;
+}
+.modal-header p,
+.create-list-tab h6 {
+  font-family: "sairaSB";
+  font-size: 16px;
+}
+.card.card-blinking {
+  animation: blinking 2s ease linear;
+}
+
+@keyframes blinking {
+  0% {
+    background-color: #f9b248;
+  }
+  100% {
+    background-color: #fff3e8;
+  }
 }

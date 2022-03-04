@@ -169,7 +169,7 @@
                         <div class="dropdown-topic">
                           <ul class="inner-dropdown">
                             <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <span class="add-img"><img src="assets/images/question-heading-icon-white.svg" alt=""></span></li>
-                            <li class="inner-dropdown-item" data-toggle="modal" data-target="#myModal" data-source="addlist"><span>Add List </span> <span class="add-img"><img src="assets/images/list-white.svg" alt=""></span></li>
+                            <li class="inner-dropdown-item" data-toggle="modal"  data-target="#exampleModalCenter" data-source="addlist"><span>Add List </span> <span class="add-img"><img src="assets/images/list-white.svg" alt=""></span></li>
                           </ul>
                         </div>
                         <div class="add_input_area" data-target="addquestion">
@@ -367,7 +367,7 @@
                             </div>
                           </div>
                         </div>
-                        <div class="card">
+                        <div class="card card-blinking">
                           <div class="card-header" id="headingtow">
                             <h5 class="mb-0">
                               <div class="topAccord_area">
@@ -1448,8 +1448,8 @@
       <!-- Footer End -->
       <!-- Add List Model -->
       <!-- The Modal -->
-      <div class="modal list-model" id="myModal">
-        <div class="modal-dialog">
+      <div class="modal list-model"  id="exampleModalCenter">
+        <div class=" modal-dialog modal-dialog-centered">
           <div class="modal-content">
 
             <!-- Modal Header -->
@@ -1566,8 +1566,9 @@
         header_avtar[avtarI].addEventListener('click', function(){
           // var getAvtar = this.querySelector(".btn-link");
           var getAvtar = this.getAttribute('class');
+          console.log(getAvtar);
           var getAvtarImg = this.querySelector(".avtar");
-          if( getAvtar === "btn btn-link collapsed"){
+          if( getAvtar === "btn my_question btn-link collapsed"){
             getAvtarImg.style.display = "block";
           }
           else{
