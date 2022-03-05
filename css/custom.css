@@ -1952,20 +1952,22 @@ button.cmn_topic_heading {
 
 div#report {
   box-shadow: 0px 0px 5px rgb(0 0 0 / 13%);
-  padding: 10px;
   background: #fff;
   border-radius: 4px;
   margin-top: 10px;
-  z-index: 9;
+  z-index: 99;
   position: absolute;
-  width: 140px;
+  width: 200px;
   right: 0;
-  padding: 16px;
 }
 
-div#report p {
-  font-weight: 400;
-  font-size: 14px;
+div#report button {
+  padding: 15px 15px;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  text-align: left;
+  font-family: sairaR;
+  font-size: 15px;
 }
 #accordion .card-header button.btn {
   position: relative;
@@ -3108,6 +3110,10 @@ button:focus {
 .list_description textarea.form-control {
   border: 1px solid #ff851b;
   margin-top: 15px;
+  height: auto;
+  padding: 0;
+  border: none;
+  box-shadow: none !important;
 }
 .list_description button {
   border: transparent;
@@ -3173,4 +3179,68 @@ button:focus {
   100% {
     background-color: #fff3e8;
   }
+}
+div#report ul.report-drop {
+  display: none;
+}
+
+div#report.report-wrap-show ul.report-drop {
+  display: block;
+}
+div#report.report-wrap-show button.main-btn {
+  background: #eee;
+}
+div#report button span.side-arrow-btn {
+  float: right;
+}
+
+div#report button span.side-arrow-btn img {
+  width: 18px;
+}
+
+div#report.report-wrap-show button span.side-arrow-btn {
+  transform: rotate(90deg);
+}
+#inner-report img {
+  width: 100px;
+  margin: 0 auto 25px;
+  display: table;
+}
+
+#inner-report .report-message span {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-family: "montM";
+}
+#inner-report .modal-body {
+  padding: 50px;
+}
+.list_name input[type="text"] {
+  border: none;
+  padding: 0;
+  outline: none;
+  width: auto;
+}
+.list-sec {
+  position: relative;
+}
+
+.list-sec .add_btn.add-question-btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.list-sec .add_btn.add-question-btn img {
+  margin: 0;
+  width: 15px;
+}
+
+.list-sec {
+  display: flex;
+  align-items: center;
+}
+
+.list-sec p {
 }
