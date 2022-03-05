@@ -3030,7 +3030,9 @@ input.search-list {
   background: transparent;
   border: transparent;
   display: block;
-  padding: 10px 0px;
+  padding: 10px;
+  margin: 0 !important;
+  width: 100%;
 }
 
 .top_sidebar p {
@@ -3048,7 +3050,6 @@ input.search-list {
 }
 .top_sidebar li {
   border-bottom: 1px solid #ddd;
-  margin-bottom: 10px;
 }
 .add_list_input {
   padding: 10px 0px;
@@ -3067,9 +3068,11 @@ button:focus {
 }
 
 .topics_content span {
-  font-size: 14px;
+  font-size: 13px;
   color: #000;
-  font-family: "sairaSB";
+  font-family: "sairaR";
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 .topics_content h5 {
@@ -3224,6 +3227,7 @@ div#report.report-wrap-show button span.side-arrow-btn {
 }
 .list-sec {
   position: relative;
+  margin: 20px 0;
 }
 
 .list-sec .add_btn.add-question-btn {
@@ -3242,5 +3246,34 @@ div#report.report-wrap-show button span.side-arrow-btn {
   align-items: center;
 }
 
-.list-sec p {
+.top_sidebar .add_topic_list .active button {
+  color: #ff851b;
+}
+.top_sidebar .add_topic_list button span.delete_list img {
+  width: 17px;
+  margin: 0 !important;
+}
+
+.top_sidebar .add_topic_list button span.delete_list {
+  background: rgb(255 133 27 / 10%);
+  border-radius: 50%;
+  width: 36px;
+  height: 35px;
+  float: right;
+  text-align: center;
+}
+.top_sidebar .add_topic_list button span.delete_list img {
+  width: 17px;
+  margin: 0 !important;
+}
+
+.top_sidebar .add_topic_list button span.delete_list {
+  float: right;
+  background: rgb(255 133 27 / 10%);
+  border-radius: 50%;
+  width: 36px;
+  height: 35px;
+}
+.top_sidebar ul li button {
+  text-align: left;
 }

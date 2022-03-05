@@ -12,7 +12,11 @@
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
+<style>
+  .topic_inner:first-child{
+    border: none;
+  }
+</style>
 <body>
   <!-- Loader -->
   <div class="loader">
@@ -125,7 +129,7 @@
             <div class="col-md-4 mb-5">
               <div class="top_sidebar topics_card">
                   <h2>My Topics</h2>
-                  <ul><li>
+                  <ul class=""><li>
                     <button>
                         <img src="assets/images/my_topic_icon.svg" alt="" />My Topics
                       </button>
@@ -156,28 +160,40 @@
                          </div>
                     </div>
                   <ul class="p-0 ml-3">
-                    <li>
+                    <li class="active">
                       <button>
                         <img src="assets/images/my_list_icon.svg" alt="" />varun
                         Sareen
+                        <span class="delete_list">
+                          <img src="assets/images/delete.svg" alt="Delet List">
+                        </span>
                       </button>
                     </li>
                     <li>
                       <button>
                         <img src="assets/images/my_list_icon.svg" alt="" />varun
                         Sareen
+                        <span class="delete_list">
+                          <img src="assets/images/delete.svg" alt="Delet List">
+                        </span>
                       </button>
                     </li>
                     <li>
                       <button>
                         <img src="assets/images/my_list_icon.svg" alt="" />varun
                         Sareen
+                        <span class="delete_list">
+                          <img src="assets/images/delete.svg" alt="Delet List">
+                        </span>
                       </button>
                     </li>
                     <li>
                       <button>
                         <img src="assets/images/my_list_icon.svg" alt="" />varun
                         Sareen
+                        <span class="delete_list">
+                          <img src="assets/images/delete.svg" alt="Delet List">
+                        </span>
                       </button>
                     </li>
                   </ul>
@@ -194,12 +210,12 @@
                   <div class="list_description mb-3">
                       <textarea class="form-control" name="" id="" cols="30" rows="4" placeholder="Add description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto nobis fugit illo nemo odio dolor veritatis aspernatur voluptatibus sapiente assumenda? Distinctio fuga fugit consequuntur, tempora ex quos repellendus ducimus aperiam.</textarea>
                    <div class="text-right">
-                    <button type="submit" class="cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
+                    <!-- <button type="submit" class="cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button> -->
                    </div>
                   </div>
                   <div class="my-topics">
                       <div class="topic_info">
-                          <div class="my_info">
+                          <!-- <div class="my_info">
                             <div class="avtar" style="display: block;">
                               <div class="avtar_name">
                                <p>VS</p>
@@ -207,14 +223,21 @@
                          
                              </div>
                             <p><img src="assets/images/access_time.svg" alt=""> 24 Min</p>
-                          </div>
+                          </div> -->
                           <div class="topic_inner">
                               <div class="article_image">
                                   <img src="assets/images/topic_image.png" alt="">
                               </div>
                               <div class="topics_content">
-                                  <h5> This is so beautiful</h5>
+                                  <h5> This beautiful</h5>
+                                  <div class="category_area">
+                                  <span>Nature</span>,
+                                  <span>Nature</span>,
+                                  <span>Nature</span>,
+                                  <span>Nature</span>,
+                                  <span>Nature</span>,
                                   <span>Nature</span>
+                                </div>
                                   <p>It's one thing to subject yourself to a Halloween costume mishap
                                       because, hey, that's your prerogative.</p>
                               </div>
