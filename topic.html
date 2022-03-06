@@ -454,18 +454,23 @@
                               <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
                                 Are young people generally more selfish than their parents and grandparents?
                               </button>
+                              <div id="inner-report">
+                                  <div class="cmn_report_msg success"><img src="assets/images/signboard.svg" alt="" class="img-success"><span class="text-success">Thanks for your feedback.</span> </div>
+                                  <div class="cmn_report_msg error"><img src="assets/images/warning.svg" alt="" class="img-error"><span class="text-danger">Sorry There si an error</span> </div>
+                                </div>
                               <div class="accord_hover_icons">
                                 <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
                                 <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt=""></a>
                             <div id="report" style="display: none;">
-                              <button class="main-btn"><img src="assets/images/report-icon.svg" alt="" class="mr-2"> Report <span class="side-arrow-btn"><img src="
-                                assets/images/down_arrow.svg" alt=""></span></button>
+                              <button class="cmn_drop_btn"><img src="assets/images/pencil.svg" alt="" class="mr-2" width="20px"> Edit </span></button>
+                                <button class="cmn_drop_btn"><img src="assets/images/delete.svg" alt="" class="mr-2" width="20px"> Delete </button>
+                              <button class="cmn_drop_btn main-btn"><img src="assets/images/report-icon.svg" alt="" class="mr-2" width="20px"> Report <span class="side-arrow-btn"><img src="assets/images/down_arrow.svg" alt=""></span></button>
                                 <ul class="report-drop">
-                                  <li><button class="sub-reportbtn" data-toggle="modal" data-target="#inner-report"><img src="assets/images/report-icon.svg" alt="" class="mr-2"> Report</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/report-icon.svg" alt="" class="mr-2"> Report</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/report-icon.svg" alt="" class="mr-2"> Report</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/report-icon.svg" alt="" class="mr-2"> Report</button></li>
+                                  <li><button class="sub-reportbtn" ><img src="assets/images/translation-icon.svg" alt="" class="mr-2" width="20px"> Bad Translation</button></li>
+                                  <li><button class="sub-reportbtn"><img src="assets/images/forbidden.svg" alt="" class="mr-2" width="20px"> Not Pertinenet</button></li>
+                                  <li><button class="sub-reportbtn"><img src="assets/images/talkative.svg" alt="" class="mr-2" width="20px"> Rough Language</button></li>
+                                  <li><button class="sub-reportbtn"><img src="assets/images/somethingElse.svg" alt="" class="mr-2" width="20px"> Something Else</button></li>
                                 </ul>
                                </div>
                             </div>
@@ -1481,27 +1486,6 @@
         </div>
       </div>
 
-      <!-- Report Model -->
-      <!-- The Modal -->
-      <div class="modal" id="inner-report">
-        <div class="modal-dialog">
-          <div class="modal-content">
-
-            <!-- Modal body -->
-            <div class="modal-body">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <img src="assets/images/signboard.svg" alt="" class="img-success">
-              <img src="assets/images/warning.svg" alt="" class="img-error">
-              <div class="report-message">
-                <span class="text-success">Thanks for your feedback.</span>
-                <span class="text-danger">Sorry There si an error</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
     </div>
     <!-- Wrapper End -->
 
@@ -1673,10 +1657,13 @@
 
 
       // report btn
-      var report = document.getElementById("report");
-      // var getreportBtn = report.querySelector("");
-      report.addEventListener("click", function(){
-        this.classList.toggle("report-wrap-show");
+      // var report = document.getElementById("report");
+      var getreportBtn = document.querySelector("#report .main-btn");
+      getreportBtn.addEventListener("click", function(){
+        console.log(this);
+        let getparent = this.parentNode;
+        console.log(getparent);
+        getparent.classList.toggle("report-wrap-show");
       });
     </script>
   </body>
