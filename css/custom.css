@@ -3259,19 +3259,24 @@ div#report.report-wrap-show button span.side-arrow-btn {
   color: #ff851b;
 }
 .top_sidebar .add_topic_list button span.delete_list img,
-.topics_content span.delete_list img {
+.topics_content span.delete_list img,
+.list-deleteBTN span.delete_list img {
   width: 17px;
   margin: 0 !important;
 }
 
 .top_sidebar .add_topic_list button span.delete_list,
-.topics_content span.delete_list {
+.topics_content span.delete_list,
+.list-deleteBTN span.delete_list {
   background: rgb(255 133 27 / 10%);
   border-radius: 50%;
   width: 36px;
   height: 35px;
   float: right;
   text-align: center;
+}
+.list-deleteBTN {
+  flex-grow: 1;
 }
 .top_sidebar .add_topic_list button span.delete_list img {
   width: 17px;
@@ -3287,4 +3292,27 @@ div#report.report-wrap-show button span.side-arrow-btn {
 }
 .top_sidebar ul li button {
   text-align: left;
+}
+.card.delete .collapse,
+.card.delete .card-header {
+  display: none;
+}
+.card .undo_btn.show {
+  display: block;
+}
+.card .undo_btn {
+  display: none;
+}
+.card.delete.delete-collapse {
+  padding: 0 !important;
+  border: none !important;
+}
+.card {
+  transition: 0.5s;
+}
+.card.red-bg {
+  background: #ff4242;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.5s;
 }

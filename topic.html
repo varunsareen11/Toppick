@@ -464,7 +464,7 @@
                                 <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt=""></a>
                             <div id="report" style="display: none;">
                               <button class="cmn_drop_btn"><img src="assets/images/pencil.svg" alt="" class="mr-2" width="20px"> Edit </span></button>
-                                <button class="cmn_drop_btn"><img src="assets/images/delete.svg" alt="" class="mr-2" width="20px"> Delete </button>
+                                <button class="cmn_drop_btn cmn_delete_btn"><img src="assets/images/delete.svg" alt="" class="mr-2" width="20px"> Delete </button>
                               <button class="cmn_drop_btn main-btn"><img src="assets/images/report-icon.svg" alt="" class="mr-2" width="20px"> Report <span class="side-arrow-btn"><img src="assets/images/down_arrow.svg" alt=""></span></button>
                                 <ul class="report-drop">
                                   <li><button class="sub-reportbtn" ><img src="assets/images/translation-icon.svg" alt="" class="mr-2" width="20px"> Bad Translation</button></li>
@@ -537,6 +537,9 @@
                                 </div>
                             </div>
                             </div>
+                          </div>
+                          <div class="undo_btn">
+                            Click here to undo your car.         
                           </div>
                         </div>
                          <div class="card">
@@ -1665,6 +1668,43 @@
         console.log(getparent);
         getparent.classList.toggle("report-wrap-show");
       });
+
+      // Card delete btn
+      var deleteCard = document.getElementsByClassName("cmn_delete_btn");
+      for(var deleteI = 0; deleteI < deleteCard.length; deleteI++){
+        deleteCard[deleteI].addEventListener('click', function(){
+          let parentNodeFind = this.closest(".card");
+          let parentNodeFind2 = parentNodeFind.querySelector(".undo_btn");
+
+          parentNodeFind.classList.add("red-bg");
+
+          setTimeout(() => {
+            parentNodeFind.classList.add("delete");
+            parentNodeFind2.classList.add("show");
+            parentNodeFind.classList.remove("red-bg");
+            
+          }, 2000);
+
+          setTimeout(() => {
+            parentNodeFind2.classList.remove("show");
+            parentNodeFind.classList.add("delete-collapse");
+          }, 5000);
+
+          console.log(parentNodeFind2)
+        })
+      }
+
+      // undo card
+      var undu_btn = document.getElementsByClassName("undo_btn");
+      for(var undoI = 0; undoI < undu_btn.length; undoI++){
+        undu_btn[undoI].addEventListener('click', function(){
+          let parentNodeFind = this.closest(".card");
+          parentNodeFind.classList.remove("delete");
+          parentNodeFind.classList.remove("delete-collapse");
+          this.classList.remove("show");
+          console.log(parentNodeFind)
+        })
+      }
     </script>
   </body>
 </html>
