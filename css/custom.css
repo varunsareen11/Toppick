@@ -3049,7 +3049,7 @@ input.search-list {
 .top_sidebar img {
   margin-right: 10px;
 }
-.top_sidebar li {
+.top_sidebar li:not(:last-child) {
   border-bottom: 1px solid #ddd;
 }
 .add_list_input {
@@ -3315,4 +3315,66 @@ div#report.report-wrap-show button span.side-arrow-btn {
   opacity: 1;
   visibility: visible;
   transition: 0.5s;
+}
+
+/*  */
+ul.profession li {
+  border: unset;
+}
+.topic_wrapper.view_user_profile h6 {
+  color: #ff851b;
+  font-size: 24px;
+  font-family: montM;
+}
+.user_details {
+  background: #ffffff;
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+  border-radius: 10px;
+  padding: 30px;
+  margin-top: 20px;
+}
+.user_vatart_image {
+  flex: 0 0 140px;
+  height: 140px;
+  margin-right: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.user_vatart_image img {
+  height: 140px;
+  width: 140px;
+  object-fit: cover;
+}
+.user_name_head a {
+  color: #000;
+}
+.user_name_head h2 {
+  font-family: "sairaM";
+}
+
+.user_name_head p.user_address {
+  margin: 8px 0;
+}
+
+.user_name_head p,
+.user_name_head a {
+  color: #797979;
+}
+.user_details h5.user_designation {
+  font-family: "montM";
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+.top_sidebar .profile-side-card:not(:last-child) {
+  margin-bottom: 50px;
+}
+.profile-side-card li {
+  font-family: "montM";
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0.03em;
 }
