@@ -3397,6 +3397,19 @@ ul.profession li {
 
 .share-social ul li a {
   margin: 0 10px;
+  font-size: 20px;
+}
+.share-social ul li.facebook a {
+  color: #305c99;
+}
+.share-social ul li.twitter a {
+  color: #00cdff;
+}
+.share-social ul li.instagram a {
+  color: #3f729b;
+}
+.share-social ul li.youtube a {
+  color: #e22b26;
 }
 
 .share-social h6 {
