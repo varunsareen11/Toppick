@@ -2610,6 +2610,11 @@ button.edit_icon {
   border: 1px solid #dfdfdf;
   box-sizing: border-box;
   border-radius: 4px;
+  padding: 10px 10px 10px 40px;
+}
+
+.profile_form .formGroup_inner textarea.form-control {
+  min-height: 150px;
 }
 
 .profile_form h3 {
@@ -3377,4 +3382,44 @@ ul.profession li {
   font-weight: 500;
   line-height: 32px;
   letter-spacing: 0.03em;
+}
+
+.share-social ul {
+  display: flex;
+  align-items: center;
+}
+
+.share-social {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.share-social ul li a {
+  margin: 0 10px;
+}
+
+.share-social h6 {
+  margin-right: 10px;
+  font-size: 17px !important;
+  color: #797b7d !important;
+}
+.share-social ul li:first-child a {
+  margin-left: 0;
+}
+#verifyMail .modal-body {
+  padding: 50px;
+  text-align: center;
+}
+
+#verifyMail .modal-body img {
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+#verifyMail .modal-body h5 {
+  font-size: 20px;
+  font-family: "montM";
+  text-transform: capitalize;
+  margin: 10px 0 30px;
 }
