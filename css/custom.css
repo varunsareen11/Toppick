@@ -1941,6 +1941,8 @@ button.cmn_topic_heading {
   position: absolute;
   right: 0;
   top: 0;
+  display: flex;
+  align-items: center;
 }
 .card-header .topAccord_area {
   padding-top: 0;
@@ -3435,4 +3437,47 @@ ul.profession li {
   font-family: "montM";
   text-transform: capitalize;
   margin: 10px 0 30px;
+}
+.user_name p.userBadge {
+  background: #000;
+  display: table;
+  border-radius: 50px;
+  font-size: 10px;
+  color: #fff;
+  padding: 4px 15px;
+  margin: 5px auto;
+  font-family: "montR";
+}
+
+.user_name p.adminBadge.userBadge {
+  background: #ff851b;
+}
+
+.user_name p.creatorBadge.userBadge {
+  background: #3706ff;
+}
+
+.user_name p.defaultBadge.userBadge {
+  background: #8d8d8d;
+}
+.card.confirmCard {
+  background: #83f8ba;
+}
+.card.rejectCard {
+  background: #ffc7c7;
+}
+.cardBadge {
+  display: inline-block;
+
+  color: #fff;
+  padding: 7px 11px;
+  border-radius: 50px;
+  font-size: 10px;
+  font-family: "montM";
+}
+.rejectCard .cardBadge {
+  background: #df1212;
+}
+.confirmCard .cardBadge {
+  background: #009446;
 }
