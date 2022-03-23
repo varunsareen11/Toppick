@@ -1609,18 +1609,18 @@ ul.tags li.tag_block {
 .Breadcrums a.cm-color:hover {
   text-decoration: underline;
 }
-.side_card ul.social_links {
+ul.social_links {
   display: flex;
   align-items: center;
   padding: 0 26px 20px;
 }
 
-.side_card ul.social_links li.links {
+ul.social_links li.links {
   padding: 0;
   border: none;
 }
 
-.side_card ul.social_links li.links a {
+ul.social_links li.links a {
   width: 41px;
   line-height: 40px;
   display: inline-block;
@@ -1631,16 +1631,16 @@ ul.tags li.tag_block {
   font-size: 18px;
   margin: 4px;
 }
-.side_card ul.social_links li.links.facebook a {
+ul.social_links li.links.facebook a {
   background: #305c99;
 }
-.side_card ul.social_links li.links.instagram a {
+ul.social_links li.links.instagram a {
   background: #3f729b;
 }
-.side_card ul.social_links li.links.youtube a {
+ul.social_links li.links.youtube a {
   background: #e22b26;
 }
-.side_card ul.social_links li.links.twitter a {
+ul.social_links li.links.twitter a {
   background: #00cdff;
 }
 .see_more {
@@ -2547,7 +2547,13 @@ li.nav-item.user ul.user_dropdown a.usermenu_item:hover {
 .profile_form {
   overflow: hidden;
   border-radius: 15px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 40%);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 20%);
+  margin-bottom: 20px;
+}
+.profile_info button {
+  border: transparent;
+  background: transparent;
+  padding: 10px;
 }
 
 button.edit_icon {
@@ -2598,11 +2604,12 @@ button.edit_icon {
 }
 
 .user_name {
-  margin-top: 30px;
   text-align: center;
   font-family: "sairaM";
   font-size: 24px;
-  margin-bottom: 10px;
+  margin: 30px 20px 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
 }
 .profile_form {
   padding: 2em;
@@ -3481,3 +3488,141 @@ ul.profession li {
 .confirmCard .cardBadge {
   background: #009446;
 }
+button.list-cont {
+  background: transparent;
+  border: transparent;
+}
+
+button.list-cont img {
+  width: 17px;
+  transform: rotate(45deg);
+  filter: invert(1);
+}
+
+.list-form.aprove {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 70px;
+}
+button.list-cont {
+  padding: 0;
+  font-family: "montR";
+  font-size: 14px;
+  cursor: pointer;
+}
+.list-form.aprove label {
+  font-family: "montR";
+  font-size: 14px;
+}
+.profile_info ul li {
+  border-bottom: 1px solid #ddd;
+
+  padding: 5px;
+}
+.profile_info ul li img {
+  width: 20px;
+}
+
+.profile_info ul li:last-child {
+  border: transparent;
+}
+.list-form.aprove button {
+  background: transparent;
+  border: transparent;
+}
+
+.list-form.aprove button img {
+  width: 22px;
+}
+ul.user_info_tabs {
+  padding: 0 20px;
+}
+ul.user_info_tabs li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+.card.approve-reject {
+  margin-bottom: 10px;
+}
+.tabcontent {
+  display: none;
+}
+.tabcontent.active {
+  display: block;
+}
+.tablinks.active .withoutHover-img,
+.tablinks .hover-img {
+  display: none;
+}
+.tablinks.active .hover-img {
+  display: inline-block;
+}
+
+/* Profile Tab Section */
+/* .tab {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+}
+.tab button.tablinks {
+  position: relative;
+  inset: 0;
+  font-family: "montM";
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+}
+
+.tab button.tablinks.active:before {
+  position: absolute;
+  bottom: -1px;
+  content: "";
+  left: 0;
+  width: 100%;
+  background: #ff851b;
+  height: 1px;
+}
+.tab button.tablinks.active {
+  color: #ff851b;
+}
+
+.tab button.tablinks.active:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  background-image: linear-gradient(135deg, #ff851b 50%, transparent 50%);
+}
+.profileDesc_box:not(:last-child) {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.profileDesc_box p.profileDesc {
+  font-family: "montM";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.profileDesc_box p.profileDesc span.profileDescHead {
+  margin-right: 14px;
+  color: #797979;
+}
+.profileDesc_box h5.profileTabHeading {
+  font-family: "sairaR";
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: 0.03em;
+  color: #ff851b;
+  margin-bottom: 10px;
+} */

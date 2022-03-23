@@ -1,0 +1,241 @@
+/* blog page css starts here */
+.blog_card figure {
+  margin: 0;
+}
+.blog_card figure img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+.blog_card {
+  height: 100%;
+  background: #ffffff;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog_content {
+  padding: 1em;
+}
+
+.blog_content a div {
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+.blog_content a:hover div {
+  color: #ff851b;
+  transition: 0.5s;
+}
+.blog_content a {
+  text-decoration: none;
+}
+
+.blog_content p {
+  color: #80776f;
+}
+.blog_content .cm-btn {
+  color: #fff;
+}
+.blog_card figure {
+  position: relative;
+}
+
+.blog_card span.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.blog_info {
+  display: flex;
+  padding: 8px 0 15px;
+}
+.blog_content p.blog_excrept {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-transform: capitalize;
+}
+.topic_tabs button {
+  cursor: pointer;
+}
+p.blog_excrept {
+  margin-bottom: 1em;
+}
+.card_wrapper {
+  padding-bottom: 2em;
+  height: 100%;
+}
+.reltTopics .row {
+  min-height: 433px;
+}
+.side_card .card_list {
+  display: flex;
+}
+.side_card li {
+  cursor: pointer;
+}
+.see_more:focus {
+  outline: unset;
+}
+.question_item {
+  padding-right: 30px;
+}
+.card_list_img {
+  height: 40px;
+  width: 40px;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+}
+.card_list_img img {
+  width: 100%;
+  object-fit: cover;
+}
+.card_list_img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255 133 27 / 33%);
+}
+
+.card_list_text p a {
+  font-size: 12px;
+  color: #000;
+}
+
+p.post_type {
+  color: #797979;
+  font-size: 11px;
+}
+.card_list_text {
+  margin-left: 10px;
+}
+.side_bar {
+  box-shadow: 0px 0px 20px rgb(0 0 0 / 10%);
+  border-radius: 7px;
+  margin-bottom: 2em;
+  background: #fff;
+  z-index: 9;
+  position: relative;
+}
+.side_card li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5em 1.2em;
+}
+.side_card li a {
+  text-decoration: none;
+}
+.download_cont_block {
+  padding: 0 30px;
+}
+
+.download_cont_block ul.download_app_btns {
+  display: flex;
+  align-items: center;
+}
+
+ul.download_app_btns {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.download_cont_block ul.download_app_btns li.tag_block {
+  padding: 15px 0 30px;
+}
+
+.download_cont_block ul.download_app_btns li.tag_block:first-child {
+  padding-right: 15px;
+}
+.sidebar_ads {
+  margin-bottom: 2em;
+}
+.blog_info p {
+  font-size: 13px;
+}
+.cmn_blog_info {
+  display: flex;
+  align-items: center;
+}
+.blog_date.cmn_blog_info {
+  padding-right: 12px;
+}
+.cmn_blog_info img {
+  padding-right: 8px;
+}
+.side_card h3 {
+  color: #ff851b;
+  padding: 0.7em;
+  padding-left: 1em;
+  font-weight: 300;
+}
+.side_card li:last-child {
+  border-bottom: unset;
+}
+ul.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 5px 10px;
+}
+ul.tags li.tag_block {
+  border: none;
+  padding: 10px;
+  cursor: auto;
+}
+.pagination .page-link {
+  border: none;
+  color: #000;
+  margin-right: 10px;
+  font-size: 15px;
+}
+.pagination .page-link:focus {
+  box-shadow: unset;
+}
+
+.pagination .page-link:hover {
+  background: unset;
+}
+.pagination .page-link.page_link_btn {
+  background: #ff851b;
+  color: #fff;
+  border-radius: 30px;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+.pagination .page-link.active {
+  color: #ff851b;
+}
+.about_hero.inner_cmn_hero.blog_sec {
+  background-image: url("../../assets/images/blog_banner_bg.png");
+  position: relative;
+}
+.about_hero.inner_cmn_hero.blog_sec::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 70%);
+}
+
+.about_hero.inner_cmn_hero.blog_sec::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  width: 100%;
+  background-image: url("../../assets/images/design.svg");
+  height: 200px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.about_hero.inner_cmn_hero.blog_sec .container {
+  position: relative;
+}
+/* blog page css ends here */

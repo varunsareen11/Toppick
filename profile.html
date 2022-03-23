@@ -182,34 +182,26 @@
                                                 <p class="creatorBadge userBadge">Creator</p>
                                                 <p class="defaultBadge userBadge">Default</p>
                                             </div>
+                                            <ul class="user_info_tabs">
+                                              <li class="tablinks active" onclick="openCity(event, 'GeneralInfo')"><img src="assets/images/resume.svg" class="mr-2 withoutHover-img" alt=""> <img src="assets/images/resume-orange.svg" class="mr-2 hover-img" alt="">General Infomation</li>
+                                              <li class="tablinks" onclick="openCity(event, 'SocialLinks')"><img src="assets/images/AboutMe.svg" class="mr-2 withoutHover-img" alt=""> <img src="assets/images/AboutMe-orange.svg" class="mr-2 hover-img" alt="">About Me</li>
+                                              <li class="tablinks" onclick="openCity(event, 'Goals')"><img src="assets/images/target.svg" class="mr-2 withoutHover-img" alt=""> <img src="assets/images/target-orange.svg" class="mr-2 hover-img" alt="">My Goals</li>
+                                            </ul>
                                             </div>
+                                           
                                         </div>
                                     </div>
+                                   
+                                    
                         </div>
                         <div class="col-md-8 mb-5">
-                                <div class="profile_form">
+                                <div class="profile_form mb-5 tabcontent active" id="GeneralInfo">
                                     <div class="col-lg-12">
                                         <div class="form_area register_form">
-                                            <h3 class="sairaR mb-5 col-md-12">Proile</h3>
+                                            <h3 class="sairaR mb-5 col-md-12">General Information</h3>
                                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#verifyMail">
                                               Open modal
                                             </button>
-                                            <!-- First Name -->
-                                            <div class="form-group">
-                                                <label for="firstName">First Name</label>
-                                                <div class="formGroup_inner">
-                                                  <i class="fa fa-user"></i>
-                                                <input type="text" class="form-control" id="firstName" aria-describedby="firstNameHelp" placeholder="First Name">
-                                                </div>
-                                               </div>
-                                              <!-- Last Name -->
-                                              <div class="form-group">
-                                                <label for="lastName">Last Name</label>
-                                                <div class="formGroup_inner">
-                                                  <i class="fa fa-user"></i>
-                                                <input type="text" class="form-control" id="lastName" aria-describedby="lastNameHelp" placeholder="Last Name">
-                                                </div>
-                                             </div>
                                               <!-- UserName -->
                                               <div class="form-group">
                                                 <label for="userName">UserName</label>
@@ -226,83 +218,43 @@
                                                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                                   </div>
                                                  </div>
-                                                <!-- Password  -->
-                                                <div class="form-group">
-                                                  <label for="exampleInputPassword1">Password</label>
-                                                  <div class="formGroup_inner">
-                                                      <i class="fa fa-key"></i>
-                                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                                                  </div>
-                                                 </div>
-                                                <!-- Profession -->
-                                                <div class="form-group">
-                                                    <label for="inputProfession">Profession</label>
-                                                    <div class="formGroup_inner">
-                                                        <i class="fa fa-graduation-cap"></i>
-                                                        <select id="inputProfession" class="form-control">
-                                                            <option selected>Select Profession...</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                          </select>
-                                                    </div>
+                                              <!-- Native Language -->
+                                              <div class="form-group">
+                                                <label for="inputNativelanguage">Native language</label>
+                                                <div class="formGroup_inner">
+                                                    <i class="fa fa-language"></i>
+                                                    <select id="inputNativelanguage" class="form-control">
+                                                        <option selected>Select Native language...</option>
+                                                        <option>1</option>
+                                                        <option>2</option>
+                                                        <option>3</option>
+                                                        <option>4</option>
+                                                      </select>
                                                 </div>
-                                                <!-- Country -->
-                                                <div class="form-group">
-                                                    <label for="inputCountry">Country</label>
-                                                    <div class="formGroup_inner">
-                                                        <i class="fa fa-globe"></i>
-                                                        <select id="inputCountry" class="form-control">
-                                                            <option selected>Select Country...</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                          </select>
-                                                    </div>
-                                                  </div>
-                                                <!-- Language -->
-                                                <div class="form-group">
-                                                    <label for="inputlanguage">language</label>
-                                                    <div class="formGroup_inner">
-                                                        <i class="fa fa-language"></i>
-                                                        <select id="inputlanguage" class="form-control">
-                                                            <option selected>Select language...</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                          </select>
-                                                    </div>
-                                                </div>
-                                                <!-- Add Social Links -->
-                                                <div class="form-group">
-                                                    <label class="d-block">Social Links</label>
-                                                    <div class="formGroup_inner mb-3">
-                                                      <i class="fa fa-facebook"></i>
-                                                      <input type="text" id="facebookLink" placeholder="Facebook Link" class="form-control">
-                                                    </div>
-                                                    <div class="formGroup_inner mb-3">
-                                                      <i class="fa fa-twitter"></i>
-                                                      <input type="text" id="twitterLink" placeholder="Twitter Link" class="form-control">
-                                                    </div>
-                                                    <div class="formGroup_inner mb-3">
-                                                      <i class="fa fa-instagram"></i>
-                                                      <input type="text" id="instagramLink" placeholder="Instagram Link" class="form-control">
-                                                    </div>
-                                                    <div class="formGroup_inner mb-3">
-                                                      <i class="fa fa-youtube"></i>
-                                                      <input type="text" id="youtubeLink" placeholder="Youtube Link" class="form-control">
-                                                    </div>
-                                                </div>
-                                                <!-- Bio -->
-                                                <div class="form-group">
-                                                  <label for="inputBio">Bio</label>
-                                                  <div class="formGroup_inner">
-                                                      <textarea id="inputBio" cols="30" rows="10" class="form-control"></textarea>
-                                                  </div>
+                                            </div>
+                                            <!-- Target  Language -->
+                                            <div class="form-group">
+                                              <label for="inputTargetlanguage">Target language</label>
+                                              <div class="formGroup_inner">
+                                                  <i class="fa fa-language"></i>
+                                                  <select id="inputTargetlanguage" class="form-control">
+                                                      <option selected>Select Target language...</option>
+                                                      <option>1</option>
+                                                      <option>2</option>
+                                                      <option>3</option>
+                                                      <option>4</option>
+                                                    </select>
                                               </div>
+                                          </div>
+                                             <!-- Career -->
+                                             <div class="form-group">
+                                              <label for="career">Career</label>
+                                              <div class="formGroup_inner">
+                                                <i class="fa fa-user"></i>
+                                              <input type="text" class="form-control" id="career" aria-describedby="careerHelp" placeholder="career">
+                                              </div>
+                                             </div>
+                                              
                                             <div class="text-right">
                                                 <button type="submit" class="col-md-12 cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
                                             </div>
@@ -311,6 +263,66 @@
                                     
                                     </div>
                                 </div>
+                                <div class="profile_form mb-5 tabcontent" id="SocialLinks">
+                                  <div class="col-lg-12">
+                                      <div class="form_area register_form">
+                                          <h3 class="sairaR mb-5 col-md-12">Social Media</h3>
+                                              <!-- Add Social Links -->
+                                              <div class="form-group">
+                                                <label class="d-block">Social Links</label>
+                                                <div class="formGroup_inner mb-3">
+                                                  <i class="fa fa-facebook"></i>
+                                                  <input type="text" id="facebookLink" placeholder="Facebook Link" class="form-control">
+                                                </div>
+                                                <div class="formGroup_inner mb-3">
+                                                  <i class="fa fa-twitter"></i>
+                                                  <input type="text" id="twitterLink" placeholder="Twitter Link" class="form-control">
+                                                </div>
+                                                <div class="formGroup_inner mb-3">
+                                                  <i class="fa fa-instagram"></i>
+                                                  <input type="text" id="instagramLink" placeholder="Instagram Link" class="form-control">
+                                                </div>
+                                                <div class="formGroup_inner mb-3">
+                                                  <i class="fa fa-youtube"></i>
+                                                  <input type="text" id="youtubeLink" placeholder="Youtube Link" class="form-control">
+                                                </div>
+                                            </div>
+                                              <!-- Bio -->
+                                              <div class="form-group">
+                                                <label for="inputBio">Bio</label>
+                                                <div class="formGroup_inner">
+                                                    <textarea id="inputBio" cols="30" rows="10" class="form-control"></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                          <div class="text-right">
+                                              <button type="submit" class="col-md-12 cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
+                                          </div>
+                                          
+                                      </div>
+                                  
+                                  </div>
+                              </div>
+                                <div class="profile_form mb-5 tabcontent" id="Goals">
+                                  <div class="col-lg-12">
+                                      <div class="form_area register_form">
+                                          <h3 class="sairaR mb-5 col-md-12">My Goals</h3>
+                                         
+                                          <div class="form-group">
+                                            <label for="inputBio">My Goals</label>
+                                            <div class="formGroup_inner">
+                                                <textarea id="inputBio" cols="30" rows="10" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                            
+                                          <div class="text-right">
+                                              <button type="submit" class="col-md-12 cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
+                                          </div>
+                                          
+                                      </div>
+                                  
+                                  </div>
+                              </div>
                         </div>
                 </div>
           </div>
@@ -414,6 +426,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src="js/crousal.js"></script>
   <script src="js/custom.js"></script>
+  <script>
+    function openCity(evt, cityName) {
+      console.log(cityName);
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).classList.add("active");
+    evt.currentTarget.className += " active";
+}
+  </script>
 </body>
 
 </html>

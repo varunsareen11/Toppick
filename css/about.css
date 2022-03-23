@@ -1,0 +1,118 @@
+/*==================== About Page Styling ====================*/
+
+/* About here section starts here  */
+
+.about_hero.inner_cmn_hero {
+  background-image: url("../../assets/images/about_banner_bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.about_hero {
+  color: #fff;
+}
+.about_hero a {
+  color: #fff;
+}
+.about_hero a.active {
+  color: #000;
+}
+.about_hero a:hover {
+  text-decoration: underline;
+}
+.about_hero a.active:hover {
+  text-decoration: none;
+}
+/* about about starts here */
+.about_page .philosphy_outer {
+  background-color: #f9eadc;
+}
+.inner_cmn_hero {
+  background-image: url("../../assets/images/about_banner_bg.svg");
+  background-size: cover;
+  background-position: bottom;
+  padding: 100px 0 180px;
+}
+
+section.about_section {
+  background-image: url("../../assets/images/about_inner.png");
+}
+.about_outer.about_section .about_img {
+  background-image: unset;
+  padding: 0;
+}
+.about_section .about_content span {
+  color: #ff851b;
+}
+.about_section .cm-btn.cm_bg {
+  color: #fff;
+}
+.offercard figure {
+  background: #ff851b;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 7px;
+}
+.offercard {
+  text-align: left;
+  padding: 20px;
+  box-shadow: 0px 0px 12px rgb(0 0 0 / 9%);
+  border-radius: 15px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+.offercard::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 70px;
+  left: 0;
+  height: 3px;
+  background: #ff851b;
+  transition: 0.5s;
+}
+.offercard:hover::before {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.offercard div {
+  display: block;
+  color: #000;
+  margin: 15px 0px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.offercard p {
+  font-size: 14px;
+  line-height: 26px;
+  color: #80776f;
+}
+/* partner about starts here */
+.partners {
+  text-align: center;
+}
+.partners ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.partners ul li {
+  padding: 5px;
+  flex: 0 0 20%;
+}
+
+/* Company Info SSeciton Start */
+.company_info {
+  background-image: url("../../assets/images/about-story_bg.png");
+  background-size: cover;
+  background-position: right;
+  position: relative;
+}
+.company_info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(255 133 27 / 70%);
+}
