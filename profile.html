@@ -11,7 +11,16 @@
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
+<style>
+  button.preview {
+    padding: 10px 30px;
+    font-size: 14px;
+    margin: 0;
+    left: 0;
+    top: 0;
+    margin-top: 10px;
+}
+</style>
 <body>
   <!-- Loader -->
   <div class="loader">
@@ -181,6 +190,7 @@
                                                 <p class="adminBadge userBadge">Admin</p>
                                                 <p class="creatorBadge userBadge">Creator</p>
                                                 <p class="defaultBadge userBadge">Default</p>
+                                                <button class="preview cm_bg cm-btn text-white position-relative">Preview Profile</button>
                                             </div>
                                             <ul class="user_info_tabs">
                                               <li class="tablinks active" onclick="openCity(event, 'GeneralInfo')"><img src="assets/images/profile.svg" class="mr-2 withoutHover-img" alt=""> <img src="assets/images/profile-orange.svg" class="mr-2 hover-img" alt="">General Infomation</li>

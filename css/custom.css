@@ -3467,26 +3467,15 @@ ul.profession li {
 .user_name p.defaultBadge.userBadge {
   background: #8d8d8d;
 }
-.card.confirmCard {
-  background: #83f8ba;
-}
-.card.rejectCard {
-  background: #ffc7c7;
-}
 .cardBadge {
   display: inline-block;
-
+  width: 85px;
+  text-align: center;
   color: #fff;
   padding: 7px 11px;
   border-radius: 50px;
   font-size: 10px;
   font-family: "montM";
-}
-.rejectCard .cardBadge {
-  background: #df1212;
-}
-.confirmCard .cardBadge {
-  background: #009446;
 }
 button.list-cont {
   background: transparent;
