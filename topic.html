@@ -16,6 +16,20 @@
     <link rel="stylesheet" href="./css/custom.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
+  <style>
+    /* 26-03-2022 */
+    .accordion-validate-question#accordion .card-header button.btn-link::before{
+      display: none;
+    }
+    .accordion-validate-question#accordion .card-header button.btn{
+      padding-right: 0;
+      cursor: inherit;
+    }
+    .validate_header a.validate-hide {
+        display: flex;
+        align-items: center;
+    }
+  </style>
   <body>
     <!-- Wrapper Start -->
     <div class="wrapper">
@@ -197,9 +211,10 @@
                      </div>
                      <!-- Question Accordian -->
                      <div class="validate_header">
-                       <h3>Validate Question</h3> <a href="">Hide <img src="assets/images/down_arrow.svg" alt=""> </a>
+                       <!-- <h3>Validate Question</h3> -->
+                        <a href="" class="validate-hide">Hide <img src="assets/images/down_arrow.svg" alt=""> </a>
                      </div>
-                     <div id="accordion" class="mb-5">
+                     <div id="accordion" class="mb-5 accordion-validate-question">
                        <div class="card">
                         <div class="card-header" id="headingOne">
                           <h5 class="mb-0">
@@ -210,157 +225,14 @@
                             <div class="topAccord_area">
                               <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
                             </div>
-                            <button class="btn my_question btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                               
-                              <div class="avtar_outer">
-                                <div class="avtar">
-                                 <div class="avtar_name">
-                                  <p>VS</p>
-                                 </div>
-                                 <div class="view_avtar_profile">
-                                   <div class="view_avtar_profile_wrap">
-                                  <div class="avtar_name">
-                                      <p>VS</p>
-                                  </div>
-                                  <div class="view_avtar_profile_info">
-                                    <h5>Varun Sareen</h5>
-                                    <a href="javascript:void(0)">Open Detail View</a>
-                                  </div>
-                                </div>
-                             
-                                </div>
-                                </div>
-                              </div>
+                            <button class="btn my_question btn-link collapsed" >
                               Are young people generally more selfish than their parents and grandparents?
                             </button>
-                            <div class="add_input_area mb-3">
-                              <!-- <label for="">New Example</label> -->
-                              <div class="form-group">
-                                <div class="avatar_name">
-                                  <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                               </div>
-                            <div class="article_link">
-                              <input type="text" name="add-question" class="form-control" placeholder="add question">
-                              <button type="submit">Submit</button>
-                            </div>
-                            </div>
-                            </div>
-                            <!-- <div class="add_btn">
-                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
-                            </div> -->
                           </h5>
-                        </div>
-                    
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                          <div class="card-body">
-                              <div class="example_area">
-                                  <div class="topAccord_area">
-                                    
-                                      <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> 
-                                          <span class="tootle-tip">Example explaination <button>here</button> </span> 
-                                          Example</p>
-                                    
-                                      <ul class="example_list">
-                                        <li>
-                                          <div class="avtar">
-                                            <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                          </div>
-                                      
-                                          <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                          <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                          <!-- Are young people generally more selfish than their parents and 0grandparents? -->
-                                        </li>
-                                        <li>
-                                          <div class="avtar">
-                                            <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                          
-                                          </div>
-                                          <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                          <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                        </li>
-                                        <li>
-                                          <div class="avtar">
-                                            <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                          </div>
-                                          <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                          <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                        </li>
-                                      </ul>
-                                      <div class="add_input_area mb-3">
-                                        <!-- <label for="">New Example</label> -->
-                                        <div class="form-group">
-                                          <div class="avatar_name">
-                                            <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                                         </div>
-                                      <div class="article_link">
-                                        <input type="text" name="new-article-url" class="form-control" placeholder="add url here">
-                                        <p class="error_message text-danger">Enter a valid link</p>
-                                        <button type="submit">Submit</button>
-                                      </div>
-                                      </div>
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0"> <div class="avtar">
-                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                            </div> How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </div>
-                                        </div>
-                                          <div class="add_input_area mb-3">
-                                            <!-- <label for="">New Artile Url</label> -->
-                                            <div class="form-group">
-                                              <div class="avatar_name">
-                                                <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                                             </div>
-                                          <div class="article_link">
-                                            <input type="text" name="new-article-url" class="form-control" placeholder="add url here">
-                                            <button type="submit">Submit</button>
-                                          </div>
-                                          </div>
-                                          </div>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </div>
                         </div>
                       </div>
                      </div>
+
                      <div id="accordion">
                         <div class="card approve-reject">
                           <div class="card-header" id="headingOne">
