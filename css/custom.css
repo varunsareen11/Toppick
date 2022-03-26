@@ -3492,7 +3492,7 @@ button.list-cont img {
   display: flex;
   align-items: center;
   position: absolute;
-  right: 70px;
+  right: 0px;
 }
 button.list-cont {
   padding: 0;
@@ -3615,3 +3615,20 @@ ul.user_info_tabs li {
   color: #ff851b;
   margin-bottom: 10px;
 } */
+
+/*  */
+.validate_header {
+  display: flex;
+  margin-bottom: 15px;
+}
+.validate_header a {
+  font-family: "montSB";
+  margin-left: auto;
+  color: #ff851b;
+  font-size: 16px;
+}
+.validate_header h3 {
+  color: #ff851b;
+  font-size: 24px;
+  font-family: "montSB";
+}
