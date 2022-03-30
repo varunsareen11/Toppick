@@ -3632,3 +3632,26 @@ ul.user_info_tabs li {
   font-size: 24px;
   font-family: "montSB";
 }
+
+/* 30 march */
+.topAccord_area ul li.question_verify input.exampleHidden {
+  flex: 0 0 82%;
+  background: #ddd;
+}
+.question_verify .list-form.aprove {
+  top: 12px;
+}
+.media.approved_article {
+  padding: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
+}
+.approved_article .list-form.aprove {
+  right: 10px;
+  top: 10px;
+}
+
+.media.approved_article {
+  position: relative;
+}

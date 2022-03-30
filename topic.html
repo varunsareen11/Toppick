@@ -212,7 +212,7 @@
                      <!-- Question Accordian -->
                      <div class="validate_header">
                        <!-- <h3>Validate Question</h3> -->
-                        <a href="" class="validate-hide">Hide <img src="assets/images/down_arrow.svg" alt=""> </a>
+                        <button  onclick="showhide()" href="" class="validate-hide">Hide  </button>
                      </div>
                      <div id="accordion" class="mb-5 accordion-validate-question">
                        <div class="card">
@@ -323,6 +323,17 @@
                                             <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
                                             <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
                                           </li>
+                                          <li class="question_verify">
+                                            <div class="avtar">
+                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                            </div>
+                                            <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
+                                            <div class="list-form aprove">
+                                              <button><img src="assets/images/cancel.svg" alt=""></button>
+                                              <button><img src="assets/images/checked.svg" alt=""></button>
+                                             </div>
+                                          </li>
+                                         
                                         </ul>
                                         <div class="add_input_area mb-3">
                                           <!-- <label for="">New Example</label> -->
@@ -357,6 +368,22 @@
                                             <p>Are young people generally more selfish than their parents and 0grandparents? Are 
                                               young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
                                             </div>
+                                          </div>
+                                          <div class="media approved_article">
+                                           <div class="aticle_image">
+                                            <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
+                                           </div>
+                                            <div class="media-body">
+                                              <h5 class="mt-0"> <div class="avtar">
+                                                <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                              </div> How living with grandparents looks like</h5>
+                                            <p>Are young people generally more selfish than their parents and 0grandparents? Are 
+                                              young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
+                                            </div>
+                                            <div class="list-form aprove">
+                                              <button><img src="assets/images/cancel.svg" alt=""></button>
+                                              <button><img src="assets/images/checked.svg" alt=""></button>
+                                             </div>
                                           </div>
                                             <div class="add_input_area mb-3">
                                               <!-- <label for="">New Artile Url</label> -->
@@ -1744,6 +1771,14 @@
           console.log(parentNodeFind)
         })
       }
+      function showhide() {
+  var x = document.getElementsByClassName("accordion-validate-question");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
     </script>
   </body>
 </html>
