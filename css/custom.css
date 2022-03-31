@@ -3620,6 +3620,7 @@ ul.user_info_tabs li {
 .validate_header {
   display: flex;
   margin-bottom: 15px;
+  justify-content: flex-end;
 }
 .validate_header a {
   font-family: "montSB";

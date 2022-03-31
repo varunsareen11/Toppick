@@ -25,9 +25,39 @@
       padding-right: 0;
       cursor: inherit;
     }
-    .validate_header a.validate-hide {
+    .validate_header .cmn_validate_btn {
         display: flex;
         align-items: center;
+        border: none;
+    background: transparent;
+    color: #ff851b;
+    }
+    .hide-card{
+      display: none !important;
+    }
+    /* 31-03-2022 */
+    /* Validate question card animation */
+    .opacity-card-hide{
+      animation: opacityCardHide 2s linear ;
+    }
+    .opacity-card-show{
+      animation: opacityCardShow 2s linear ;
+    }
+    @keyframes opacityCardHide {
+      0%{
+        opacity: 1;
+      }
+      100%{
+        opacity: 0.2;
+      }
+    }
+    @keyframes opacityCardShow {
+      0%{
+        opacity: 0;
+      }
+      100%{
+        opacity: 0.8;
+      }
     }
   </style>
   <body>
@@ -212,7 +242,8 @@
                      <!-- Question Accordian -->
                      <div class="validate_header">
                        <!-- <h3>Validate Question</h3> -->
-                        <button  onclick="showhide()" href="" class="validate-hide">Hide  </button>
+                        <button class="cmn_validate_btn validate-hide">Hide  </button>
+                        <button class="cmn_validate_btn validate-show">Show  </button>
                      </div>
                      <div id="accordion" class="mb-5 accordion-validate-question">
                        <div class="card">
@@ -1771,14 +1802,30 @@
           console.log(parentNodeFind)
         })
       }
-      function showhide() {
-  var x = document.getElementsByClassName("accordion-validate-question");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+
+      // validate hide question
+      let validateHide = document.querySelector('.validate-hide');
+      let validateShow = document.querySelector('.validate-show');
+      let accordValidate = document.querySelector('.accordion-validate-question');
+      validateShow.classList.add("hide-card");
+      validateHide.addEventListener('click', function(){
+        accordValidate.classList.add("opacity-card-hide");
+        setTimeout(() => {
+          accordValidate.classList.remove("opacity-card-hide");
+          accordValidate.classList.add("hide-card");
+          validateShow.classList.remove("hide-card");
+          validateHide.classList.add("hide-card");
+          }, 2000);
+      })
+      validateShow.addEventListener('click', function(){
+        accordValidate.classList.add("opacity-card-show");
+        accordValidate.classList.remove("hide-card");
+        setTimeout(() => {
+          accordValidate.classList.remove("opacity-card-show");
+          validateShow.classList.add("hide-card");
+          validateHide.classList.remove("hide-card");
+          }, 2000);
+      })
     </script>
   </body>
 </html>

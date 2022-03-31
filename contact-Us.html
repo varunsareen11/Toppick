@@ -11,7 +11,18 @@
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="css/responsive.css">
 </head>
+<style>
+  .contact-form .formGroup_inner  textarea.form-control {
+      height: 150px !important;
+      padding: 10px 10px 10px 45px;
+      border-radius: 24px;
+  }
 
+  .contact-form .formGroup_inner i.fa.fa-comment-o {
+      top: 23px;
+      left: 8px;
+  }
+</style>
 <body>
   <!-- Loader -->
   <div class="loader">
@@ -158,7 +169,7 @@
       </div>
 
       <!-- Login form card start here -->
-        <section class="innerpage_formCard">
+        <section class="innerpage_formCard contact-form">
             <div class="container">
                 <div class="cmn_cardInner space">
                     <div class="row justify-content-center">
@@ -171,28 +182,25 @@
                                       <div class="formGroup_inner">
                                         <div class="formGroup_inner">
                                             <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-
                                             <select id="inputTargetlanguage" class="form-control">
-                                          
                                                 <option selected=""> Suggest a New Topic</option>
                                                 <option>Report a Bug</option>
                                                 <option>General Suggestion</option>
-                                       
                                               </select>
                                         </div>
+                                        <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Select Reason</small>
                                       </div>                                   
                                     </div>
-                                    
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Body</label>
                                         <div class="formGroup_inner">
-                                            <i class="fa fa-comment-o" aria-hidden="true"></i>
-
-                                       <textarea class="form-control"  name="" id="" cols="3" rows="" placeholder="Write your Message"></textarea>
-                                        </div>                                   
-                                      </div>
+                                          <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                          <textarea class="form-control"  name="" id="" placeholder="Write your Message"></textarea>
+                                        </div>     
+                                        <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Body block is not empty</small>                              
+                                    </div>
+                                    <p class="text-success  p-2 mt-3">Contact Submit Successfully</p>
                                     <button type="submit" class="cm_bg cm-btn text-white mt-4">Submit <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1"></button>
-                                
                             </div>
                         </div>
                     </div>
