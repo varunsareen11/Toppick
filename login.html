@@ -11,7 +11,24 @@
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="css/responsive.css">
 </head>
-
+<style>
+  .custom-control-label::before{
+    width: 1.2rem;
+    height: 1.2rem;
+    background: transparent;
+    border: 1px solid #ff851b ;
+  }
+  .custom-control-label::after{
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+  .custom-control-label::before:focus{
+    box-shadow: 0 0 0 0.2rem rgb(255 133 27 / 25%);
+  }
+  .login_page .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background-color: #ff851b;
+  }
+</style>
 <body>
   <!-- Loader -->
   <div class="loader">
@@ -179,6 +196,13 @@
                                       <div class="formGroup_inner">
                                           <i class="fa fa-key"></i>
                                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                      </div>
+                                      <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Wrong Password</small>
+                                    </div>
+                                    <div class="form-group">
+                                      <div class="custom-control custom-checkbox mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
+                                        <label class="custom-control-label" for="customCheck">Stayed Connected</label>
                                       </div>
                                       <small id="emailHelp" class="error-message text-danger  border-danger p-2 mt-2 d-block">Wrong Password</small>
                                     </div>
