@@ -3661,3 +3661,57 @@ ul.user_info_tabs li {
 .media.approved_article {
   position: relative;
 }
+
+
+/* 4 april */
+.email-sent p {
+  margin: 10px 0px;
+  color: #ff851b;
+  font-family: 'sairaM';
+}
+
+span.dot {
+  width: 10px;
+  height: 10px;
+  background: red;
+  display: block;
+  border-radius: 50%;
+}
+.cmn_badge {
+  position: absolute;
+  right: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cmn_badge p.badge_text {
+  position: absolute;
+  top: -40px;
+  padding: 5px 10px;
+  border: 1px solid #ff851b;
+  border-radius: 6px;
+  background: #fff;
+  z-index: 0;
+  right: -6px;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+}
+
+.cmn_badge p.badge_text:before {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  background-image: linear-gradient(132deg, #ff851b 50%, transparent 50%);
+  z-index: -1;
+  transform: rotate(-131deg);
+}
+
+.cmn_badge:hover p.badge_text {
+  opacity: 1;
+  visibility: visible;
+  transition: .5s;
+}
