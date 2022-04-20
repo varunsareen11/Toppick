@@ -13,12 +13,16 @@
 </head>
 <style>
     /* change style */
+    .view_profile_page section.inner_cmn_hero {
+        padding-bottom: 300px;
+    }
+
     .view_profile_inner {
         background: #FFFFFF;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
         padding: 50px;
-        margin: -130px 0 70px;
+        margin: -200px 0 70px;
     }
 
     .user_profile_box {
@@ -68,10 +72,12 @@
         margin: 10px 8px;
     }
 
-    ul.spoken_languages {
+    ul.spoken_languages,
+    ul.topick_list {
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     ul.spoken_languages li {
@@ -90,12 +96,6 @@
         line-height: 32px;
         letter-spacing: 0.03em;
         margin: 15px 0 15px;
-    }
-
-    .topick_list {
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .topick_list li {
@@ -123,10 +123,24 @@
     p.user_profile_box_info {
         font-family: 'montR';
         font-size: 16px;
-
         line-height: 27px;
-
         color: #000;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    @media(max-width:767px) {
+        .view_profile_page section.inner_cmn_hero {
+            padding-bottom: 240px;
+        }
+
+        .view_profile_inner {
+            padding: 30px;
+        }
+
+        p.user_profile_box_info {
+            max-width: 100%;
+        }
     }
 </style>
 
@@ -222,7 +236,7 @@
         </header>
         <!-- Header End -->
         <!-- Main Body Start -->
-        <div class="body_wrap about_page cmnBody_wrap">
+        <div class="body_wrap about_page cmnBody_wrap view_profile_page">
             <!-- Hero section starts here -->
             <section class="space about_hero inner_cmn_hero text-center">
                 <div class="container">
