@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopPick</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<style>
+    /* change style */
+    .view_profile_inner {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 50px;
+        margin: -130px 0 70px;
+    }
+
+    .user_profile_box {
+        margin-bottom: 25px;
+    }
+
+    .user_name_head h2 {
+        font-family: sairaB;
+        font-size: 34px;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+
+    .user_vatart_image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+    }
+
+    .user_vatart_image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .user_profile_info li {
+        font-family: 'sairaR';
+        font-size: 20px;
+        line-height: 32px;
+        margin: 7px 0;
+    }
+
+    .user_profile_social ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .user_profile_social ul li.user_profile_link a {
+        background: #ff851b;
+        color: #fff;
+        width: 30px;
+        line-height: 30px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 10px 8px;
+    }
+
+    ul.spoken_languages {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ul.spoken_languages li {
+        background: #ff851b;
+        color: #fff;
+        width: 90px;
+        padding: 5px;
+        border-radius: 50px;
+        font-size: 13px;
+        margin: 10px;
+    }
+
+    .user_profile_box h5.user_designation {
+        font-family: 'montM';
+        font-size: 20px;
+        line-height: 32px;
+        letter-spacing: 0.03em;
+        margin: 15px 0 15px;
+    }
+
+    .topick_list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .topick_list li {
+        font-family: 'montM';
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: 0.03em;
+        color: #FF851B;
+        position: relative;
+        margin: 10px 10px 10px 20px;
+    }
+
+    .topick_list li::before {
+        position: absolute;
+        content: '';
+        left: -12px;
+        top: 50%;
+        width: 6px;
+        height: 6px;
+        background: #FF851B;
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+
+    p.user_profile_box_info {
+        font-family: 'montR';
+        font-size: 16px;
+
+        line-height: 27px;
+
+        color: #000;
+    }
+</style>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Start -->
+        <header class="header">
+            <!-- Topbar -->
+            <div class="topbar cm_bg">
+                <div class="container">
+                    <div class="ticker">
+                        <div class="title">
+                            <h5>Latest news</h5>
+                        </div>
+                        <div class="news">
+                            <marquee class="news-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud
+                                </p>
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit
+                                    voluptatem accusantium doloremque laudantium, totam rem
+                                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                    quasi architecto
+                                </p>
+                                <p>
+                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                                    amet, consectetur, adipisci velit, sed quia non numquam eius
+                                    modi tempora incidunt ut labore et dolore magnam aliquam
+                                    quaerat voluptatem. Ut enim ad minima veniam
+                                </p>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu bar -->
+            <nav class="navbar navbar-expand-lg navbar-light py-3">
+                <div class="container">
+                    <a class="navbar-brand cm-color" href="index.html">TopPick</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-reorder"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-remove"></span>
+                        </button>
+                        <div class="header_overlay"></div>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="menu_logo">
+                                <a href="index.html" class="text-white"> TopPick </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dialogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about.html">About</a>
+                            </li>
+                            <li class="nav-item btn">
+                                <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                        class="img-fluid" /></a>
+                            </li>
+                            <li class="nav-item btn">
+                                <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                        class="img-fluid" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Header End -->
+        <!-- Main Body Start -->
+        <div class="body_wrap about_page cmnBody_wrap">
+            <!-- Hero section starts here -->
+            <section class="space about_hero inner_cmn_hero text-center">
+                <div class="container">
+                    <h1>Varun Sareen</h1>
+                    <div class="Breadcrums">
+                        <a href="index.html">Home</i>
+                        </a>
+                        <img src="assets/images/right-arrow-black.svg" alt="" class="mx-2" />
+                        <a class="active" href="About Us">Varun Sareen</a>
+                    </div>
+                </div>
+            </section>
+            <!-- topics section starts here -->
+            <section class="view_profile">
+                <div class="container">
+                    <div class="view_profile_inner">
+                        <div class="my_topics_lists text-center">
+                            <div class="user_avtar">
+                                <div class="user_vatart_image">
+                                    <img src="assets/images/ProfilePhoto.png" alt="">
+                                </div>
+                                <div class="user_name_head">
+                                    <h2>Varun s</h2>
+                                    <ul class="user_profile_info">
+                                        <li><span>Name :</span> Varun Sareen</li>
+                                        <li><span>Job :</span> Web Designer</li>
+                                        <li>Amritsar Punjab, India</li>
+                                    </ul>
+                                    <div class="user_profile_social">
+                                        <ul>
+                                            <li class="user_profile_link">
+                                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                            </li>
+                                            <li class="user_profile_link">
+                                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                            </li>
+                                            <li class="user_profile_link">
+                                                <a href="#"><i class="fa fa-youtube"></i></a>
+                                            </li>
+                                            <li class="user_profile_link">
+                                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="user_profile_box">
+                                        <h5 class="user_designation">Spoken Languages</h5>
+                                        <ul class="spoken_languages">
+                                            <li>Afar</li>
+                                            <li>Afar</li>
+                                            <li>Afar</li>
+                                            <li>Afar</li>
+                                        </ul>
+                                    </div>
+                                    <div class="user_profile_box">
+                                        <h5 class="user_designation">Topick</h5>
+                                        <ul class="topick_list">
+                                            <li>Language Learning</li>
+                                            <li>Language Learning</li>
+                                        </ul>
+                                    </div>
+                                    <div class="user_profile_box">
+                                        <h5 class="user_designation">Bio</h5>
+                                        <p class="user_profile_box_info">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Iusto nobis fugit
+                                            illo nemo odio dolor veritatis aspernatur voluptatibus sapiente assumenda?
+                                            Distinctio fuga fugit consequuntur, tempora ex quos repellendus ducimus
+                                            aperiam
+                                        </p>
+                                    </div>
+                                    <div class="user_profile_box">
+                                        <h5 class="user_designation">My Interest</h5>
+                                        <p class="user_profile_box_info">Lorem ipsum dolor sit amet consectetur
+                                            adipisicing elit. Iusto nobis fugit
+                                            illo nemo odio dolor veritatis aspernatur voluptatibus sapiente assumenda?
+                                            Distinctio fuga fugit consequuntur, tempora ex quos repellendus ducimus
+                                            aperiam
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- Main Body End -->
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="footer_inner py-5">
+                <div class="container">
+                    <div class="footer_blocks">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="footer_box">
+                                    <a href="index.html" class="sairaM footer_logo">Top<span
+                                            class="cm-color">Pick</span></a>
+                                    <p>
+                                        These people envy me for having a lifestyle they don’t
+                                        have, but the truth is, sometimes I envy their lifestyle
+                                        instead. Struggling to sell one multi-million
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box">
+                                    <h5 class="sairaM footer_head">CATEGORIES</h5>
+                                    <ul class="footer_menu">
+                                        <li><a href="#">Fashion</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Sport</a></li>
+                                        <li><a href="#">Technology</a></li>
+                                        <li><a href="#">Politics</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box">
+                                    <h5 class="sairaM footer_head">INFORMATION</h5>
+                                    <ul class="footer_menu">
+                                        <li><a href="#">Site Map </a></li>
+                                        <li><a href="#">Search Terms </a></li>
+                                        <li><a href="#">Advanced Search</a></li>
+                                        <li><a href="/about.html">About Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box last_footer_box">
+                                    <h5 class="sairaM footer_head">Get the App</h5>
+                                    <ul class="footer_app_links">
+                                        <li>
+                                            <a href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                                    class="img-fluid" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                                    class="img-fluid" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="copyright cm_bg py-3">
+                <div class="container-fluid">
+                    <p class="text-center text-white montM">
+                        © 2021 All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+    </div>
+    <!-- Wrapper End -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/crousal.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
