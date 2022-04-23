@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>TopPick</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="./css/custom.css" />
+   <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<style>
+   .single_blog_box {
+      display: flex;
+      align-items: flex-start;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 10px 0 20px;
+   }
+
+   .single_blog_box .box_img {
+      flex: 0 0 50px;
+      margin-right: 15px;
+      text-align: center;
+   }
+
+   .single_blog_box h4 {
+      font-size: 22px;
+
+      line-height: 25px;
+
+      font-family: 'sairaSB';
+      color: #FF851B;
+   }
+
+   .single_blog_box p {
+      font-family: 'montM';
+      font-size: 17px;
+      font-style: italic;
+
+      line-height: 27px;
+
+   }
+
+   .single_blog_box li {
+      position: relative;
+      font-family: 'montM';
+      font-size: 17px;
+      font-style: italic;
+
+      line-height: 27px;
+
+      padding: 0 0 4px 12px;
+   }
+
+   .single_blog_box li:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 5px;
+      height: 5px;
+      background: #ff851b;
+      border-radius: 50%;
+   }
+</style>
+
+<body>
+   <!-- Loader -->
+   <div class="loader">
+      <div class="loader-inner">
+         <div class="circle"></div>
+      </div>
+   </div>
+   <!-- Wrapper Start -->
+   <div class="wrapper">
+      <!-- Header Start -->
+      <header class="header">
+         <!-- Topbar -->
+         <div class="topbar cm_bg">
+            <div class="container">
+               <div class="ticker">
+                  <div class="title">
+                     <h5>Latest news</h5>
+                  </div>
+                  <div class="news">
+                     <marquee class="news-content">
+                        <p>
+                           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                           do eiusmod tempor incididunt ut labore et dolore magna
+                           aliqua. Ut enim ad minim veniam, quis nostrud
+                        </p>
+                        <p>
+                           Sed ut perspiciatis unde omnis iste natus error sit
+                           voluptatem accusantium doloremque laudantium, totam rem
+                           aperiam, eaque ipsa quae ab illo inventore veritatis et
+                           quasi architecto
+                        </p>
+                        <p>
+                           Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                           amet, consectetur, adipisci velit, sed quia non numquam eius
+                           modi tempora incidunt ut labore et dolore magnam aliquam
+                           quaerat voluptatem. Ut enim ad minima veniam
+                        </p>
+                     </marquee>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Menu bar -->
+         <nav class="navbar navbar-expand-lg navbar-light py-3">
+            <div class="container">
+               <a class="navbar-brand cm-color" href="index.html">TopPick</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="fa fa-reorder"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <button class="navbar-toggler" type="button" data-toggle="collapse"
+                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                     aria-label="Toggle navigation">
+                     <span class="fa fa-remove"></span>
+                  </button>
+                  <div class="header_overlay"></div>
+                  <ul class="navbar-nav ml-auto">
+                     <li class="menu_logo">
+                        <a href="index.html" class="text-white"> TopPick </a>
+                     </li>
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Topics</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#">Dialogs</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                     </li>
+                     <li class="nav-item btn">
+                        <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                              class="img-fluid" /></a>
+                     </li>
+                     <li class="nav-item btn">
+                        <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                              class="img-fluid" /></a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!-- Header End -->
+      <!-- Main Body Start -->
+      <div class="body_wrap singleBlog_page">
+         <!-- Hero section starts here -->
+         <section class="space about_hero inner_cmn_hero text-center blog_sec">
+            <div class="container">
+               <h1 class="mb-4">Lifestyle brings big changes in people lives. <br>
+                  Are you ready?
+               </h1>
+               <div class="Breadcrums">
+                  <a href="index.html" class="cm-color">Home </i>
+                  </a>
+                  <img src="assets/images/right-arrow.svg" alt="" class="mx-2" />
+                  <a href="blog.html" class="cm-color">Blog </i>
+                  </a>
+                  <img src="assets/images/right-arrow.svg" alt="" class="mx-2" />
+                  <p class="d-inline-block">Life brings big changes in people lives. Are you ready?</p>
+               </div>
+            </div>
+         </section>
+         <!-- about section starts here -->
+         <!-- blog section starts here  -->
+         <section class="space">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-8">
+                     <div class="single_blog">
+                        <!-- Main Img  -->
+                        <img class="img-fluid mb-3" src="assets/images/single-main-img.png" alt="">
+                        <div class="blog_info">
+                           <div class="blog_date cmn_blog_info">
+                              <img src="assets/images/blog-access_time.svg" alt="" class="img-fluid" />
+                              <p>July 12, 2021</p>
+                           </div>
+                           <div class="author cmn_blog_info">
+                              <img src="assets/images/blog-avtar.svg" alt="" class="img-fluid" />
+                              <p>Alex Martun Blogger</p>
+                           </div>
+                        </div>
+                        <!-- Blog Content -->
+                        <h2 class="blog-title sairaM">Lifestyle brings big changes in people lives. Are you ready?</h2>
+                        <p class="blog_cont">Relief, collective impact society social impact academic. Cultivate scale
+                           and impact framework; systems thinking expose the truth collaborative cities cultivate
+                           collaborative cities venture philanthropy movements. Commitment or, big data rubric issue
+                           outcomes. Compassion overcome injustice shared unit of analysis; her body her rights
+                           segmentation synergy society social intrapreneurship milestones grit external partners
+                           innovation.Framework; shared vocabulary co-creation then, B-corp white paper, grit
+                           revolutionary; best practices dataing.
+                        </p>
+                        <p class="blog_cont">Transparent catalyze empower communities; revolutionary, mobilize bandwidth
+                           or justice sustainable, our work, activate outcomes paradigm. B-corp empower communities,
+                           empower communities to triple bottom line empower, when, collaborate; thought leader innovate
+                           changemaker social entrepreneur natural resources. Shared vocabulary; B-corp scalable
+                           change-makers systems thinking transparent relief; cultivate inspirational global. Agile
+                           segmentation cultivate peaceful inspirational technology.
+                        </p>
+                        <h4 class="blog_inner_heading">A Beautiful Girl Breack a 24 Years Guy - 1st</h4>
+                        <p class="blog_cont">Corporation. Shared vocabulary families, society; mass incarceration,
+                           academic strategy; society policymaker targeted paradigm unprecedented challenge circular
+                           efficient peaceful. Sociapr ship innovate, catalyze our work do-gooder benefit corporation
+                           systems thinking. Expose the trucollaborative cities, equal opportunity.
+                        </p>
+                        <div class="single_blog_box">
+                           <div class="box_img">
+                              <img src="assets/images/idea.png" alt="Curiosity image">
+                           </div>
+                           <div class="blog_box_cont">
+                              <h4 class="mb-2">Curiosity</h4>
+                              <p>Replicable boots on the ground gender rights NGO framework empowe vibrant empower
+                                 communities dynamic challenges and opportunities.
+                              </p>
+                           </div>
+                        </div>
+                        <div class="single_blog_box">
+                           <div class="box_img">
+                              <img src="assets/images/remember.png" alt="Curiosity image">
+                           </div>
+                           <div class="blog_box_cont">
+                              <h4 class="mb-2">Reminder</h4>
+                              <p>Replicable boots on the ground gender rights NGO framework empowe vibrant empower
+                                 communities dynamic challenges and opportunities.
+                              </p>
+                           </div>
+                        </div>
+                        <div class="single_blog_box">
+                           <div class="box_img">
+                              <img src="assets/images/todo-action.png" alt="Curiosity image">
+                           </div>
+                           <div class="blog_box_cont">
+                              <h4 class="mb-2">Todos</h4>
+                              <ul>
+                                 <li>Replicable boots on the ground gender rights NGO framework </li>
+                                 <li>Replicable boots on the ground gender rights NGO framework </li>
+                                 <li>Replicable boots on the ground gender rights NGO framework </li>
+                                 <li>Replicable boots on the ground gender rights NGO framework </li>
+                                 <li>Replicable boots on the ground gender rights NGO framework </li>
+                              </ul>
+                           </div>
+                        </div>
+                        <img src="assets/images/second-img-single.png" alt="" class="img-fluid mb-4">
+                        <p class="blog_cont">Progress, inspire improve the world, support; capacity building indicators,
+                           empower communities inspire, the resistance inspirational sustainable progress thought leader
+                           accessibility. Blended value game-changer; white paper social enterprise; black lives matter
+                           circular ideate big data triple bottom line program area scale and impact. Replicable boots
+                           on the ground gender rights NGO framework empower correlation vibrant empower portunities.
+                        </p>
+                        <div class="row">
+                           <div class="col-lg-6 mb-3">
+                              <div class="blog_cont_block">
+                                 <p class="blog_cont">Progress, inspire improve the world, support; capacity building
+                                    indicators, empower community inspire, the resistance inspi-rational sustainable.
+                                 </p>
+                                 <div class="video_block">
+                                    <a href="#" class="video_block_link d-block">
+                                       <img src="assets/images/second-img-single.png" alt="" class="img-fluid">
+                                       <div class="video_icon">
+                                          <i class="fa fa-play"></i>
+                                       </div>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-6 mb-3">
+                              <div class="blog_cont_block">
+                                 <p class="blog_cont">Compassion overcome injustice shared unit of analysis; her body
+                                    her rights synergy society social grit external partners. Framework; data, LGBTQ.
+                                 </p>
+                                 <div class="video_block">
+                                    <a href="#" class="video_block_link d-block">
+                                       <img src="assets/images/second-img-single.png" alt="" class="img-fluid">
+                                       <div class="video_icon">
+                                          <i class="fa fa-play"></i>
+                                       </div>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <p class="blog_cont">A save the world, ecosystem think tank greenwashing NGO the, initiative a
+                           inclusion think tank. Synergy improve the world collaborative consumption, but thinking
+                           justice resist. Systems thinking catalyze improve the world to the do-gooder. Systems
+                           thinking issue outcomes targeted human-centered collaborative consumption, benefit
+                           corporation, expose the truth preliminary thinking strengthening infrastructure we must stand
+                           up systems thinking accessibility global. White paper the resistance, boots on the ground
+                           then but. Sustainable, co-create human-centered thought leader entrepreneur, strategy
+                           indicators a, collective impact benefit corporation improve the world game-changer.
+                        </p>
+                        <img src="assets/images/home-adds_1.png" alt="ad1" class="img-fluid w-100 rounded">
+                        <div class="summary mt-5">
+                           <h2 class="sairaM mb-3 cm-color">Summary</h2>
+                           <p class="blog_cont">A save the world, ecosystem think tank greenwashing NGO the, initiative
+                              a inclusion think tank. Synergy improve the world collaborative consumption, but thinking
+                              justice resist. Systems thinking catalyze improve the world to the do-gooder. Systems
+                              thinking issue outcomes targeted human-centered collaborative consumption, benefit
+                              corporation, expose the truth preliminary thinking strengthening infrastructure we must
+                              stand up systems thinking accessibility global. White paper the resistance, boots on the
+                              ground then but. Sustainable, co-create human-centered thought leader entrepreneur,
+                              strategy indicators a, collective impact benefit corporation improve the world
+                              game-changer.</p>
+                        </div>
+                        <div class="comments mt-5">
+                           <h2 class="sairaM mb-5">Leave a <span class="cm-color">Comments</span></h2>
+                           <!-- comment Form -->
+                           <div class="comment_form">
+                              <div class="comment_img">
+                                 <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                              </div>
+                              <div class="comment">
+                                 <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Comment">
+                                    <input type="submit" value="Comment">
+                                 </div>
+                              </div>
+                           </div>
+                           <!-- Comment Area -->
+                           <div class="comment_area">
+                              <div class="comment_block mb-4">
+                                 <div class="comment_img">
+                                    <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                 </div>
+                                 <div class="comment_cont">
+                                    <div class="comment_top">
+                                       <h5>Jenny Joe </h5>
+                                       <p class="comment_date">Aprl 26, 2045 </p>
+                                    </div>
+                                    <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                       maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                       porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor,
+                                       in interdum ante faucibus.</p>
+                                    <div class="replybtn_area">
+                                       <button class="reply">reply</button>
+                                       <p class="reply_quantety">3 Reply</p>
+                                    </div>
+                                    <div class="reply_comment">
+                                       <div class="comment_block mb-3">
+                                          <div class="comment_img">
+                                             <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                          </div>
+                                          <div class="comment_cont">
+                                             <div class="comment_top">
+                                                <h5>Jenny Joe </h5>
+                                                <p class="comment_date">Aprl 26, 2045 </p>
+                                             </div>
+                                             <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem
+                                                magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus.</p>
+                                          </div>
+                                       </div>
+                                       <div class="comment_block mb-3">
+                                          <div class="comment_img">
+                                             <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                          </div>
+                                          <div class="comment_cont">
+                                             <div class="comment_top">
+                                                <h5>Jenny Joe </h5>
+                                                <p class="comment_date">Aprl 26, 2045 </p>
+                                             </div>
+                                             <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem
+                                                magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus.</p>
+                                          </div>
+                                       </div>
+                                       <div class="comment_block mb-3">
+                                          <div class="comment_img">
+                                             <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                          </div>
+                                          <div class="comment_cont">
+                                             <div class="comment_top">
+                                                <h5>Jenny Joe </h5>
+                                                <p class="comment_date">Aprl 26, 2045 </p>
+                                             </div>
+                                             <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem
+                                                magna, maximus at est id, maximus aliquet nunc. Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus Suspendisse lacinia
+                                                velit a eros porttitor, in interdum ante faucibus.</p>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="reply_comment_form">
+                                       <div class="comment_form my-4">
+                                          <div class="comment_img">
+                                             <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                          </div>
+                                          <div class="comment">
+                                             <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="reply message">
+                                                <input type="submit" value="Submit">
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="comment_block mb-4">
+                                 <div class="comment_img">
+                                    <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                 </div>
+                                 <div class="comment_cont">
+                                    <div class="comment_top">
+                                       <h5>Jenny Joe </h5>
+                                       <p class="comment_date">Aprl 26, 2045 </p>
+                                       <button class="reply">reply</button>
+                                    </div>
+                                    <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                       maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                       porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor,
+                                       in interdum ante faucibus.</p>
+                                 </div>
+                              </div>
+                              <div class="comment_block mb-4">
+                                 <div class="comment_img">
+                                    <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                 </div>
+                                 <div class="comment_cont">
+                                    <div class="comment_top">
+                                       <h5>Jenny Joe </h5>
+                                       <p class="comment_date">Aprl 26, 2045 </p>
+                                       <button class="reply">reply</button>
+                                    </div>
+                                    <p>Nunc risus ex, tempus quis purus ac, tempor consequat ex. Vivamus sem magna,
+                                       maximus at est id, maximus aliquet nunc. Suspendisse lacinia velit a eros
+                                       porttitor, in interdum ante faucibus Suspendisse lacinia velit a eros porttitor,
+                                       in interdum ante faucibus.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-4">
+                     <div class="sidebar_ads">
+                        <img src="assets/images/sidebar_ads.png" alt="" class="img-fluid" />
+                     </div>
+                     <div class="side_bar">
+                        <div class="side_card">
+                           <h3 class="sairaR">Latest Post</h3>
+                           <ul>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">topic</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Topic</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                           </ul>
+                           <button class="see_more sairaM">See All<i class="fa fa-angle-down ml-2"></i></button>
+                        </div>
+                     </div>
+                     <div class="side_bar">
+                        <div class="side_card">
+                           <h3 class="sairaR">Post A-Z</h3>
+                           <ul>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">topic</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Topic</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>
+                                             Lifestyle brings big changes in people lives.?
+                                          </p>
+                                          <p class="post_type">Category</p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                           </ul>
+                           <button class="see_more sairaM">See All<i class="fa fa-angle-down ml-2"></i></button>
+                        </div>
+                     </div>
+                     <div class="side_bar">
+                        <div class="side_card">
+                           <h3 class="sairaR">Latest Topic</h3>
+                           <ul>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>Lorem Ipsum Topic Name</p>
+                                          <p class="post_type">
+                                             Lorem ipsum dolor sit amet, consectetur.....
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>Lorem Ipsum Topic Name</p>
+                                          <p class="post_type">
+                                             Lorem ipsum dolor sit amet, consectetur.....
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>Lorem Ipsum Topic Name</p>
+                                          <p class="post_type">
+                                             Lorem ipsum dolor sit amet, consectetur.....
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>Lorem Ipsum Topic Name</p>
+                                          <p class="post_type">
+                                             Lorem ipsum dolor sit amet, consectetur.....
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                              <li>
+                                 <a href="">
+                                    <div class="card_list">
+                                       <div class="card_list_img">
+                                          <img src="assets/images/blog-sidecate.png" alt="" />
+                                       </div>
+                                       <div class="card_list_text">
+                                          <p>Lorem Ipsum Topic Name</p>
+                                          <p class="post_type">
+                                             Lorem ipsum dolor sit amet, consectetur.....
+                                          </p>
+                                       </div>
+                                    </div>
+                                 </a>
+                              </li>
+                           </ul>
+                           <button class="see_more sairaM">See All<i class="fa fa-angle-down ml-2"></i></button>
+                        </div>
+                     </div>
+                     <div class="side_bar">
+                        <div class="side_card">
+                           <h3 class="sairaR">Tags</h3>
+                           <ul class="tags">
+                              <li class="tag_block">
+                                 <span class="badge">Fashion</span>
+                              </li>
+                              <li class="tag_block">
+                                 <span class="badge">Fashion</span>
+                              </li>
+                              <li class="tag_block">
+                                 <span class="badge">Fashion</span>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="side_bar">
+                        <div class="side_card">
+                           <h3 class="sairaR">Share On</h3>
+                           <ul class="social_links">
+                              <li class="links facebook">
+                                 <a href="#"><i class="fa fa-facebook"></i></a>
+                              </li>
+                              <li class="links instagram">
+                                 <a href="#"><i class="fa fa-instagram"></i></a>
+                              </li>
+                              <li class="links youtube">
+                                 <a href="#"><i class="fa fa-youtube"></i></a>
+                              </li>
+                              <li class="links twitter">
+                                 <a href="#"><i class="fa fa-twitter"></i></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="side_bar download_sidebar cm_bg">
+                        <div class="side_card text-white">
+                           <h3 class="sairaR text-white">Download App <br />Today</h3>
+                           <div class="download_cont_block">
+                              <p>Discover the right topic here</p>
+                              <ul class="download_app_btns">
+                                 <li class="tag_block">
+                                    <a class="" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                          class="img-fluid" /></a>
+                                 </li>
+                                 <li class="tag_block">
+                                    <a class="" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                          class="img-fluid" /></a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="sidebar_ads">
+                        <img src="assets/images/sidebar_ads.png" alt="" class="img-fluid" />
+                     </div>
+                  </div>
+               </div>
+               <div class="latest-news mt-5">
+                  <div class="heading">
+                     <h2 class="sairaM mb-4">Latest <sapn class="cm-color">News</sapn>
+                     </h2>
+                  </div>
+                  <div class="latest-news_block">
+                     <div class="row">
+                        <div class="col-lg-4">
+                           <div class="card_wrapper">
+                              <div class="blog_card">
+                                 <figure>
+                                    <img src="assets/images/blog-01.png" alt="" />
+                                    <span class="badge">Fashion</span>
+                                 </figure>
+                                 <div class="blog_content">
+                                    <a href="singleBlog.html">
+                                       <figure-caption>
+                                          Lifestyle brings big changes in people lives. Are
+                                          you ready?
+                                       </figure-caption>
+                                    </a>
+                                    <div class="blog_info">
+                                       <div class="blog_date cmn_blog_info">
+                                          <img src="assets/images/blog-access_time.svg" alt="" class="img-fluid" />
+                                          <p>July 12, 2021</p>
+                                       </div>
+                                       <div class="author cmn_blog_info">
+                                          <img src="assets/images/blog-avtar.svg" alt="" class="img-fluid" />
+                                          <p>Alex Martun Blogger</p>
+                                       </div>
+                                    </div>
+                                    <a href="singleBlog.html" class="cm_bg cm-btn mt-3">Read More
+                                       <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1" /></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="card_wrapper">
+                              <div class="blog_card">
+                                 <figure>
+                                    <img src="assets/images/blog-01.png" alt="" />
+                                    <span class="badge">Fashion</span>
+                                 </figure>
+                                 <div class="blog_content">
+                                    <a href="singleBlog.html">
+                                       <figure-caption>
+                                          Lifestyle brings big changes in people lives. Are
+                                          you ready?
+                                       </figure-caption>
+                                    </a>
+                                    <div class="blog_info">
+                                       <div class="blog_date cmn_blog_info">
+                                          <img src="assets/images/blog-access_time.svg" alt="" class="img-fluid" />
+                                          <p>July 12, 2021</p>
+                                       </div>
+                                       <div class="author cmn_blog_info">
+                                          <img src="assets/images/blog-avtar.svg" alt="" class="img-fluid" />
+                                          <p>Alex Martun Blogger</p>
+                                       </div>
+                                    </div>
+                                    <a href="singleBlog.html" class="cm_bg cm-btn mt-3">Read More
+                                       <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1" /></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4">
+                           <div class="card_wrapper">
+                              <div class="blog_card">
+                                 <figure>
+                                    <img src="assets/images/blog-01.png" alt="" />
+                                    <span class="badge">Fashion</span>
+                                 </figure>
+                                 <div class="blog_content">
+                                    <a href="singleBlog.html">
+                                       <figure-caption>
+                                          Lifestyle brings big changes in people lives. Are
+                                          you ready?
+                                       </figure-caption>
+                                    </a>
+                                    <div class="blog_info">
+                                       <div class="blog_date cmn_blog_info">
+                                          <img src="assets/images/blog-access_time.svg" alt="" class="img-fluid" />
+                                          <p>July 12, 2021</p>
+                                       </div>
+                                       <div class="author cmn_blog_info">
+                                          <img src="assets/images/blog-avtar.svg" alt="" class="img-fluid" />
+                                          <p>Alex Martun Blogger</p>
+                                       </div>
+                                    </div>
+                                    <a href="singleBlog.html" class="cm_bg cm-btn mt-3">Read More
+                                       <img src="assets/images/right-arrow-black.svg" alt="" class="ml-1" /></a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Blog section ends here  -->
+      </div>
+      <!-- Main Body End -->
+      <!-- Footer Start -->
+      <footer class="footer">
+         <div class="footer_inner py-5">
+            <div class="container">
+               <div class="footer_blocks">
+                  <div class="row">
+                     <div class="col-md-4 mb-4">
+                        <div class="footer_box">
+                           <a href="index.html" class="sairaM footer_logo">Top<span class="cm-color">Pick</span></a>
+                           <p>
+                              These people envy me for having a lifestyle they don’t
+                              have, but the truth is, sometimes I envy their lifestyle
+                              instead. Struggling to sell one multi-million
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col mb-4 footer_cmn_block">
+                        <div class="footer_box">
+                           <h5 class="sairaM footer_head">CATEGORIES</h5>
+                           <ul class="footer_menu">
+                              <li><a href="#">Fashion</a></li>
+                              <li><a href="#">Food</a></li>
+                              <li><a href="#">Sport</a></li>
+                              <li><a href="#">Technology</a></li>
+                              <li><a href="#">Politics</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col mb-4 footer_cmn_block">
+                        <div class="footer_box">
+                           <h5 class="sairaM footer_head">INFORMATION</h5>
+                           <ul class="footer_menu">
+                              <li><a href="#">Site Map </a></li>
+                              <li><a href="#">Search Terms </a></li>
+                              <li><a href="#">Advanced Search</a></li>
+                              <li><a href="/about.html">About Us</a></li>
+                              <li><a href="#">Contact Us</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col mb-4 footer_cmn_block">
+                        <div class="footer_box last_footer_box">
+                           <h5 class="sairaM footer_head">Get the App</h5>
+                           <ul class="footer_app_links">
+                              <li>
+                                 <a href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                       class="img-fluid" /></a>
+                              </li>
+                              <li>
+                                 <a href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                       class="img-fluid" /></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- Copyright -->
+         <div class="copyright cm_bg py-3">
+            <div class="container-fluid">
+               <p class="text-center text-white montM">
+                  © 2021 All Rights Reserved.
+               </p>
+            </div>
+         </div>
+      </footer>
+      <!-- Footer End -->
+   </div>
+   <!-- Wrapper End -->
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+   <script src="js/crousal.js"></script>
+   <script src="js/custom.js"></script>
+   <script>
+      var reply_btn = document.getElementsByClassName("reply");
+      for (var repI = 0; repI < reply_btn.length; repI++) {
+         console.log(reply_btn[repI]);
+         reply_btn[repI].addEventListener('click', function () {
+            let reply_btn_cont = this.closest(".comment_cont");
+            let reply_btn_contAtr = reply_btn_cont.getAttribute("class");
+            if (reply_btn_contAtr === "comment_cont comment_form_show" || reply_btn_contAtr === "comment_cont comment_form_show comment_show") {
+               reply_btn_cont.classList.remove("comment_form_show");
+            }
+            else {
+               reply_btn_cont.classList.add("comment_form_show");
+            }
+         });
+      }
+
+      // Show reply cooments
+      var reply_quantety = document.getElementsByClassName("reply_quantety");
+      for (var repQ = 0; repQ < reply_quantety.length; repQ++) {
+         console.log(reply_quantety[repQ]);
+         reply_quantety[repQ].addEventListener('click', function () {
+            let reply_quantety_cont = this.closest(".comment_cont");
+            let reply_quantety_contAtr = reply_quantety_cont.getAttribute("class");
+            if (reply_quantety_contAtr === "comment_cont comment_show" || reply_quantety_contAtr === "comment_cont comment_show comment_form_show") {
+               reply_quantety_cont.classList.remove("comment_show");
+            }
+            else {
+               reply_quantety_cont.classList.add("comment_show");
+            }
+         });
+      }
+   </script>
+</body>
+
+</html>
