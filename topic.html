@@ -1,1841 +1,1886 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TopPick</title>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="./css/custom.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-  </head>
-  <style>
-    /* 26-03-2022 */
-    .accordion-validate-question#accordion .card-header button.btn-link::before{
-      display: none;
-    }
-    .accordion-validate-question#accordion .card-header button.btn{
-      padding-right: 0;
-      cursor: inherit;
-    }
-    .validate_header .cmn_validate_btn {
-        display: flex;
-        align-items: center;
-        border: none;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TopPick</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="./css/custom.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<style>
+  /* 8 may 2022 */
+  .keywords {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+    padding: 10px;
+    top: 88px;
+  }
+
+  .keywords ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .keywords ul li a {
+    padding: 10px;
+    color: #000;
+  }
+
+  /* 26-03-2022 */
+  .accordion-validate-question#accordion .card-header button.btn-link::before {
+    display: none;
+  }
+
+  .accordion-validate-question#accordion .card-header button.btn {
+    padding-right: 0;
+    cursor: inherit;
+  }
+
+  .validate_header .cmn_validate_btn {
+    display: flex;
+    align-items: center;
+    border: none;
     background: transparent;
     color: #ff851b;
+  }
+
+  .hide-card {
+    display: none !important;
+  }
+
+  /* 31-03-2022 */
+  /* Validate question card animation */
+  .opacity-card-hide {
+    animation: opacityCardHide 2s linear;
+  }
+
+  .opacity-card-show {
+    animation: opacityCardShow 2s linear;
+  }
+
+  @keyframes opacityCardHide {
+    0% {
+      opacity: 1;
     }
-    .hide-card{
-      display: none !important;
+
+    100% {
+      opacity: 0.2;
     }
-    /* 31-03-2022 */
-    /* Validate question card animation */
-    .opacity-card-hide{
-      animation: opacityCardHide 2s linear ;
+  }
+
+  @keyframes opacityCardShow {
+    0% {
+      opacity: 0;
     }
-    .opacity-card-show{
-      animation: opacityCardShow 2s linear ;
+
+    100% {
+      opacity: 0.8;
     }
-    @keyframes opacityCardHide {
-      0%{
-        opacity: 1;
-      }
-      100%{
-        opacity: 0.2;
-      }
-    }
-    @keyframes opacityCardShow {
-      0%{
-        opacity: 0;
-      }
-      100%{
-        opacity: 0.8;
-      }
-    }
-  </style>
-  <body>
-    <!-- Wrapper Start -->
-    <div class="wrapper">
-      <!-- Header Start -->
-      <header class="header">
-        <!-- Topbar -->
-        <div class="topbar cm_bg">
-          <div class="container">
-            <div class="ticker">
-              <div class="title">
-                <h5>Latest news</h5>
-              </div>
-              <div class="news">
-                <marquee class="news-content">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud
-                  </p>
-                  <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis et
-                    quasi architecto
-                  </p>
-                  <p>
-                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
-                    amet, consectetur, adipisci velit, sed quia non numquam eius
-                    modi tempora incidunt ut labore et dolore magnam aliquam
-                    quaerat voluptatem. Ut enim ad minima veniam
-                  </p>
-                </marquee>
-              </div>
+  }
+
+  .keys {
+    cursor: pointer;
+  }
+</style>
+
+<body>
+  <!-- Wrapper Start -->
+  <div class="wrapper">
+    <!-- Header Start -->
+    <header class="header">
+      <!-- Topbar -->
+      <div class="topbar cm_bg">
+        <div class="container">
+          <div class="ticker">
+            <div class="title">
+              <h5>Latest news</h5>
+            </div>
+            <div class="news">
+              <marquee class="news-content">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. Ut enim ad minim veniam, quis nostrud
+                </p>
+                <p>
+                  Sed ut perspiciatis unde omnis iste natus error sit
+                  voluptatem accusantium doloremque laudantium, totam rem
+                  aperiam, eaque ipsa quae ab illo inventore veritatis et
+                  quasi architecto
+                </p>
+                <p>
+                  Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                  amet, consectetur, adipisci velit, sed quia non numquam eius
+                  modi tempora incidunt ut labore et dolore magnam aliquam
+                  quaerat voluptatem. Ut enim ad minima veniam
+                </p>
+              </marquee>
             </div>
           </div>
         </div>
-        <!-- Menu bar -->
-        <nav class="navbar navbar-expand-lg navbar-light py-3">
-          <div class="container">
-            <a class="navbar-brand cm-color" href="index.html">TopPick</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="fa fa-reorder"></span>
+      </div>
+      <!-- Menu bar -->
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+          <a class="navbar-brand cm-color" href="index.html">TopPick</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="fa fa-reorder"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="fa fa-remove"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="fa fa-remove"></span>
-              </button>
-              <div class="header_overlay"></div>
-              <ul class="navbar-nav ml-auto">
-                <li class="menu_logo">
-                  <a href="index.html" class="text-white"> TopPick </a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="topic.html">Topics</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Dialogs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="blog.html">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about.html">About</a>
-                </li>
-                <li class="nav-item btn">
-                  <a class="nav-link" href="#"
-                    ><img
-                      src="assets/images/Google Play Badge.svg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                </li>
-                <li class="nav-item btn">
-                  <a class="nav-link" href="#"
-                    ><img
-                      src="assets/images/App Store Badge.svg"
-                      alt=""
-                      class="img-fluid"
-                  /></a>
-                </li>
-              </ul>
-            </div>
+            <div class="header_overlay"></div>
+            <ul class="navbar-nav ml-auto">
+              <li class="menu_logo">
+                <a href="index.html" class="text-white"> TopPick </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="topic.html">Topics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Dialogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+              <li class="nav-item btn">
+                <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                    class="img-fluid" /></a>
+              </li>
+              <li class="nav-item btn">
+                <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                    class="img-fluid" /></a>
+              </li>
+            </ul>
           </div>
-        </nav>
-      </header>
-      <!-- Header End -->
+        </div>
+      </nav>
+    </header>
+    <!-- Header End -->
 
-      <!-- Main Body Start -->
-      <div class="body_wrap topic_page cmnBody_wrap">
-        <!-- Hero section starts here -->
-        <section
-          class="space about_hero inner_cmn_hero blog_sec article_banner"
-          style="background-image: url(assets/images/topic_page_img.png)"
-        >
-          <div class="container">
-            <div class="banner_inner_wrap">
-              <h1>AGING</h1>
-              <p>
-                The subject of health is a recurrent one in many conversations,
-                and for good reason, a person's health is affected by literally
-                everything that happens to and around them. People of all ages
-                are constantly talking about health, from older people
-                discussing how aging has affected their wellbeing to young
-                adults frequently discussing topics like mental health and
-                skincare to children who are eternally awed and confused by how
-                rapidly they're growing.
-              </p>
-              <!-- <div class="Breadcrums">
+    <!-- Main Body Start -->
+    <div class="body_wrap topic_page cmnBody_wrap">
+      <!-- Hero section starts here -->
+      <section class="space about_hero inner_cmn_hero blog_sec article_banner"
+        style="background-image: url(assets/images/topic_page_img.png)">
+        <div class="container">
+          <div class="banner_inner_wrap">
+            <h1>AGING</h1>
+            <p>
+              The subject of health is a recurrent one in many conversations,
+              and for good reason, a person's health is affected by literally
+              everything that happens to and around them. People of all ages
+              are constantly talking about health, from older people
+              discussing how aging has affected their wellbeing to young
+              adults frequently discussing topics like mental health and
+              skincare to children who are eternally awed and confused by how
+              rapidly they're growing.
+            </p>
+            <!-- <div class="Breadcrums">
                   <a href="index.html" class="cm-color"
                     >Home <img src="assets/images/right-arrow.svg" alt="" class="mx-2"></i>
                   </a>
                   <a class="active text-white" href="About Us">Blog</a>
                 </div> -->
-            </div>
           </div>
-        </section>
-        <!-- Topic section starts here  -->
-        <section class="space">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8">
-                  <div class="topic_area">
-                    <div class="topic_heading">
-                      <div class="cmn_heading_area">
-                          <h2 class="heading"><span class="cm-color">AGING<span></h2>
-                              <div class="small_desc">
-                                  <p><span class="cm-color">Source:</span> The Internet Tesl Journey</p>
-                                  <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg" alt="level" class="img-fluid"> Hard</p>
-                              </div>
+        </div>
+      </section>
+      <!-- Topic section starts here  -->
+      <section class="space">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8">
+              <div class="topic_area">
+                <div class="topic_heading">
+                  <div class="cmn_heading_area">
+                    <h2 class="heading"><span class="cm-color">AGING<span></h2>
+                    <div class="small_desc">
+                      <p><span class="cm-color">Source:</span> The Internet Tesl Journey</p>
+                      <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg" alt="level"
+                          class="img-fluid"> Hard</p>
+                      <p class="keys"><span class="cm-color" onclick="myFunction()">Search:</span> Master</p>
+
+                      <div class="keywords " style="display: none;" id="blog_keywords">
+                        <ul>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                          <li><a href="#">keyword</a></li>
+                        </ul>
                       </div>
-                      <div class="add_input_area_dropdown mb-3">
-                        <div class="dropdown-topic">
-                          <ul class="inner-dropdown">
-                            <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <span class="add-img"><img src="assets/images/question-heading-icon-white.svg" alt=""></span></li>
-                            <li class="inner-dropdown-item" data-toggle="modal"  data-target="#exampleModalCenter" data-source="addlist"><span>Add List </span> <span class="add-img"><img src="assets/images/list-white.svg" alt=""></span></li>
-                          </ul>
+                    </div>
+                  </div>
+                  <div class="add_input_area_dropdown mb-3">
+                    <div class="dropdown-topic">
+                      <ul class="inner-dropdown">
+                        <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <span
+                            class="add-img"><img src="assets/images/question-heading-icon-white.svg" alt=""></span></li>
+                        <li class="inner-dropdown-item" data-toggle="modal" data-target="#exampleModalCenter"
+                          data-source="addlist"><span>Add List </span> <span class="add-img"><img
+                              src="assets/images/list-white.svg" alt=""></span></li>
+                      </ul>
+                    </div>
+                    <div class="add_input_area" data-target="addquestion">
+                      <!-- <label for="">New Example</label> -->
+                      <div class="form-group">
+                        <div class="avatar_name">
+                          <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
                         </div>
-                        <div class="add_input_area" data-target="addquestion">
+                        <div class="article_link">
+                          <input type="text" name="add-question" class="form-control" placeholder="add question">
+                          <button type="submit">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="add_btn add-question-btn">
+                    <button class="cmn_topic_heading"><img src="assets/images/plus.svg" alt="Create Icon"></button>
+                  </div>
+                </div>
+                <div class="topic_tabs">
+                  <a href="topic.html" class="active"><img src="assets/images/question-btn-icon.svg" alt="Question Tab"
+                      class="mr-2"> Questions</a>
+                  <a href="article.html"><img src="assets/images/article-btn-icon-white.svg" alt="Article Tab"
+                      class="mr-2">Articles</a>
+                  <a href="video.html"><img src="assets/images/camera-white.svg" alt="Article Tab"
+                      class="mr-2">Video</a>
+                  <a href="imagestab.html"><img src="assets/images/image-gallery.svg" alt="Images Tab"
+                      class="mr-2">Images</a>
+                </div>
+                <!-- Question Accordian -->
+                <div class="validate_header">
+                  <!-- <h3>Validate Question</h3> -->
+                  <button class="cmn_validate_btn validate-hide">Hide </button>
+                  <button class="cmn_validate_btn validate-show">Show </button>
+                </div>
+                <div id="accordion" class="mb-5 accordion-validate-question">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <div class="list-form aprove">
+                          <button><img src="assets/images/cancel.svg" alt=""></button>
+                          <button><img src="assets/images/checked.svg" alt=""></button>
+                        </div>
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+                        </div>
+                        <button class="btn my_question btn-link collapsed">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="accordion">
+                  <div class="card approve-reject">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+                        </div>
+                        <button class="btn my_question btn-link collapsed" data-toggle="collapse"
+                          data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                          <div class="avtar_outer">
+                            <div class="avtar">
+                              <div class="avtar_name">
+                                <p>VS</p>
+                              </div>
+                              <div class="view_avtar_profile">
+                                <div class="view_avtar_profile_wrap">
+                                  <div class="avtar_name">
+                                    <p>VS</p>
+                                  </div>
+                                  <div class="view_avtar_profile_info">
+                                    <h5>Varun Sareen</h5>
+                                    <a href="javascript:void(0)">Open Detail View</a>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                          </div>
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div class="add_input_area mb-3">
                           <!-- <label for="">New Example</label> -->
                           <div class="form-group">
                             <div class="avatar_name">
                               <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                          </div>
-                          <div class="article_link">
-                            <input type="text" name="add-question" class="form-control" placeholder="add question">
-                            <button type="submit">Submit</button>
-                          </div>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="add_btn add-question-btn">
-                          <button class="cmn_topic_heading"><img src="assets/images/plus.svg" alt="Create Icon"></button>
-                        </div>
-                      </div>
-                     <div class="topic_tabs">
-                         <a href="topic.html" class="active"><img src="assets/images/question-btn-icon.svg" alt="Question Tab" class="mr-2"> Questions</a>
-                         <a href="article.html"><img src="assets/images/article-btn-icon-white.svg" alt="Article Tab" class="mr-2">Articles</a>
-                         <a href="video.html"><img src="assets/images/camera-white.svg" alt="Article Tab" class="mr-2">Video</a>
-                         <a href="imagestab.html"><img src="assets/images/image-gallery.svg" alt="Images Tab" class="mr-2">Images</a>
-                     </div>
-                     <!-- Question Accordian -->
-                     <div class="validate_header">
-                       <!-- <h3>Validate Question</h3> -->
-                        <button class="cmn_validate_btn validate-hide">Hide  </button>
-                        <button class="cmn_validate_btn validate-show">Show  </button>
-                     </div>
-                     <div id="accordion" class="mb-5 accordion-validate-question">
-                       <div class="card">
-                        <div class="card-header" id="headingOne">
-                          <h5 class="mb-0">
-                            <div class="list-form aprove">
-                             <button><img src="assets/images/cancel.svg" alt=""></button>
-                             <button><img src="assets/images/checked.svg" alt=""></button>
                             </div>
-                            <div class="topAccord_area">
-                              <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
+                            <div class="article_link">
+                              <input type="text" name="add-question" class="form-control" placeholder="add question">
+                              <button type="submit">Submit</button>
                             </div>
-                            <button class="btn my_question btn-link collapsed" >
-                              Are young people generally more selfish than their parents and grandparents?
-                            </button>
-                          </h5>
+                          </div>
                         </div>
-                      </div>
-                     </div>
+                        <!-- <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
+                              </div> -->
+                        <div class="accord_hover_icons">
+                          <!-- <button class="like cm-color"><i class="fa fa-heart-o like-icon"></i></button> -->
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
+                          </a>
+                        </div>
+                      </h5>
+                    </div>
 
-                     <div id="accordion">
-                        <div class="card approve-reject">
-                          <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                             
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
-                              </div>
-                              <button class="btn my_question btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                 
-                                <div class="avtar_outer">
-                                  <div class="avtar">
-                                   <div class="avtar_name">
-                                    <p>VS</p>
-                                   </div>
-                                   <div class="view_avtar_profile">
-                                     <div class="view_avtar_profile_wrap">
-                                    <div class="avtar_name">
-                                        <p>VS</p>
-                                    </div>
-                                    <div class="view_avtar_profile_info">
-                                      <h5>Varun Sareen</h5>
-                                      <a href="javascript:void(0)">Open Detail View</a>
-                                    </div>
-                                  </div>
-                               
-                                  </div>
-                                  </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="example_area">
+                          <div class="topAccord_area">
+
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt="">
+                              <span class="tootle-tip">Example explaination <button>here</button> </span>
+                              Example
+                            </p>
+
+                            <ul class="example_list">
+                              <li>
+                                <div class="avtar">
+                                  <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
                                 </div>
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
+
+                                <input type="text" class="exampleHidden" readonly
+                                  value="Are young people generally more selfish than their parents and 0grandparents?">
+                                <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit"
+                                    alt=""></button>
+                                <!-- Are young people generally more selfish than their parents and 0grandparents? -->
+                                <div class="cmn_badge">
+                                  <span class="dot pending_badge bg-primary"></span>
+                                  <p class="badge_text">Pending</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="avtar">
+                                  <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+
+                                </div>
+                                <input type="text" class="exampleHidden" readonly
+                                  value="Are young people generally more selfish than their parents and 0grandparents?">
+                                <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit"
+                                    alt=""></button>
+                                <div class="cmn_badge">
+                                  <span class="dot pending_badge bg-success"></span>
+                                  <p class="badge_text">confirm</p>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="avtar">
+                                  <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                </div>
+                                <input type="text" class="exampleHidden" readonly
+                                  value="Are young people generally more selfish than their parents and 0grandparents?">
+                                <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit"
+                                    alt=""></button>
+                                <div class="cmn_badge">
+                                  <span class="dot pending_badge bg-danger"></span>
+                                  <p class="badge_text">Reject</p>
+                                </div>
+                              </li>
+                              <li class="question_verify">
+                                <div class="avtar">
+                                  <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                </div>
+                                <input type="text" class="exampleHidden" readonly
+                                  value="Are young people generally more selfish than their parents and 0grandparents?">
+                                <div class="list-form aprove">
+                                  <button><img src="assets/images/cancel.svg" alt=""></button>
+                                  <button><img src="assets/images/checked.svg" alt=""></button>
+                                </div>
+                              </li>
+
+                            </ul>
+                            <div class="add_input_area mb-3">
+                              <!-- <label for="">New Example</label> -->
+                              <div class="form-group">
+                                <div class="avatar_name">
+                                  <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
+                                </div>
+                                <div class="article_link">
+                                  <input type="text" name="new-article-url" class="form-control"
+                                    placeholder="add url here">
+                                  <p class="error_message text-danger">Enter a valid link</p>
+                                  <button type="submit">Submit</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">
+                                    <div class="avtar">
+                                      <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                    </div> How living with grandparents looks like
+                                  </h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
+                              </div>
+                              <div class="media approved_article">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">
+                                    <div class="avtar">
+                                      <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
+                                    </div> How living with grandparents looks like
+                                  </h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
+                                <div class="list-form aprove">
+                                  <button><img src="assets/images/cancel.svg" alt=""></button>
+                                  <button><img src="assets/images/checked.svg" alt=""></button>
+                                </div>
+                              </div>
                               <div class="add_input_area mb-3">
-                                <!-- <label for="">New Example</label> -->
+                                <!-- <label for="">New Artile Url</label> -->
                                 <div class="form-group">
                                   <div class="avatar_name">
                                     <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                                 </div>
-                              <div class="article_link">
-                                <input type="text" name="add-question" class="form-control" placeholder="add question">
-                                <button type="submit">Submit</button>
-                              </div>
-                              </div>
-                              </div>
-                              <!-- <div class="add_btn">
-                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
-                              </div> -->
-                              <div class="accord_hover_icons">
-                                <!-- <button class="like cm-color"><i class="fa fa-heart-o like-icon"></i></button> -->
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
-                            </a>
-                            </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                      
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> 
-                                            <span class="tootle-tip">Example explaination <button>here</button> </span> 
-                                            Example</p>
-                                      
-                                        <ul class="example_list">
-                                          <li>
-                                            <div class="avtar">
-                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                            </div>
-                                        
-                                            <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                            <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                            <!-- Are young people generally more selfish than their parents and 0grandparents? -->
-                                            <div class="cmn_badge">
-                                              <span class="dot pending_badge bg-primary"></span>
-                                              <p class="badge_text">Pending</p>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="avtar">
-                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                            
-                                            </div>
-                                            <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                            <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                            <div class="cmn_badge">
-                                              <span class="dot pending_badge bg-success"></span>
-                                              <p class="badge_text">confirm</p>
-                                            </div>
-                                          </li>
-                                          <li>
-                                            <div class="avtar">
-                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                            </div>
-                                            <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                            <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit" alt="" ></button>
-                                            <div class="cmn_badge">
-                                              <span class="dot pending_badge bg-danger"></span>
-                                              <p class="badge_text">Reject</p>
-                                            </div>
-                                          </li>
-                                          <li class="question_verify">
-                                            <div class="avtar">
-                                              <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                            </div>
-                                            <input type="text" class="exampleHidden" readonly value="Are young people generally more selfish than their parents and 0grandparents?">
-                                            <div class="list-form aprove">
-                                              <button><img src="assets/images/cancel.svg" alt=""></button>
-                                              <button><img src="assets/images/checked.svg" alt=""></button>
-                                             </div>
-                                          </li>
-                                         
-                                        </ul>
-                                        <div class="add_input_area mb-3">
-                                          <!-- <label for="">New Example</label> -->
-                                          <div class="form-group">
-                                            <div class="avatar_name">
-                                              <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                                           </div>
-                                        <div class="article_link">
-                                          <input type="text" name="new-article-url" class="form-control" placeholder="add url here">
-                                          <p class="error_message text-danger">Enter a valid link</p>
-                                          <button type="submit">Submit</button>
-                                        </div>
-                                        </div>
-                                        </div>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                        <div class="myarticle">
-                                          <div class="media">
-                                           <div class="aticle_image">
-                                            <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                           </div>
-                                            <div class="media-body">
-                                              <h5 class="mt-0"> <div class="avtar">
-                                                <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                              </div> How living with grandparents looks like</h5>
-                                            <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                              young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                            </div>
-                                          </div>
-                                          <div class="media approved_article">
-                                           <div class="aticle_image">
-                                            <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                           </div>
-                                            <div class="media-body">
-                                              <h5 class="mt-0"> <div class="avtar">
-                                                <img src="assets/images/serch_dummy.png" alt="avtar" class="img-fluid">
-                                              </div> How living with grandparents looks like</h5>
-                                            <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                              young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                            </div>
-                                            <div class="list-form aprove">
-                                              <button><img src="assets/images/cancel.svg" alt=""></button>
-                                              <button><img src="assets/images/checked.svg" alt=""></button>
-                                             </div>
-                                          </div>
-                                            <div class="add_input_area mb-3">
-                                              <!-- <label for="">New Artile Url</label> -->
-                                              <div class="form-group">
-                                                <div class="avatar_name">
-                                                  <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
-                                               </div>
-                                            <div class="article_link">
-                                              <input type="text" name="new-article-url" class="form-control" placeholder="add url here">
-                                              <button type="submit">Submit</button>
-                                            </div>
-                                            </div>
-                                            </div>
-                                          <div class="add_btn">
-                                            <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                          </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="video_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                          <div class="media-body">
-                                            <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                            <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                              <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                          </div>
-                                          
-                                        </div>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                        </div>
-                                      </div>
                                   </div>
+                                  <div class="article_link">
+                                    <input type="text" name="new-article-url" class="form-control"
+                                      placeholder="add url here">
+                                    <button type="submit">Submit</button>
+                                  </div>
+                                </div>
                               </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="card card-blinking">
-                          <div class="card-header" id="headingtow">
-                            <h5 class="mb-0">
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
-                               
-                              </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsetow" aria-expanded="true" aria-controls="collapsetow">
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
-                              <div class="accord_hover_icons">
-                                <!-- <button class="like cm-color"><i class="fa fa-heart-o like-icon"></i></button> -->
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
-                            </a>
-                            </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapsetow" class="collapse" aria-labelledby="headingtow" data-parent="#accordion">
-                            <div class="card-body">
                               <div class="add_btn">
-                                <button class="cmn_topic_heading"> Add Question</button>
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
                               </div>
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
-                                        <ul class="example_list">
-                                          <li><p>Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                        </ul>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0">How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </div>
-                                        </div>
-                                        <a href="article.html" class="cm-color sairaM">See More
-                                          <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                           </div>
                         </div>
-                        <div class="card">
-                          <div class="card-header" id="headingthree">
-                            <h5 class="mb-0">
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
-                               
-                              </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
-                              <div id="inner-report">
-                                  <div class="cmn_report_msg success"><img src="assets/images/signboard.svg" alt="" class="img-success"><span class="text-success">Thanks for your feedback.</span> </div>
-                                  <div class="cmn_report_msg error"><img src="assets/images/warning.svg" alt="" class="img-error"><span class="text-danger">Sorry There si an error</span> </div>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
                                 </div>
-                              <div class="accord_hover_icons">
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt=""></a>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-blinking">
+                    <div class="card-header" id="headingtow">
+                      <h5 class="mb-0">
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+
+                        </div>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsetow"
+                          aria-expanded="true" aria-controls="collapsetow">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div class="accord_hover_icons">
+                          <!-- <button class="like cm-color"><i class="fa fa-heart-o like-icon"></i></button> -->
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
+                          </a>
+                        </div>
+                      </h5>
+                    </div>
+
+                    <div id="collapsetow" class="collapse" aria-labelledby="headingtow" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="add_btn">
+                          <button class="cmn_topic_heading"> Add Question</button>
+                        </div>
+                        <div class="example_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
+                            <ul class="example_list">
+                              <li>
+                                <p>Are young people generally more selfish than their parents and 0grandparents?</p>
+                              </li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                            </ul>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">How living with grandparents looks like</h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
+                              </div>
+                              <a href="article.html" class="cm-color sairaM">See More
+                                <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingthree">
+                      <h5 class="mb-0">
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+
+                        </div>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsethree"
+                          aria-expanded="true" aria-controls="collapsethree">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div id="inner-report">
+                          <div class="cmn_report_msg success"><img src="assets/images/signboard.svg" alt=""
+                              class="img-success"><span class="text-success">Thanks for your feedback.</span> </div>
+                          <div class="cmn_report_msg error"><img src="assets/images/warning.svg" alt=""
+                              class="img-error"><span class="text-danger">Sorry There si an error</span> </div>
+                        </div>
+                        <div class="accord_hover_icons">
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt=""></a>
+                          <div id="report" style="display: none;">
+                            <button class="cmn_drop_btn"><img src="assets/images/pencil.svg" alt="" class="mr-2"
+                                width="20px"> Edit </span></button>
+                            <button class="cmn_drop_btn cmn_delete_btn"><img src="assets/images/delete.svg" alt=""
+                                class="mr-2" width="20px"> Delete </button>
+                            <button class="cmn_drop_btn main-btn"><img src="assets/images/report-icon.svg" alt=""
+                                class="mr-2" width="20px"> Report <span class="side-arrow-btn"><img
+                                  src="assets/images/down_arrow.svg" alt=""></span></button>
+                            <ul class="report-drop">
+                              <li><button class="sub-reportbtn"><img src="assets/images/translation-icon.svg" alt=""
+                                    class="mr-2" width="20px"> Bad Translation</button></li>
+                              <li><button class="sub-reportbtn"><img src="assets/images/forbidden.svg" alt=""
+                                    class="mr-2" width="20px"> Not Pertinenet</button></li>
+                              <li><button class="sub-reportbtn"><img src="assets/images/talkative.svg" alt=""
+                                    class="mr-2" width="20px"> Rough Language</button></li>
+                              <li><button class="sub-reportbtn"><img src="assets/images/somethingElse.svg" alt=""
+                                    class="mr-2" width="20px"> Something Else</button></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </h5>
+                    </div>
+
+                    <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="add_btn">
+                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                            Question</button>
+                        </div>
+                        <div class="example_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
+                            <ul class="example_list">
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                            </ul>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">How living with grandparents looks like</h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
+                              </div>
+                              <a href="article.html" class="cm-color sairaM">See More
+                                <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="undo_btn">
+                      Click here to undo your car.
+                    </div>
+                  </div>
+                  <div class="card confirmCard">
+                    <div class="card-header" id="headingtow">
+                      <h5 class="mb-0">
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+                        </div>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour"
+                          aria-expanded="true" aria-controls="collapsetow">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div class="accord_hover_icons">
+                          <div class=" cardBadge bg-success">Confirmed</div>
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
+
                             <div id="report" style="display: none;">
-                              <button class="cmn_drop_btn"><img src="assets/images/pencil.svg" alt="" class="mr-2" width="20px"> Edit </span></button>
-                                <button class="cmn_drop_btn cmn_delete_btn"><img src="assets/images/delete.svg" alt="" class="mr-2" width="20px"> Delete </button>
-                              <button class="cmn_drop_btn main-btn"><img src="assets/images/report-icon.svg" alt="" class="mr-2" width="20px"> Report <span class="side-arrow-btn"><img src="assets/images/down_arrow.svg" alt=""></span></button>
-                                <ul class="report-drop">
-                                  <li><button class="sub-reportbtn" ><img src="assets/images/translation-icon.svg" alt="" class="mr-2" width="20px"> Bad Translation</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/forbidden.svg" alt="" class="mr-2" width="20px"> Not Pertinenet</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/talkative.svg" alt="" class="mr-2" width="20px"> Rough Language</button></li>
-                                  <li><button class="sub-reportbtn"><img src="assets/images/somethingElse.svg" alt="" class="mr-2" width="20px"> Something Else</button></li>
-                                </ul>
-                               </div>
+                              <p>Report</p>
                             </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordion">
-                            <div class="card-body">
-                              <div class="add_btn">
-                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
-                              </div>
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
-                                        <ul class="example_list">
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                        </ul>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0">How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </div>
-                                        </div>
-                                        <a href="article.html" class="cm-color sairaM">See More
-                                          <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                          </div>
-                          <div class="undo_btn">
-                            Click here to undo your car.         
-                          </div>
+
+                          </a>
                         </div>
-                         <div class="card confirmCard">
-                          <div class="card-header" id="headingtow">
-                            <h5 class="mb-0">
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
-                              </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsetow">
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
-                              <div class="accord_hover_icons">
-                                <div class=" cardBadge bg-success">Confirmed</div>
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
-                             
-                                    <div id="report" style="display: none;">
-                                     <p>Report</p>
-                                      </div>
-                                
-                            </a>
-                            </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapsefour" class="collapse" aria-labelledby="headingtow" data-parent="#accordion">
-                            <div class="card-body">
-                              <div class="add_btn">
-                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
-                              </div>
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
-                                        <ul class="example_list">
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                        </ul>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0">How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </div>
-                                        </div>
-                                        <a href="article.html" class="cm-color sairaM">See More
-                                          <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
+                      </h5>
+                    </div>
+
+                    <div id="collapsefour" class="collapse" aria-labelledby="headingtow" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="add_btn">
+                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                            Question</button>
+                        </div>
+                        <div class="example_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
+                            <ul class="example_list">
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                            </ul>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
                             </div>
                           </div>
                         </div>
-                        <div class="card rejectCard">
-                          <div class="card-header" id="headingfour">
-                            <h5 class="mb-0">
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">How living with grandparents looks like</h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
                               </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true" aria-controls="collapsefour">
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
-                              <div class="accord_hover_icons">
-                                <div class=" cardBadge bg-danger">Rejected</div>
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
-                             
-                                    <div id="report" style="display: none;">
-                                     <p>Report</p>
-                                      </div>
-                                
-                            </a>
-                            </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapsefive" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
-                            <div class="card-body">
+                              <a href="article.html" class="cm-color sairaM">See More
+                                <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
                               <div class="add_btn">
-                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
                               </div>
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
-                                        <ul class="example_list">
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                        </ul>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0">How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                            <a href="article.html" class="cm-color sairaM">See More
-                                              <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                          </div>
-                                          
-                                        </div>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                           </div>
                         </div>
-                        <div class="card">
-                          <div class="card-header" id="headingfive">
-                            <h5 class="mb-0">
-                              <div class="topAccord_area">
-                                <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt=""> Question 1</p>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
                               </div>
-                              <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="true" aria-controls="collapsefive">
-                                Are young people generally more selfish than their parents and grandparents?
-                              </button>
-                              <div class="accord_hover_icons">
-                                <div class=" cardBadge bg-primary">Pending</div>
-                                <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
-                                <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
-                                <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
-                             
-                                    <div id="report" style="display: none;">
-                                     <p>Report</p>
-                                      </div>
-                                
-                            </a>
-                            </div>
-                            </h5>
-                          </div>
-                      
-                          <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
-                            <div class="card-body">
                               <div class="add_btn">
-                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Question</button>
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
                               </div>
-                                <div class="example_area">
-                                    <div class="topAccord_area">
-                                        <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
-                                        <ul class="example_list">
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                          <li>Are young people generally more selfish than their parents and 0grandparents?</li>
-                                        </ul>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Example</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="article_area">
-                                  <div class="topAccord_area">
-                                      <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt=""> Article</p>
-                                      <div class="myarticle">
-                                        <div class="media">
-                                         <div class="aticle_image">
-                                          <img class="mr-3" src="assets/images/blog-sidecate.png" alt="Generic placeholder image">
-                                         </div>
-                                          <div class="media-body">
-                                            <h5 class="mt-0">How living with grandparents looks like</h5>
-                                          <p>Are young people generally more selfish than their parents and 0grandparents? Are 
-                                            young people generally more selfish than their parents and 0grandparents? Are young people generally more selfish than their parents and 0grandparents?</p>
-                                          </div>
-                                        </div>
-                                        <a href="article.html" class="cm-color sairaM">See More
-                                          <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        <div class="add_btn">
-                                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Article</button>
-                                        </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="video_area">
-                                <div class="topAccord_area">
-                                    <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
-                                    <div class="myarticle">
-                                      <div class="media">
-                                        <div class="media-body">
-                                          <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
-                                          <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
-                                            <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
-                                        </div>
-                                        
-                                      </div>
-                                      <div class="add_btn">
-                                        <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add Video</button>
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                  </div>
-                    <div class="blog_navigation text-center mt-5">
-                      <ul class="pagination justify-content-center">
-                        <li class="page-item">
-                          <a class="page-link page_link_btn montM" href="#"
-                            >Prev</a
-                          >
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link montSB active" href="#">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link montSB" href="#">2</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link montSB" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link montSB" href="#">...</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link montSB" href="#">10</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="page-link page_link_btn montM" href="#"
-                            >Next</a
-                          >
-                        </li>
-                      </ul>
                     </div>
-                    <div class="suggest_question space">
-                      <h3 class="sairaR mb-4">Suggest <span class="cm-color">A Question</span></h3>
-                      <div class="suggest_input_area">
-                        <form>
-                          <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Suggest Question"></textarea>
+                  </div>
+                  <div class="card rejectCard">
+                    <div class="card-header" id="headingfour">
+                      <h5 class="mb-0">
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+                        </div>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefive"
+                          aria-expanded="true" aria-controls="collapsefour">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div class="accord_hover_icons">
+                          <div class=" cardBadge bg-danger">Rejected</div>
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
+
+                            <div id="report" style="display: none;">
+                              <p>Report</p>
+                            </div>
+
+                          </a>
+                        </div>
+                      </h5>
+                    </div>
+
+                    <div id="collapsefive" class="collapse" aria-labelledby="headingfour" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="add_btn">
+                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                            Question</button>
+                        </div>
+                        <div class="example_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
+                            <ul class="example_list">
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                            </ul>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
+                            </div>
                           </div>
-                          <a href="javascript:void(0)" class="cm_bg cm-btn text-white">Submit</a>
-                        </form>
+                        </div>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">How living with grandparents looks like</h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                  <a href="article.html" class="cm-color sairaM">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-              </div>
-              <div class="col-md-4">
-                <div class="sidebar_ads">
-                  <img
-                    src="assets/images/sidebar_ads.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-                <div class="side_bar">
-                  <div class="side_card">
-                    <h3 class="sairaR">Related Topics</h3>
-                    <ul>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">topic</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Topic</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </li>
-                    </ul>
-                    <a class="see_more sairaM"
-                      >See All<i class="fa fa-angle-down ml-2"></i
-                    ></a>
-                    <a class="see_more seeLess sairaM"
-                    >See Less<i class="fa fa-angle-up ml-2"></i
-                  ></a>
                   </div>
-                </div>
-                <div class="side_bar">
-                  <div class="side_card">
-                    <h3 class="sairaR">Related Category</h3>
-                    <ul>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
+                  <div class="card">
+                    <div class="card-header" id="headingfive">
+                      <h5 class="mb-0">
+                        <div class="topAccord_area">
+                          <p class="cmn_topic_heading"><img src="assets/images/question-heading-icon.svg" alt="">
+                            Question 1</p>
+                        </div>
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapsefive"
+                          aria-expanded="true" aria-controls="collapsefive">
+                          Are young people generally more selfish than their parents and grandparents?
+                        </button>
+                        <div class="accord_hover_icons">
+                          <div class=" cardBadge bg-primary">Pending</div>
+                          <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
+                          <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
+
+                            <div id="report" style="display: none;">
+                              <p>Report</p>
                             </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">topic</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Topic</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li class="hideList_item">
-                        <a href="javascript:void(0)">
-                          <div class="card_list">
-                            <div class="card_list_img">
-                              <img
-                                src="assets/images/blog-sidecate.png"
-                                alt=""
-                              />
-                            </div>
-                            <div class="card_list_text">
-                              <p>
-                                Lifestyle brings big changes in people lives.?
-                              </p>
-                              <p class="post_type">Category</p>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </li>
-                    </ul>
-                    <a class="see_more sairaM"
-                      >See All<i class="fa fa-angle-down ml-2"></i
-                    ></a>
-                    <a class="see_more seeLess sairaM"
-                    >See Less<i class="fa fa-angle-up ml-2"></i
-                  ></a>
-                  </div>
-                </div>
-                <div class="side_bar">
-                  <div class="side_card">
-                    <h3 class="sairaR">Share On</h3>
-                    <ul class="social_links">
-                      <li class="links facebook">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                      </li>
-                      <li class="links instagram">
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                      </li>
-                      <li class="links youtube">
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                      </li>
-                      <li class="links twitter">
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="side_bar download_sidebar cm_bg">
-                  <div class="side_card text-white">
-                    <h3 class="sairaR text-white">Download App <br />Today</h3>
-                    <div class="download_cont_block">
-                      <p>Discover the right topic here</p>
-                      <ul class="download_app_btns">
-                        <li class="tag_block">
-                          <a class="" href="#"
-                            ><img
-                              src="assets/images/Google Play Badge.svg"
-                              alt=""
-                              class="img-fluid"
-                          /></a>
-                        </li>
-                        <li class="tag_block">
-                          <a class="" href="#"
-                            ><img
-                              src="assets/images/App Store Badge.svg"
-                              alt=""
-                              class="img-fluid"
-                          /></a>
-                        </li>
-                      </ul>
+
+                          </a>
+                        </div>
+                      </h5>
                     </div>
-                  </div>
-                </div>
-                <div class="sidebar_ads">
-                  <img
-                    src="assets/images/sidebar_ads.png"
-                    alt=""
-                    class="img-fluid"
-                  />
-                </div>
-                <style>
-                  .download_sidebar a{
-                    margin: 30px 0;
-                  }
-                  </style>
-                <div class="side_bar download_sidebar bg-white">
-                  <div class="side_card ">
-                    <h3 class="sairaR">Suggest Topic</h3>
-                    <div class="download_cont_block">
-                      <p>If you want to Suggest us any topic. Click below button</p>
-                      <a href="javascript:void(0)" class=" cm-btn cm_bg text-white">Suggest Topcs</a>
+
+                    <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordion">
+                      <div class="card-body">
+                        <div class="add_btn">
+                          <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                            Question</button>
+                        </div>
+                        <div class="example_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt=""> Example</p>
+                            <ul class="example_list">
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                              <li>Are young people generally more selfish than their parents and 0grandparents?</li>
+                            </ul>
+                            <div class="add_btn">
+                              <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                Example</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="article_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg" alt="">
+                              Article</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="aticle_image">
+                                  <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                    alt="Generic placeholder image">
+                                </div>
+                                <div class="media-body">
+                                  <h5 class="mt-0">How living with grandparents looks like</h5>
+                                  <p>Are young people generally more selfish than their parents and 0grandparents? Are
+                                    young people generally more selfish than their parents and 0grandparents? Are young
+                                    people generally more selfish than their parents and 0grandparents?</p>
+                                </div>
+                              </div>
+                              <a href="article.html" class="cm-color sairaM">See More
+                                <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Article</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="video_area">
+                          <div class="topAccord_area">
+                            <p class="cmn_topic_heading"><img src="assets/images/camera.svg" alt=""> Video</p>
+                            <div class="myarticle">
+                              <div class="media">
+                                <div class="media-body">
+                                  <h5 class="mt-0 mb-3">How living with grandparents looks like</h5>
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                                  <a href="video.html" class="sairaM mt-2 d-inline-block cm-color">See More
+                                    <img src="assets/images/right-arrow.svg" alt="" class="ml-1"></a>
+                                </div>
+
+                              </div>
+                              <div class="add_btn">
+                                <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
+                                  Video</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-        <!-- Topic section ends here  -->
-      </div>
-
-      <!-- Main Body End -->
-      <!-- Footer Start -->
-      <footer class="footer">
-        <div class="footer_inner py-5">
-          <div class="container">
-            <div class="footer_blocks">
-              <div class="row">
-                <div class="col-md-4 mb-4">
-                  <div class="footer_box">
-                    <a href="index.html" class="sairaM footer_logo"
-                      >Top<span class="cm-color">Pick</span></a
-                    >
-                    <p>
-                      These people envy me for having a lifestyle they don’t
-                      have, but the truth is, sometimes I envy their lifestyle
-                      instead. Struggling to sell one multi-million
-                    </p>
-                  </div>
+              <div class="blog_navigation text-center mt-5">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a class="page-link page_link_btn montM" href="#">Prev</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link montSB active" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link montSB" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link montSB" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link montSB" href="#">...</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link montSB" href="#">10</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link page_link_btn montM" href="#">Next</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="suggest_question space">
+                <h3 class="sairaR mb-4">Suggest <span class="cm-color">A Question</span></h3>
+                <div class="suggest_input_area">
+                  <form>
+                    <div class="form-group">
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        placeholder="Suggest Question"></textarea>
+                    </div>
+                    <a href="javascript:void(0)" class="cm_bg cm-btn text-white">Submit</a>
+                  </form>
                 </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box">
-                    <h5 class="sairaM footer_head">CATEGORIES</h5>
-                    <ul class="footer_menu">
-                      <li><a href="#">Fashion</a></li>
-                      <li><a href="#">Food</a></li>
-                      <li><a href="#">Sport</a></li>
-                      <li><a href="#">Technology</a></li>
-                      <li><a href="#">Politics</a></li>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="sidebar_ads">
+                <img src="assets/images/sidebar_ads.png" alt="" class="img-fluid" />
+              </div>
+              <div class="side_bar">
+                <div class="side_card">
+                  <h3 class="sairaR">Related Topics</h3>
+                  <ul>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">topic</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Topic</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    </li>
+                  </ul>
+                  <a class="see_more sairaM">See All<i class="fa fa-angle-down ml-2"></i></a>
+                  <a class="see_more seeLess sairaM">See Less<i class="fa fa-angle-up ml-2"></i></a>
+                </div>
+              </div>
+              <div class="side_bar">
+                <div class="side_card">
+                  <h3 class="sairaR">Related Category</h3>
+                  <ul>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">topic</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Topic</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li class="hideList_item">
+                      <a href="javascript:void(0)">
+                        <div class="card_list">
+                          <div class="card_list_img">
+                            <img src="assets/images/blog-sidecate.png" alt="" />
+                          </div>
+                          <div class="card_list_text">
+                            <p>
+                              Lifestyle brings big changes in people lives.?
+                            </p>
+                            <p class="post_type">Category</p>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    </li>
+                  </ul>
+                  <a class="see_more sairaM">See All<i class="fa fa-angle-down ml-2"></i></a>
+                  <a class="see_more seeLess sairaM">See Less<i class="fa fa-angle-up ml-2"></i></a>
+                </div>
+              </div>
+              <div class="side_bar">
+                <div class="side_card">
+                  <h3 class="sairaR">Share On</h3>
+                  <ul class="social_links">
+                    <li class="links facebook">
+                      <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="links instagram">
+                      <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="links youtube">
+                      <a href="#"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li class="links twitter">
+                      <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="side_bar download_sidebar cm_bg">
+                <div class="side_card text-white">
+                  <h3 class="sairaR text-white">Download App <br />Today</h3>
+                  <div class="download_cont_block">
+                    <p>Discover the right topic here</p>
+                    <ul class="download_app_btns">
+                      <li class="tag_block">
+                        <a class="" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                            class="img-fluid" /></a>
+                      </li>
+                      <li class="tag_block">
+                        <a class="" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                            class="img-fluid" /></a>
+                      </li>
                     </ul>
                   </div>
                 </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box">
-                    <h5 class="sairaM footer_head">INFORMATION</h5>
-                    <ul class="footer_menu">
-                      <li><a href="#">Site Map </a></li>
-                      <li><a href="#">Search Terms </a></li>
-                      <li><a href="#">Advanced Search</a></li>
-                      <li><a href="/about.html">About Us</a></li>
-                      <li><a href="#">Contact Us</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col mb-4 footer_cmn_block">
-                  <div class="footer_box last_footer_box">
-                    <h5 class="sairaM footer_head">Suggest Topic</h5>
-                    <a href="javascript:void(0)" class="cm_bg cm-btn text-white d-inline-block">Suggest Topcs</a>
+              </div>
+              <div class="sidebar_ads">
+                <img src="assets/images/sidebar_ads.png" alt="" class="img-fluid" />
+              </div>
+              <style>
+                .download_sidebar a {
+                  margin: 30px 0;
+                }
+              </style>
+              <div class="side_bar download_sidebar bg-white">
+                <div class="side_card ">
+                  <h3 class="sairaR">Suggest Topic</h3>
+                  <div class="download_cont_block">
+                    <p>If you want to Suggest us any topic. Click below button</p>
+                    <a href="javascript:void(0)" class=" cm-btn cm_bg text-white">Suggest Topcs</a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Copyright -->
-        <div class="copyright cm_bg py-3">
-          <div class="container-fluid">
-            <p class="text-center text-white montM">
-              © 2021 All Rights Reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-      <!-- Footer End -->
-      <!-- Add List Model -->
-      <!-- The Modal -->
-      <div class="modal list-model"  id="exampleModalCenter">
-        <div class=" modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <p>Add to list</p>
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="list-form">
-                <label class="list-cont">Watch Later
-                  <input type="checkbox" checked="checked">
-                  <span class="checkmark"></span>
-                </label>
-                <label class="list-cont">Varun
-                  <input type="checkbox">
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-              <div class="new-list">
-                <div class="create-list-tab">
-                  <h6>New List</h6>
-                  <input type="text" name="listTitle" id="listTitle" placeholder="Title">
-                  <div class="btn-list">
-                    <button class="listcancel cmn-accord-btn">Cancel</button>
-                    <button class="listcreate cmn-accord-btn">Create</button>
-                  </div>
-                </div>
-                <button class="new-list-btn">+ Create New List </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
+      </section>
+      <!-- Topic section ends here  -->
     </div>
-    <!-- Wrapper End -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="js/crousal.js"></script>
-    <script src="js/custom.js"></script>
-    <script>
-      var seeMoreCard = document.getElementsByClassName("see_more");
-      for( var i = 0; i < seeMoreCard.length; i++ ){
-        seeMoreCard[i].addEventListener('click', function(){
-           let coosetsideBar = this.closest(".side_card");
-           let cosetsideattr = coosetsideBar.getAttribute("class");
-           if(cosetsideattr === "side_card showFull_list")
-           {
-             coosetsideBar.classList.remove("showFull_list");
-           }
-           else{
-            coosetsideBar.classList.add("showFull_list");
-           }
-        } )
-      };
-      var copy_btn = document.getElementsByClassName("copy");
-      for(var cpy_var = 0; cpy_var < copy_btn.length; cpy_var++){
-          copy_btn[cpy_var].addEventListener('click', function(){
-            var cpy_container = document.createElement("span");
-            var cpy_message = document.createTextNode("Copied");
-            cpy_container.className = "copied_message";
-            cpy_container.appendChild(cpy_message);
-            this.appendChild(cpy_container);
-            setTimeout(() => {
-              cpy_container.remove();
-          }, 1500);
-          });
-      };
-      // Add btn
-      var addbtn = document.getElementsByClassName("add_btn");
-      for(var btnI = 0; btnI < addbtn.length; btnI++){
-        let addbtnTextNode = document.createElement("button")
-          let addbtnText = document.createTextNode("Cancel");
-          addbtnTextNode.className =  "cancelbtn cmn-accord-btn";
-          addbtnTextNode.append(addbtnText);
-        addbtn[btnI].addEventListener('click', function(){
-          var showAddTab =  this.previousElementSibling;
-          var findInput = showAddTab.getAttribute('class');
-          var rotatebtn = this.querySelector(".cmn_topic_heading");
-          showAddTab.append(addbtnTextNode);
-          if(findInput === 'add_input_area_dropdown mb-3 show'){
-            showAddTab.classList.remove("show");
-            rotatebtn.style.transform = "rotate(0deg)";
-          }
-          else{
-            showAddTab.classList.add("show");
-            showAddTab.append(addbtnTextNode);
-            rotatebtn.style.transform = "rotate(45deg)";
-          }
-        })
-      };
-      // add question
-      var adddropbtn = document.querySelectorAll(".add_input_area_dropdown  .inner-dropdown .inner-dropdown-item");
-      for(var adddropbtnI = 0; adddropbtnI < adddropbtn.length; adddropbtnI++){
-        adddropbtn[adddropbtnI].addEventListener('click', function(){
-          var adddropbtnAtr = this.getAttribute('data-source');
-          let closestElement = this.parentNode.parentNode;
-          let adddropbtnAtrInput = closestElement.nextSibling.nextSibling;
-          let adddropbtnAtrInputAtr = adddropbtnAtrInput.getAttribute("data-target")
-          if(adddropbtnAtr === adddropbtnAtrInputAtr){
-            
-            adddropbtnAtrInput.classList.toggle("show")
-          }
-        })
-      };
+    <!-- Main Body End -->
+    <!-- Footer Start -->
+    <footer class="footer">
+      <div class="footer_inner py-5">
+        <div class="container">
+          <div class="footer_blocks">
+            <div class="row">
+              <div class="col-md-4 mb-4">
+                <div class="footer_box">
+                  <a href="index.html" class="sairaM footer_logo">Top<span class="cm-color">Pick</span></a>
+                  <p>
+                    These people envy me for having a lifestyle they don’t
+                    have, but the truth is, sometimes I envy their lifestyle
+                    instead. Struggling to sell one multi-million
+                  </p>
+                </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box">
+                  <h5 class="sairaM footer_head">CATEGORIES</h5>
+                  <ul class="footer_menu">
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Sport</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Politics</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box">
+                  <h5 class="sairaM footer_head">INFORMATION</h5>
+                  <ul class="footer_menu">
+                    <li><a href="#">Site Map </a></li>
+                    <li><a href="#">Search Terms </a></li>
+                    <li><a href="#">Advanced Search</a></li>
+                    <li><a href="/about.html">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col mb-4 footer_cmn_block">
+                <div class="footer_box last_footer_box">
+                  <h5 class="sairaM footer_head">Suggest Topic</h5>
+                  <a href="javascript:void(0)" class="cm_bg cm-btn text-white d-inline-block">Suggest Topcs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copyright -->
+      <div class="copyright cm_bg py-3">
+        <div class="container-fluid">
+          <p class="text-center text-white montM">
+            © 2021 All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+    <!-- Add List Model -->
+    <!-- The Modal -->
+    <div class="modal list-model" id="exampleModalCenter">
+      <div class=" modal-dialog modal-dialog-centered">
+        <div class="modal-content">
 
-      // avtar
-      var header_avtar = document.getElementsByClassName("btn-link");
-      for(var avtarI = 0; avtarI < header_avtar.length; avtarI++){
-        header_avtar[avtarI].addEventListener('click', function(){
-          // var getAvtar = this.querySelector(".btn-link");
-          var getAvtar = this.getAttribute('class');
-          console.log(getAvtar);
-          var getAvtarImg = this.querySelector(".avtar");
-          if( getAvtar === "btn my_question btn-link collapsed"){
-            getAvtarImg.style.display = "block";
-          }
-          else{
-            getAvtarImg.style.display = "none";
-          }
-        })
-      };
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <p>Add to list</p>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
 
-      // Like button functionality
-      var likeButton = document.querySelectorAll('button.like');
-      for(var like = 0; like < likeButton.length; like++){
-        likeButton[like].addEventListener('click', function(){
-          var likeIcon = this.querySelector('.like-icon');
-          var likeIcon_Attr = likeIcon.getAttribute('class');
-          if(likeIcon_Attr === 'fa fa-heart-o like-icon'){
-            likeIcon.setAttribute('class', 'fa fa-heart like-icon')
-          }
-          else{
-            likeIcon.setAttribute('class', 'fa fa-heart-o like-icon')
-          }
-          console.log(likeIcon);
-        })
-      };
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="list-form">
+              <label class="list-cont">Watch Later
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+              </label>
+              <label class="list-cont">Varun
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="new-list">
+              <div class="create-list-tab">
+                <h6>New List</h6>
+                <input type="text" name="listTitle" id="listTitle" placeholder="Title">
+                <div class="btn-list">
+                  <button class="listcancel cmn-accord-btn">Cancel</button>
+                  <button class="listcreate cmn-accord-btn">Create</button>
+                </div>
+              </div>
+              <button class="new-list-btn">+ Create New List </button>
+            </div>
+          </div>
 
-      // edit accordion items
-      var accordEditBtn = document.getElementsByClassName('accord-item-edit');
-      for(var pencil = 0; pencil < accordEditBtn.length; pencil++){
+        </div>
+      </div>
+    </div>
 
-        // create save and cancel icon
-        var saveBtn = document.createElement("button");
-          var saveBtnText = document.createTextNode("Update");
-          var cancelBtn = document.createElement("button");
-          var cancelBtnText = document.createTextNode("Cancel");
-          let deletebtn = document.createElement("button");
-          let deletebtntext= document.createTextNode("Delete");
-          saveBtn.className = "savebtn cmn-accord-btn";
-          cancelBtn.className =  "cancelbtn cmn-accord-btn";
-          deletebtn.className = "deletebtn cmn-accord-btn";
-          saveBtn.append(saveBtnText);
-          cancelBtn.append(cancelBtnText);
-          deletebtn.append(deletebtntext);
-          
-        //   var accordEditBtnIcon = accordEditBtn[pencil].getElementsByClassName('pencilEdit');
-        //   // remove readable
-        //   for(var pencilIcon2 = 0; pencilIcon2 < accordEditBtnIcon.length; pencilIcon2++){
-        //     accordEditBtnIcon[pencilIcon2].addEventListener('click', function(){
-        //       console.log(this);
-        //     });
-        //   }
-          // on click
-        accordEditBtn[pencil].addEventListener('click', function(){
-          let closestElement = this.previousSibling.previousSibling;
-          closestElement.removeAttribute('readonly');
-          let findParent = this.parentNode;
-          findParent.append(saveBtn);
-          findParent.append(cancelBtn);
-          findParent.append(deletebtn);
-          this.style.display = "none";
-          var cancelbtnclose = findParent.querySelector(".cancelbtn");
-          cancelbtnclose.addEventListener('click', function(){
-            let findParent2 = this.parentNode;
-          });
-        })
-      }
+  </div>
+  <!-- Wrapper End -->
 
-      // create newlist btn
-      var createlist_btn = document.querySelector('.new-list-btn');
-      createlist_btn.addEventListener('click', function(){
-        let createPrevList = this.parentNode;
-        let findChildList = createPrevList.querySelector('.create-list-tab');
-        let findChildListAttr = findChildList.getAttribute('class');
-        console.log(findChildListAttr);
-        if(findChildListAttr !== "create-list-tab show"){
-          findChildList.classList.add("show");
-          this.style.display="none";
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="js/crousal.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    var seeMoreCard = document.getElementsByClassName("see_more");
+    for (var i = 0; i < seeMoreCard.length; i++) {
+      seeMoreCard[i].addEventListener('click', function () {
+        let coosetsideBar = this.closest(".side_card");
+        let cosetsideattr = coosetsideBar.getAttribute("class");
+        if (cosetsideattr === "side_card showFull_list") {
+          coosetsideBar.classList.remove("showFull_list");
         }
-        let cancellistbtn = findChildList.querySelector(".listcancel ");
-        console.log(cancellistbtn);
-        cancelBtn.addEventListener('click', function(){
-          if(findChildListAttr === "create-list-tab show"){
-            findChildList.classList.remove("show");
-           this.style.display="block";
-          }
-        })
+        else {
+          coosetsideBar.classList.add("showFull_list");
+        }
       })
-
-
-      // report btn
-      // var report = document.getElementById("report");
-      var getreportBtn = document.querySelector("#report .main-btn");
-      getreportBtn.addEventListener("click", function(){
-        console.log(this);
-        let getparent = this.parentNode;
-        console.log(getparent);
-        getparent.classList.toggle("report-wrap-show");
+    };
+    var copy_btn = document.getElementsByClassName("copy");
+    for (var cpy_var = 0; cpy_var < copy_btn.length; cpy_var++) {
+      copy_btn[cpy_var].addEventListener('click', function () {
+        var cpy_container = document.createElement("span");
+        var cpy_message = document.createTextNode("Copied");
+        cpy_container.className = "copied_message";
+        cpy_container.appendChild(cpy_message);
+        this.appendChild(cpy_container);
+        setTimeout(() => {
+          cpy_container.remove();
+        }, 1500);
       });
-
-      // Card delete btn
-      var deleteCard = document.getElementsByClassName("cmn_delete_btn");
-      for(var deleteI = 0; deleteI < deleteCard.length; deleteI++){
-        deleteCard[deleteI].addEventListener('click', function(){
-          let parentNodeFind = this.closest(".card");
-          let parentNodeFind2 = parentNodeFind.querySelector(".undo_btn");
-
-          parentNodeFind.classList.add("red-bg");
-
-          setTimeout(() => {
-            parentNodeFind.classList.add("delete");
-            parentNodeFind2.classList.add("show");
-            parentNodeFind.classList.remove("red-bg");
-            
-          }, 2000);
-
-          setTimeout(() => {
-            parentNodeFind2.classList.remove("show");
-            parentNodeFind.classList.add("delete-collapse");
-          }, 5000);
-
-          console.log(parentNodeFind2)
-        })
-      }
-
-      // undo card
-      var undu_btn = document.getElementsByClassName("undo_btn");
-      for(var undoI = 0; undoI < undu_btn.length; undoI++){
-        undu_btn[undoI].addEventListener('click', function(){
-          let parentNodeFind = this.closest(".card");
-          parentNodeFind.classList.remove("delete");
-          parentNodeFind.classList.remove("delete-collapse");
-          this.classList.remove("show");
-          console.log(parentNodeFind)
-        })
-      }
-
-      // validate hide question
-      let validateHide = document.querySelector('.validate-hide');
-      let validateShow = document.querySelector('.validate-show');
-      let accordValidate = document.querySelector('.accordion-validate-question');
-      validateShow.classList.add("hide-card");
-      validateHide.addEventListener('click', function(){
-        accordValidate.classList.add("opacity-card-hide");
-        setTimeout(() => {
-          accordValidate.classList.remove("opacity-card-hide");
-          accordValidate.classList.add("hide-card");
-          validateShow.classList.remove("hide-card");
-          validateHide.classList.add("hide-card");
-          }, 2000);
+    };
+    // Add btn
+    var addbtn = document.getElementsByClassName("add_btn");
+    for (var btnI = 0; btnI < addbtn.length; btnI++) {
+      let addbtnTextNode = document.createElement("button")
+      let addbtnText = document.createTextNode("Cancel");
+      addbtnTextNode.className = "cancelbtn cmn-accord-btn";
+      addbtnTextNode.append(addbtnText);
+      addbtn[btnI].addEventListener('click', function () {
+        var showAddTab = this.previousElementSibling;
+        var findInput = showAddTab.getAttribute('class');
+        var rotatebtn = this.querySelector(".cmn_topic_heading");
+        showAddTab.append(addbtnTextNode);
+        if (findInput === 'add_input_area_dropdown mb-3 show') {
+          showAddTab.classList.remove("show");
+          rotatebtn.style.transform = "rotate(0deg)";
+        }
+        else {
+          showAddTab.classList.add("show");
+          showAddTab.append(addbtnTextNode);
+          rotatebtn.style.transform = "rotate(45deg)";
+        }
       })
-      validateShow.addEventListener('click', function(){
-        accordValidate.classList.add("opacity-card-show");
-        accordValidate.classList.remove("hide-card");
-        setTimeout(() => {
-          accordValidate.classList.remove("opacity-card-show");
-          validateShow.classList.add("hide-card");
-          validateHide.classList.remove("hide-card");
-          }, 2000);
+    };
+    // add question
+    var adddropbtn = document.querySelectorAll(".add_input_area_dropdown  .inner-dropdown .inner-dropdown-item");
+    for (var adddropbtnI = 0; adddropbtnI < adddropbtn.length; adddropbtnI++) {
+      adddropbtn[adddropbtnI].addEventListener('click', function () {
+        var adddropbtnAtr = this.getAttribute('data-source');
+        let closestElement = this.parentNode.parentNode;
+        let adddropbtnAtrInput = closestElement.nextSibling.nextSibling;
+        let adddropbtnAtrInputAtr = adddropbtnAtrInput.getAttribute("data-target")
+        if (adddropbtnAtr === adddropbtnAtrInputAtr) {
+
+          adddropbtnAtrInput.classList.toggle("show")
+        }
       })
-    </script>
-  </body>
+    };
+
+    // avtar
+    var header_avtar = document.getElementsByClassName("btn-link");
+    for (var avtarI = 0; avtarI < header_avtar.length; avtarI++) {
+      header_avtar[avtarI].addEventListener('click', function () {
+        // var getAvtar = this.querySelector(".btn-link");
+        var getAvtar = this.getAttribute('class');
+        console.log(getAvtar);
+        var getAvtarImg = this.querySelector(".avtar");
+        if (getAvtar === "btn my_question btn-link collapsed") {
+          getAvtarImg.style.display = "block";
+        }
+        else {
+          getAvtarImg.style.display = "none";
+        }
+      })
+    };
+
+    // Like button functionality
+    var likeButton = document.querySelectorAll('button.like');
+    for (var like = 0; like < likeButton.length; like++) {
+      likeButton[like].addEventListener('click', function () {
+        var likeIcon = this.querySelector('.like-icon');
+        var likeIcon_Attr = likeIcon.getAttribute('class');
+        if (likeIcon_Attr === 'fa fa-heart-o like-icon') {
+          likeIcon.setAttribute('class', 'fa fa-heart like-icon')
+        }
+        else {
+          likeIcon.setAttribute('class', 'fa fa-heart-o like-icon')
+        }
+        console.log(likeIcon);
+      })
+    };
+
+    // edit accordion items
+    var accordEditBtn = document.getElementsByClassName('accord-item-edit');
+    for (var pencil = 0; pencil < accordEditBtn.length; pencil++) {
+
+      // create save and cancel icon
+      var saveBtn = document.createElement("button");
+      var saveBtnText = document.createTextNode("Update");
+      var cancelBtn = document.createElement("button");
+      var cancelBtnText = document.createTextNode("Cancel");
+      let deletebtn = document.createElement("button");
+      let deletebtntext = document.createTextNode("Delete");
+      saveBtn.className = "savebtn cmn-accord-btn";
+      cancelBtn.className = "cancelbtn cmn-accord-btn";
+      deletebtn.className = "deletebtn cmn-accord-btn";
+      saveBtn.append(saveBtnText);
+      cancelBtn.append(cancelBtnText);
+      deletebtn.append(deletebtntext);
+
+      //   var accordEditBtnIcon = accordEditBtn[pencil].getElementsByClassName('pencilEdit');
+      //   // remove readable
+      //   for(var pencilIcon2 = 0; pencilIcon2 < accordEditBtnIcon.length; pencilIcon2++){
+      //     accordEditBtnIcon[pencilIcon2].addEventListener('click', function(){
+      //       console.log(this);
+      //     });
+      //   }
+      // on click
+      accordEditBtn[pencil].addEventListener('click', function () {
+        let closestElement = this.previousSibling.previousSibling;
+        closestElement.removeAttribute('readonly');
+        let findParent = this.parentNode;
+        findParent.append(saveBtn);
+        findParent.append(cancelBtn);
+        findParent.append(deletebtn);
+        this.style.display = "none";
+        var cancelbtnclose = findParent.querySelector(".cancelbtn");
+        cancelbtnclose.addEventListener('click', function () {
+          let findParent2 = this.parentNode;
+        });
+      })
+    }
+
+    // create newlist btn
+    var createlist_btn = document.querySelector('.new-list-btn');
+    createlist_btn.addEventListener('click', function () {
+      let createPrevList = this.parentNode;
+      let findChildList = createPrevList.querySelector('.create-list-tab');
+      let findChildListAttr = findChildList.getAttribute('class');
+      console.log(findChildListAttr);
+      if (findChildListAttr !== "create-list-tab show") {
+        findChildList.classList.add("show");
+        this.style.display = "none";
+      }
+      let cancellistbtn = findChildList.querySelector(".listcancel ");
+      console.log(cancellistbtn);
+      cancelBtn.addEventListener('click', function () {
+        if (findChildListAttr === "create-list-tab show") {
+          findChildList.classList.remove("show");
+          this.style.display = "block";
+        }
+      })
+    })
+
+
+    // report btn
+    // var report = document.getElementById("report");
+    var getreportBtn = document.querySelector("#report .main-btn");
+    getreportBtn.addEventListener("click", function () {
+      console.log(this);
+      let getparent = this.parentNode;
+      console.log(getparent);
+      getparent.classList.toggle("report-wrap-show");
+    });
+
+    // Card delete btn
+    var deleteCard = document.getElementsByClassName("cmn_delete_btn");
+    for (var deleteI = 0; deleteI < deleteCard.length; deleteI++) {
+      deleteCard[deleteI].addEventListener('click', function () {
+        let parentNodeFind = this.closest(".card");
+        let parentNodeFind2 = parentNodeFind.querySelector(".undo_btn");
+
+        parentNodeFind.classList.add("red-bg");
+
+        setTimeout(() => {
+          parentNodeFind.classList.add("delete");
+          parentNodeFind2.classList.add("show");
+          parentNodeFind.classList.remove("red-bg");
+
+        }, 2000);
+
+        setTimeout(() => {
+          parentNodeFind2.classList.remove("show");
+          parentNodeFind.classList.add("delete-collapse");
+        }, 5000);
+
+        console.log(parentNodeFind2)
+      })
+    }
+
+    // undo card
+    var undu_btn = document.getElementsByClassName("undo_btn");
+    for (var undoI = 0; undoI < undu_btn.length; undoI++) {
+      undu_btn[undoI].addEventListener('click', function () {
+        let parentNodeFind = this.closest(".card");
+        parentNodeFind.classList.remove("delete");
+        parentNodeFind.classList.remove("delete-collapse");
+        this.classList.remove("show");
+        console.log(parentNodeFind)
+      })
+    }
+
+    // validate hide question
+    let validateHide = document.querySelector('.validate-hide');
+    let validateShow = document.querySelector('.validate-show');
+    let accordValidate = document.querySelector('.accordion-validate-question');
+    validateShow.classList.add("hide-card");
+    validateHide.addEventListener('click', function () {
+      accordValidate.classList.add("opacity-card-hide");
+      setTimeout(() => {
+        accordValidate.classList.remove("opacity-card-hide");
+        accordValidate.classList.add("hide-card");
+        validateShow.classList.remove("hide-card");
+        validateHide.classList.add("hide-card");
+      }, 2000);
+    })
+    validateShow.addEventListener('click', function () {
+      accordValidate.classList.add("opacity-card-show");
+      accordValidate.classList.remove("hide-card");
+      setTimeout(() => {
+        accordValidate.classList.remove("opacity-card-show");
+        validateShow.classList.add("hide-card");
+        validateHide.classList.remove("hide-card");
+      }, 2000);
+    })
+
+    function myFunction() {
+      var x = document.getElementById("blog_keywords");
+      if (x.style.display === "none") {
+
+        setTimeout(() => {
+          x.style.display = "block";
+        }, 1000)
+      }
+      else {
+        setTimeout(() => {
+          x.style.display = "none";
+        }, 1000)
+      }
+    }
+  </script>
+</body>
+
 </html>

@@ -156,6 +156,7 @@ span.badge {
   padding: 10px 20px 10px 26px;
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 span.badge::before {
@@ -2167,7 +2168,7 @@ div.add_topic_list button[type="submit"] {
 .formGroup_inner .form-control:focus,
 .add_input_area input.form-control:focus,
 .list_description textarea.form-control:focus {
-  box-shadow: 0 0 10px 0 rgb(255 133 27 / 35%)
+  box-shadow: 0 0 10px 0 rgb(255 133 27 / 35%);
 }
 .comment_form .comment_img {
   border-radius: 50%;
@@ -3662,12 +3663,11 @@ ul.user_info_tabs li {
   position: relative;
 }
 
-
 /* 4 april */
 .email-sent p {
   margin: 10px 0px;
   color: #ff851b;
-  font-family: 'sairaM';
+  font-family: "sairaM";
 }
 
 span.dot {
@@ -3682,7 +3682,6 @@ span.dot {
   right: 35px;
   top: 50%;
   transform: translateY(-50%);
-
 }
 
 .cmn_badge p.badge_text {
@@ -3696,12 +3695,12 @@ span.dot {
   right: -6px;
   opacity: 0;
   visibility: hidden;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .cmn_badge p.badge_text:before {
   position: absolute;
-  content: '';
+  content: "";
   bottom: -5px;
   right: 5px;
   width: 10px;
@@ -3714,5 +3713,5 @@ span.dot {
 .cmn_badge:hover p.badge_text {
   opacity: 1;
   visibility: visible;
-  transition: .5s;
+  transition: 0.5s;
 }
