@@ -15,12 +15,22 @@
   /* 8 may 2022 */
   .keywords {
     position: absolute;
-    width: 100%;
     background: #fff;
     border-radius: 7px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+    box-shadow: 0px 0px 5px rgb(0 0 0 / 30%);
     padding: 10px;
-    top: 88px;
+    right: 0;
+    top: 30px;
+    min-width: 570px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+  }
+
+  .blog_keywords:hover .keywords {
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
   }
 
   .keywords ul {
@@ -221,24 +231,25 @@
                       <p><span class="cm-color">Source:</span> The Internet Tesl Journey</p>
                       <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg" alt="level"
                           class="img-fluid"> Hard</p>
-                      <p class="keys"><span class="cm-color" onclick="myFunction()">Search:</span> Master</p>
-
-                      <div class="keywords " style="display: none;" id="blog_keywords">
-                        <ul>
-                          <li><a href="#" class="active">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                          <li><a href="#">keyword</a></li>
-                        </ul>
+                      <div class="blog_keywords">
+                        <p class="keys"><span class="cm-color">Search:</span> Master</p>
+                        <div class="keywords ">
+                          <ul>
+                            <li><a href="#" class="active">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                            <li><a href="#">keyword</a></li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1872,21 +1883,6 @@
         validateHide.classList.remove("hide-card");
       }, 2000);
     })
-
-    function myFunction() {
-      var x = document.getElementById("blog_keywords");
-      if (x.style.display === "none") {
-
-        setTimeout(() => {
-          x.style.display = "block";
-        }, 1000)
-      }
-      else {
-        setTimeout(() => {
-          x.style.display = "none";
-        }, 1000)
-      }
-    }
   </script>
 </body>
 
