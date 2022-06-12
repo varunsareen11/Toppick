@@ -11,6 +11,47 @@
     <link rel="stylesheet" href="./css/custom.css" />
     <link rel="stylesheet" href="css/responsive.css" />
 </head>
+<style>
+    .keywords ul li a.active span::after {
+        position: absolute;
+        content: "";
+        bottom: -3px;
+        height: 2px;
+        background: #f9b248;
+        right: 0;
+        width: 92%;
+        left: 0;
+        margin: auto;
+    }
+
+    .keywords ul li a.active span {
+        position: relative;
+    }
+
+    .keywords ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .keywords ul li a.active {
+        font-weight: 600;
+    }
+
+    .keywords ul li a {
+        color: #5c5c5c;
+        display: inline-block;
+        margin: 5px 0px;
+        padding-right: 20px;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 5600;
+        font-size: 16px;
+    }
+
+    .keywords ul li a.active {
+        color: #ff851b;
+    }
+</style>
 
 <body>
     <!-- Loader -->
@@ -141,85 +182,137 @@
                                     <h2 class="heading"><span class="cm-color">AGING<span></h2>
                                     <div class="small_desc">
                                         <p><span class="cm-color">Source:</span> The Internet Tesl Journey</p>
-                                        <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg" alt="level"
-                                                class="img-fluid"> Hard</p>
+                                        <p><span class="cm-color">Level:</span> <img src="assets/images/level-hard.svg"
+                                                alt="level" class="img-fluid"> Hard</p>
                                     </div>
                                 </div>
                                 <div class="topic_tabs">
-                                    <a href="topic.html"><img src="assets/images/question-btn-icon.svg" alt="Question Tab" class="mr-2"> Questions</a>
-                                    <a href="article.html" class="active"><img src="assets/images/article-btn-icon-white.svg" alt="Article Tab" class="mr-2">Articles</a>
-                                    <a href="video.html"><img src="assets/images/camera-white.svg" alt="Article Tab" class="mr-2">Video</a>
+                                    <a href="topic.html"><img src="assets/images/question-btn-icon.svg"
+                                            alt="Question Tab" class="mr-2"> Questions</a>
+                                    <a href="article.html" class="active"><img
+                                            src="assets/images/article-btn-icon-white.svg" alt="Article Tab"
+                                            class="mr-2">Articles</a>
+                                    <a href="video.html"><img src="assets/images/camera-white.svg" alt="Article Tab"
+                                            class="mr-2">Video</a>
+                                </div>
+                                <div class="blog_keywords mb-4">
+
+                                    <div class="keywords">
+                                        <ul>
+                                            <li><a href="#" class="active"><span>keyword</span></a></li>
+                                            <li><a href="#"><span>Alience</span></a></li>
+                                            <li><a href="#"><span>Culture</span></a></li>
+                                            <li><a href="#"><span>beach</span></a></li>
+                                            <li><a href="#"><span>Songs</span></a></li>
+                                            <li><a href="#"><span>Social</span></a></li>
+                                            <li><a href="#"><span>Comando</span></a></li>
+                                            <li><a href="#"><span>Civilization</span></a></li>
+                                            <li><a href="#"><span>Media</span></a></li>
+                                            <li><a href="#"><span>News</span></a></li>
+                                            <li><a href="#"><span>Oxford</span></a></li>
+                                            <li><a href="#"><span>Intelligent</span></a></li>
+                                            <li><a href="#"><span>City</span></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                                 <!-- Articles Area -->
                                 <div class="article">
                                     <div class="article_card mb-5">
                                         <div class="article_img">
-                                            <a href="https://www.banfield.com/en/products/optimum-wellness-plan/Dog-plans">
-                                            <img src="https://serpapi.com/searches/61edcd12aa6c9540dd2e9060/images/1f884a751298c1947af68c9cc06fe1e3f119beec5f97c0c5abf321a1eab704f3.jpeg" alt="Article Image"
-                                                class="img-fluid">
-                                        </a>
+                                            <a
+                                                href="https://www.banfield.com/en/products/optimum-wellness-plan/Dog-plans">
+                                                <img src="https://serpapi.com/searches/61edcd12aa6c9540dd2e9060/images/1f884a751298c1947af68c9cc06fe1e3f119beec5f97c0c5abf321a1eab704f3.jpeg"
+                                                    alt="Article Image" class="img-fluid">
+                                            </a>
                                         </div>
                                         <div class="article-cont">
-                                            <small class="text-secandary d-block mb-1">https://www.banfield.com › products › Dog-plans</small>
-                                            <a href="https://www.banfield.com/en/products/optimum-wellness-plan/Dog-plans"> <h2>Optimum Wellness Plans ® for dogs - Banfield Pet Hospital</h2></a>
+                                            <small class="text-secandary d-block mb-1">https://www.banfield.com ›
+                                                products › Dog-plans</small>
+                                            <a
+                                                href="https://www.banfield.com/en/products/optimum-wellness-plan/Dog-plans">
+                                                <h2>Optimum Wellness Plans ® for dogs - Banfield Pet Hospital</h2>
+                                            </a>
                                             <span class="badge durationBadge mb-2">News</span>
-                                            <p>Build Dog Wellness Plans for a happy and healthy dog. Banfield's Optimum Wellness Plans provide access to regular preventive care and veterinary services. </p>
+                                            <p>Build Dog Wellness Plans for a happy and healthy dog. Banfield's Optimum
+                                                Wellness Plans provide access to regular preventive care and veterinary
+                                                services. </p>
                                         </div>
                                     </div>
                                     <div class="article_card mb-5">
                                         <div class="article_img">
-                                            <a href="https://www.ubisoft.com/en-gb/game/watch-dogs/legion/news-updates/2ilc5NtwVTZdIUqekyyVd6/an-update-from-the-development-team">
-                                            <img src="assets/images/full-dummy-banner.png" alt="Article Image"
-                                                class="img-fluid">
-                                        </a>
+                                            <a
+                                                href="https://www.ubisoft.com/en-gb/game/watch-dogs/legion/news-updates/2ilc5NtwVTZdIUqekyyVd6/an-update-from-the-development-team">
+                                                <img src="assets/images/full-dummy-banner.png" alt="Article Image"
+                                                    class="img-fluid">
+                                            </a>
                                         </div>
                                         <div class="article-cont">
-                                            <small class="text-secandary d-block mb-1">https://www.ubisoft.com › game › legion › news-updates</small>
-                                            <a href="https://www.ubisoft.com/en-gb/game/watch-dogs/legion/news-updates/2ilc5NtwVTZdIUqekyyVd6/an-update-from-the-development-team"> <h2>AN UPDATE FROM THE DEVELOPMENT TEAM - Ubisoft</h2></a>
+                                            <small class="text-secandary d-block mb-1">https://www.ubisoft.com › game ›
+                                                legion › news-updates</small>
+                                            <a
+                                                href="https://www.ubisoft.com/en-gb/game/watch-dogs/legion/news-updates/2ilc5NtwVTZdIUqekyyVd6/an-update-from-the-development-team">
+                                                <h2>AN UPDATE FROM THE DEVELOPMENT TEAM - Ubisoft</h2>
+                                            </a>
                                             <span class="badge durationBadge mb-2">News</span>
-                                            <p>In October 2020, Watch Dogs: Legion launched, and you joined us in London to stop the authoritarian powers that were threatening the city. </p>
+                                            <p>In October 2020, Watch Dogs: Legion launched, and you joined us in London
+                                                to stop the authoritarian powers that were threatening the city. </p>
                                         </div>
                                     </div>
                                     <div class="article_card mb-5">
                                         <div class="article_img">
                                             <a href="https://www.medicalnewstoday.com/articles/322868">
-                                            <img src="assets/images/full-dummy-banner.png" alt="Article Image"
-                                                class="img-fluid">
-                                        </a>
+                                                <img src="assets/images/full-dummy-banner.png" alt="Article Image"
+                                                    class="img-fluid">
+                                            </a>
                                         </div>
                                         <div class="article-cont">
-                                            <small class="text-secandary d-block mb-1">https://www.medicalnewstoday.com › articles</small>
-                                            <a href="https://www.medicalnewstoday.com/articles/322868"> <h2>How dogs contribute to your health and happiness - Medical ...</h2></a>
+                                            <small class="text-secandary d-block mb-1">https://www.medicalnewstoday.com
+                                                › articles</small>
+                                            <a href="https://www.medicalnewstoday.com/articles/322868">
+                                                <h2>How dogs contribute to your health and happiness - Medical ...</h2>
+                                            </a>
                                             <span class="badge durationBadge mb-2">News</span>
-                                            <p>Dogs 'force' their owners to take daily exercise. Just last year, Medical News Today reported on a study that showed that owning a dog reduces a ... </p>
+                                            <p>Dogs 'force' their owners to take daily exercise. Just last year, Medical
+                                                News Today reported on a study that showed that owning a dog reduces a
+                                                ... </p>
                                         </div>
                                     </div>
                                     <div class="article_card mb-5">
                                         <div class="article_img">
                                             <a href="https://www.dogsondeployment.org/">
-                                            <img src="assets/images/full-dummy-banner.png" alt="Article Image"
-                                                class="img-fluid">
-                                        </a>
+                                                <img src="assets/images/full-dummy-banner.png" alt="Article Image"
+                                                    class="img-fluid">
+                                            </a>
                                         </div>
                                         <div class="article-cont">
-                                            <small class="text-secandary d-block mb-1">https://www.dogsondeployment.org</small>
-                                            <a href="https://www.dogsondeployment.org/"> <h2>Dogs On Deployments: Home</h2> </a>
+                                            <small
+                                                class="text-secandary d-block mb-1">https://www.dogsondeployment.org</small>
+                                            <a href="https://www.dogsondeployment.org/">
+                                                <h2>Dogs On Deployments: Home</h2>
+                                            </a>
                                             <span class="badge durationBadge mb-2">News</span>
-                                            <p>Dogs on Deployment promotes responsible, life-long pet ownership by military pet owners by advocating for military pet owner rights, providing educational ...</p>
+                                            <p>Dogs on Deployment promotes responsible, life-long pet ownership by
+                                                military pet owners by advocating for military pet owner rights,
+                                                providing educational ...</p>
                                         </div>
                                     </div>
                                     <div class="article_card mb-5">
                                         <div class="article_img">
                                             <a href="https://www.dailypaws.com/dogs-puppies">
-                                            <img src="https://serpapi.com/searches/61edcd12aa6c9540dd2e9060/images/1f884a751298c1947af68c9cc06fe1e3e2e381cdcaa384f62407dbb5fc40138e.jpeg" alt="Article Image"
-                                                class="img-fluid">
-                                        </a>
+                                                <img src="https://serpapi.com/searches/61edcd12aa6c9540dd2e9060/images/1f884a751298c1947af68c9cc06fe1e3e2e381cdcaa384f62407dbb5fc40138e.jpeg"
+                                                    alt="Article Image" class="img-fluid">
+                                            </a>
                                         </div>
                                         <div class="article-cont">
-                                            <small class="text-secandary d-block mb-1">https://www.dailypaws.com › dogs-puppies</small>
-                                            <a href="https://www.dailypaws.com/dogs-puppies"> <h2>Dogs and Puppies - Daily Paws</h2></a>
+                                            <small class="text-secandary d-block mb-1">https://www.dailypaws.com ›
+                                                dogs-puppies</small>
+                                            <a href="https://www.dailypaws.com/dogs-puppies">
+                                                <h2>Dogs and Puppies - Daily Paws</h2>
+                                            </a>
                                             <span class="badge durationBadge mb-2">News</span>
-                                            <p>Interested in bringing a dog into your life? Daily Paws has expert advice and tips on all things canine-related, including dog adoption, dog breeds, ...</p>
+                                            <p>Interested in bringing a dog into your life? Daily Paws has expert advice
+                                                and tips on all things canine-related, including dog adoption, dog
+                                                breeds, ...</p>
                                         </div>
                                     </div>
                                 </div>
