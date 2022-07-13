@@ -2070,11 +2070,11 @@ div#report button {
 }
 .avatar_name {
   flex: 0 0 50px;
+  height: 50px;
 }
 .add_input_area .form-group {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 .article_link {
   width: 100%;
@@ -2149,6 +2149,9 @@ div.add_topic_list button[type="submit"] {
   position: relative;
   margin: 0;
 }
+div.add_input_area button[type="submit"] {
+  position: relative;
+}
 .comment_form .form-group input[type="submit"],
 .add_input_area button[type="submit"],
 .add_topic_list button[type="submit"] {
@@ -2162,6 +2165,20 @@ div.add_topic_list button[type="submit"] {
   border-radius: 50px;
   width: 130px;
   cursor: pointer;
+}
+.cmn_view_more button {
+  color: #fff;
+  background: rgb(255 133 27);
+  border: none;
+  height: 44px;
+  border-radius: 50px;
+  width: 130px;
+  cursor: pointer;
+  margin: 10px 0px;
+}
+
+.cmn_view_more {
+  text-align: center;
 }
 .comment_form input.form-control:focus,
 .add_topic_list input:focus,
@@ -2639,14 +2656,14 @@ button.edit_icon {
 .add_input_area.show {
   opacity: 1;
   visibility: visible;
-  height: 50px;
+
   transition: 0.3s;
 }
 
 .add_input_area {
   opacity: 0;
   visibility: hidden;
-  height: 0;
+
   transition: 0.3s;
 }
 .avtar {

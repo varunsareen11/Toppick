@@ -113,6 +113,20 @@
     cursor: pointer;
   }
 
+  .article_link .form-control,
+  .create-list-tab .form-control {
+    border: 1px solid #ff851b;
+    border-radius: 50px;
+    height: 44px;
+    color: #000;
+    padding: 8px 140px 8px 20px;
+  }
+
+  .article_link textarea.form-control {
+    min-height: 100px;
+    border-radius: 10px;
+  }
+
   /* .blog_keywords {
     position: relative;
   } */
@@ -269,7 +283,7 @@
                     <div class="dropdown-topic">
                       <ul class="inner-dropdown">
                         <li class="inner-dropdown-item" data-source="addquestion"><span>Add Question</span> <span
-                            class="add-img"><img src="assets/images/question-heading-icon-white.svg" alt=""></span></li>
+                            class="add-img"><img src="assets/images/answer.svg" alt=""></span></li>
                         <li class="inner-dropdown-item" data-toggle="modal" data-target="#exampleModalCenter"
                           data-source="addlist"><span>Add List </span> <span class="add-img"><img
                               src="assets/images/list-white.svg" alt=""></span></li>
@@ -391,9 +405,9 @@
                         <div class="example_area">
                           <div class="topAccord_area">
 
-                            <p class="cmn_topic_heading"><img src="assets/images/example-icon.svg" alt="">
-                              <span class="tootle-tip">Example explaination <button>here</button> </span>
-                              Example
+                            <p class="cmn_topic_heading"><img src="assets/images/answer.svg" alt="">
+                              <span class="tootle-tip">Answers explaination <button>here</button> </span>
+                              Answer
                             </p>
 
                             <ul class="example_list">
@@ -452,6 +466,9 @@
                               </li>
 
                             </ul>
+                            <div class="cmn_view_more">
+                              <button>View More</button>
+                            </div>
                             <div class="add_input_area mb-3">
                               <!-- <label for="">New Example</label> -->
                               <div class="form-group">
@@ -459,16 +476,19 @@
                                   <img src="assets/images/avatar1.png" alt="Client Image" class="img-fluid">
                                 </div>
                                 <div class="article_link">
-                                  <input type="text" name="new-article-url" class="form-control"
-                                    placeholder="add url here">
-                                  <p class="error_message text-danger">Enter a valid link</p>
-                                  <button type="submit">Submit</button>
+
+                                  <textarea type="text" name="new-article-url" class="form-control"
+                                    placeholder="add url here"></textarea>
+
                                 </div>
+                              </div>
+                              <div class="w-100 text-right mt-2">
+                                <button type="submit">Submit</button>
                               </div>
                             </div>
                             <div class="add_btn">
                               <button class="cmn_topic_heading"><img src="assets/images/add-icon.svg" alt=""> Add
-                                Example</button>
+                                Answer</button>
                             </div>
                           </div>
                         </div>
@@ -512,6 +532,9 @@
                                   <button><img src="assets/images/cancel.svg" alt=""></button>
                                   <button><img src="assets/images/checked.svg" alt=""></button>
                                 </div>
+                              </div>
+                              <div class="cmn_view_more">
+                                <button>View More</button>
                               </div>
                               <div class="add_input_area mb-3">
                                 <!-- <label for="">New Artile Url</label> -->
@@ -1710,7 +1733,7 @@
         else {
           showAddTab.classList.add("show");
           showAddTab.append(addbtnTextNode);
-          rotatebtn.style.transform = "rotate(45deg)";
+          // rotatebtn.style.transform = "rotate(45deg)";
         }
       })
     };
