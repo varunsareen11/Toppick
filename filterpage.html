@@ -127,6 +127,49 @@
       font-family: 'montM';
       font-size: 24px;
     }
+
+    .overlay_loader {
+      height: 0;
+      width: 0;
+      padding: 29px;
+      border: 6px solid #ccc;
+      border-right-color: #ff851b;
+      border-radius: 52px;
+      -webkit-animation: rotate 1s infinite linear;
+    }
+
+    @-webkit-keyframes rotate {
+
+      /* 100% keyframe for  clockwise. 
+     use 0% instead for anticlockwise */
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    .filter_outer.mb-5 {
+      position: relative;
+    }
+
+    .loader_outer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      background: rgb(0 0 0 / 36%);
+      z-index: 2;
+    }
+
+    .loader_outer h3 {
+      z-index: 2;
+      position: relative;
+      color: #ff851b;
+      margin-top: 10px;
+      font-family: 'sairaM';
+    }
   </style>
 </head>
 
@@ -233,6 +276,13 @@
       <section class="question_game">
         <div class="container pb-5">
           <div class="filter_outer   mb-5">
+            <div class="loader_outer">
+              <div>
+                <div class="overlay_loader">
+                </div>
+                <h3>Loading</h3>
+              </div>
+            </div>
             <div class="filter_header">
               <h2><a href="#">Speed Finding</a></h2> <button class="next_btn">Next <img
                   src="assets/images/fa-solid_angle-right.png" alt="" srcset=""></button>
