@@ -132,7 +132,7 @@
       height: 0;
       width: 0;
       padding: 29px;
-      border: 6px solid #ccc;
+      border: 6px solid #fff;
       border-right-color: #ff851b;
       border-radius: 52px;
       -webkit-animation: rotate 1s infinite linear;
@@ -159,14 +159,14 @@
       align-items: center;
       text-align: center;
       justify-content: center;
-      background: rgb(0 0 0 / 36%);
+      background: rgb(255 133 27 / 32%);
       z-index: 2;
     }
 
     .loader_outer h3 {
       z-index: 2;
       position: relative;
-      color: #ff851b;
+      color: #fff;
       margin-top: 10px;
       font-family: 'sairaM';
     }
@@ -510,7 +510,67 @@
       </div>
     </footer>
     <!-- Footer End -->
+    <!-- Floating links -->
+    <style>
+      .floatingUrl {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        background: #fff;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        transform: translateX(-151px);
+        transition: .2s;
+      }
+
+      .floatingUrl.active {
+        transform: translateX(0);
+        transition: .2s;
+      }
+
+      .floatingUrl i {
+        position: absolute;
+        background: #ffa95d;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        color: #fff;
+        font-size: 18px;
+        right: -30px;
+        top: 0;
+        cursor: pointer;
+      }
+
+      .floatingUrl.active i.fa-angle-right:before {
+        content: "\f104";
+      }
+
+      .floatingUrl ul li a {
+        padding: 10px 20px;
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        color: #000;
+      }
+
+      .floatingUrl ul li:not(:last-child) a {
+        border-bottom: 1px solid #eee;
+      }
+    </style>
+    <div class="floatingUrl">
+      <i class="fa fa-angle-right"></i>
+      <ul>
+        <li><a href="javascript:void(0)">Question Picker</a></li>
+        <li><a href="javascript:void(0)">Topic Picker</a></li>
+      </ul>
+    </div>
   </div>
+  <script>
+    let getFloatURL = document.querySelector(".floatingUrl");
+    getFloatURL.addEventListener("click", function () {
+      getFloatURL.classList.toggle("active");
+    })
+  </script>
   <!-- Wrapper End -->
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
