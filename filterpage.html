@@ -128,27 +128,87 @@
       font-size: 24px;
     }
 
-    .overlay_loader {
-      height: 0;
-      width: 0;
-      padding: 29px;
-      border: 6px solid #fff;
-      border-right-color: #ff851b;
-      border-radius: 52px;
-      -webkit-animation: rotate 1s infinite linear;
+
+    .loaders {
+      animation: rotate 1s infinite;
+      height: 50px;
+      width: 50px;
+      z-index: 2;
     }
 
-    @-webkit-keyframes rotate {
+    .loaders:before,
+    .loaders:after {
+      border-radius: 50%;
+      content: '';
+      display: block;
+      height: 20px;
+      width: 20px;
+    }
 
-      /* 100% keyframe for  clockwise. 
-     use 0% instead for anticlockwise */
+    .loaders:before {
+      animation: ball1 1s infinite;
+      background-color: #000;
+      box-shadow: 30px 0 0 #ff851b;
+      margin-bottom: 10px;
+    }
+
+    .loaders:after {
+      animation: ball2 1s infinite;
+      background-color: #ff851b;
+      box-shadow: 30px 0 0 #000;
+    }
+
+    @keyframes rotate {
+      0% {
+        -webkit-transform: rotate(0deg) scale(0.8);
+        -moz-transform: rotate(0deg) scale(0.8);
+      }
+
+      50% {
+        -webkit-transform: rotate(360deg) scale(1.2);
+        -moz-transform: rotate(360deg) scale(1.2);
+      }
+
       100% {
-        -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(720deg) scale(0.8);
+        -moz-transform: rotate(720deg) scale(0.8);
       }
     }
 
-    .filter_outer.mb-5 {
-      position: relative;
+    @keyframes ball1 {
+      0% {
+        box-shadow: 30px 0 0 #f8b334;
+      }
+
+      50% {
+        box-shadow: 0 0 0 #f8b334;
+        margin-bottom: 0;
+        -webkit-transform: translate(15px, 15px);
+        -moz-transform: translate(15px, 15px);
+      }
+
+      100% {
+        box-shadow: 30px 0 0 #f8b334;
+        margin-bottom: 10px;
+      }
+    }
+
+    @keyframes ball2 {
+      0% {
+        box-shadow: 30px 0 0 #000;
+      }
+
+      50% {
+        box-shadow: 0 0 0 #000;
+        margin-top: -20px;
+        -webkit-transform: translate(15px, 15px);
+        -moz-transform: translate(15px, 15px);
+      }
+
+      100% {
+        box-shadow: 30px 0 0 #000;
+        margin-top: 0;
+      }
     }
 
     .loader_outer {
@@ -157,18 +217,128 @@
       height: 100%;
       display: flex;
       align-items: center;
-      text-align: center;
       justify-content: center;
-      background: rgb(255 133 27 / 32%);
+      background: rgb(255 255 255 / 71%);
       z-index: 2;
     }
 
-    .loader_outer h3 {
-      z-index: 2;
-      position: relative;
-      color: #fff;
-      margin-top: 10px;
-      font-family: 'sairaM';
+    /*
+ * Container - Button
+ */
+    .float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 40px;
+      right: 40px;
+      background-color: #ff851b;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 2px 2px 3px rgb(153 150 153 / 56%);
+      z-index: 1000;
+      animation: bot-to-top 2s ease-out;
+    }
+
+    /*
+ * Submenu - Buttons
+ */
+    .floatings {
+      position: fixed;
+      right: 40px;
+      padding-bottom: 10px;
+      bottom: 90px;
+      z-index: 100;
+    }
+
+    .floatings li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+
+    .floatings li a {
+      min-width: 100px;
+      background-color: #ff851b;
+      color: #FFF;
+      text-align: center;
+      box-shadow: 2px 2px 3px #99999940;
+      display: block;
+      padding: 10px;
+      border-radius: 7px;
+    }
+
+    /* Hidden Buttons */
+    a.float+.floatings {
+      visibility: hidden;
+    }
+
+    /* Visible Buttons */
+    a.float:hover+.floatings {
+      visibility: visible;
+      animation: scale-in 0.5s;
+    }
+
+    .floatings:hover {
+      visibility: visible !important;
+    }
+
+    /* Center icons */
+    a i.icon {
+      font-size: 24px;
+      margin-top: 18px;
+    }
+
+    /*
+ * Animations
+ */
+    a.float i {
+      animation: rotate-in 0.5s;
+    }
+
+    a.float:hover>i {
+      animation: rotate-out 0.5s;
+    }
+
+    @keyframes bot-to-top {
+      0% {
+        bottom: -60px
+      }
+
+      50% {
+        bottom: 40px
+      }
+    }
+
+    @keyframes scale-in {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes rotate-in {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotate-out {
+      from {
+        transform: rotate(360deg);
+      }
+
+      to {
+        transform: rotate(0deg);
+      }
     }
   </style>
 </head>
@@ -277,11 +447,10 @@
         <div class="container pb-5">
           <div class="filter_outer   mb-5">
             <div class="loader_outer">
-              <div>
-                <div class="overlay_loader">
-                </div>
-                <h3>Loading</h3>
-              </div>
+              <!--   LOADER  -->
+              <div class="loaders"></div>
+
+              <!--  LOADER   -->
             </div>
             <div class="filter_header">
               <h2><a href="#">Speed Finding</a></h2> <button class="next_btn">Next <img
@@ -441,7 +610,27 @@
           </div>
       </section>
     </div>
+    <!-- floating -->
 
+
+    <!-- Buttons -->
+    <a href="#" class="float">
+      <i class="fa fa-plus icon"></i>
+    </a>
+    <ul class="floatings">
+      <li>
+        <a href="#">
+          Question picker
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Topic Picker
+        </a>
+      </li>
+
+    </ul>
+    <!-- End - Buttons -->
     <!-- Main Body End -->
     <!-- Footer Start -->
     <footer class="footer">
