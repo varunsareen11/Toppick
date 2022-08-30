@@ -245,10 +245,14 @@
  */
     .floatings {
       position: fixed;
-      right: 40px;
-      padding-bottom: 10px;
-      bottom: 90px;
+      right: 60px;
+      bottom: 100px;
       z-index: 100;
+      background: #fff;
+      box-shadow: 0px 0px 4px rgb(0 0 0 / 30%);
+      padding: 10px;
+      border-radius: 7px;
+      padding-bottom: 0;
     }
 
     .floatings li {
@@ -265,6 +269,7 @@
       display: block;
       padding: 10px;
       border-radius: 7px;
+
     }
 
     /* Hidden Buttons */
@@ -291,8 +296,12 @@
     /*
  * Animations
  */
-    a.float i {
+    a.float img {
       transition: ease all .3s;
+    }
+
+    a.float img {
+      width: 20px;
     }
 
     a.float:hover {
@@ -304,8 +313,8 @@
     a.float:hover>i {
       animation: rotate-out 0.5s;
     } */
-    a.float:hover i {
-      transform: rotate(135deg);
+    a.float:hover img {
+      transform: rotate(45deg);
       transition: ease all .3s;
     }
 
@@ -625,7 +634,7 @@
 
     <!-- Buttons -->
     <a href="#" class="float">
-      <i class="fa fa-plus icon"></i>
+      <img src="assets/images/plus.svg" alt="Create Icon">
     </a>
     <ul class="floatings">
       <li>

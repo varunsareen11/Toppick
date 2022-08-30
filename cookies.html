@@ -685,6 +685,12 @@
                 position: relative;
             }
 
+            .cookies_body {
+                padding: 20px;
+                overflow-y: auto;
+                height: 450px;
+            }
+
             .cookie_header h2 {
                 font-size: 20px;
                 font-family: 'sairaM';
@@ -811,13 +817,15 @@
             .cookies_foot {
                 background: #fff;
                 padding: 20px;
-                box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+                box-shadow: 0 -1px 10px 0 #acabab4d;
+                position: fixed;
+                bottom: 0;
+                z-index: 2;
             }
 
             .cookies_foot h5 {
                 font-size: 18px;
-                font-family: 'sairaM';
-                margin-right: auto;
+                margin-bottom: 12px;
             }
 
             .cookies_foot p {
@@ -840,8 +848,186 @@
                 display: flex;
                 align-items: flex-end;
             }
+
+            .cookie_foot_content button.active {
+                background: #ff851b;
+                color: #fff;
+            }
+
+            .cookies_model .modal-dialog {
+                width: 845px;
+                max-width: 100%;
+            }
+
+            button.close {
+                position: absolute;
+                right: 20px;
+            }
         </style>
-        <div class="cokies_card">
+        <!-- model cookies -->
+        <div class="modal fade bd-example-modal-lg  cookies_model" id="exampleModalCenter" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog model-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="cookie_header">
+                        <h2>Customize Conset Prefrences</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="cookies_body">
+                            <div class="cookies_text border-bottom pb-3">
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s.... <a href="">Show more</a>
+                                </p>
+                            </div>
+                            <div class="cookies_text border-bottom pb-3 pt-3">
+                                <div class="text_header mb-2">
+                                    <h6> Necessary</h6>
+                                    <p class="active_text">Always Active </p>
+                                </div>
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry.</p>
+                            </div>
+                            <div class="cookies_text border-bottom pb-3 pt-3">
+                                <div class="text_header mb-2">
+                                    <h6> Functional</h6>
+
+
+
+                                </div>
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry.</p>
+                            </div>
+                            <div class="cookies_text border-bottom pb-3 pt-3">
+                                <div class="text_header mb-2">
+                                    <h6> Analytics</h6>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="sliders round"></span>
+                                    </label>
+
+
+                                </div>
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry.</p>
+                            </div>
+                            <div class="cookies_text border-bottom pb-3 pt-3">
+                                <div class="text_header mb-2">
+                                    <h6> Performance</h6>
+
+
+
+                                </div>
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry.</p>
+                            </div>
+                            <div class="cookies_text  pb-3 pt-3">
+                                <div class="text_header mb-2">
+                                    <h6> Advertisement</h6>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="sliders round"></span>
+                                    </label>
+
+
+                                </div>
+                                <p class="mb-2">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                    Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s psum is simply dummy text of
+                                    the
+
+
+                                </p>
+                                <p> printing and typesetting industry. Lorem Ipsum has been
+                                    the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy
+                                    text of the
+                                    printing and typesetting industry.</p>
+                            </div>
+                            <div class="cookies_button">
+                                <button>Recject all</button>
+                                <button>Save My Prefrences </button>
+                                <button class="active">Accept All</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- model coooikes -->
+        <!-- <div class="cokies_card">
             <div class="cookie_header">
                 <h2>Customize Conset Prefrences</h2>
                 <i class="fa fa-times" aria-hidden="true"></i>
@@ -864,7 +1050,7 @@
                 </div>
                 <div class="cookies_text border-bottom pb-3 pt-3">
                     <div class="text_header mb-2">
-                        <h6><i class="fa fa-angle-right mr-2"></i> Necessary</h6>
+                        <h6> Necessary</h6>
                         <p class="active_text">Always Active </p>
                     </div>
                     <p class="mb-2">
@@ -881,7 +1067,7 @@
                 </div>
                 <div class="cookies_text border-bottom pb-3 pt-3">
                     <div class="text_header mb-2">
-                        <h6><i class="fa fa-angle-right mr-2"></i> Functional</h6>
+                        <h6> Functional</h6>
 
 
 
@@ -900,7 +1086,7 @@
                 </div>
                 <div class="cookies_text border-bottom pb-3 pt-3">
                     <div class="text_header mb-2">
-                        <h6><i class="fa fa-angle-right mr-2"></i> Analytics</h6>
+                        <h6> Analytics</h6>
                         <label class="switch">
                             <input type="checkbox">
                             <span class="sliders round"></span>
@@ -922,7 +1108,7 @@
                 </div>
                 <div class="cookies_text border-bottom pb-3 pt-3">
                     <div class="text_header mb-2">
-                        <h6><i class="fa fa-angle-right mr-2"></i> Performance</h6>
+                        <h6> Performance</h6>
 
 
 
@@ -941,7 +1127,7 @@
                 </div>
                 <div class="cookies_text  pb-3 pt-3">
                     <div class="text_header mb-2">
-                        <h6><i class="fa fa-angle-right mr-2"></i> Advertisement</h6>
+                        <h6> Advertisement</h6>
                         <label class="switch">
                             <input type="checkbox">
                             <span class="sliders round"></span>
@@ -967,7 +1153,7 @@
                     <button class="active">Accept All</button>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="cookies_foot">
             <h5>We Value Your Privacy</h5>
             <div class="cookie_foot_content">
@@ -975,7 +1161,7 @@
                     aliquam ducimus enim ex. Asperiores fugiat nulla a quae! Vel velit voluptatum nihil quae impedit
                     saepe.</p>
                 <div class="d-flex">
-                    <button>Customize</button>
+                    <button type="button" data-toggle="modal" data-target="#exampleModalCenter"> Customize</button>
                     <button>Recject All </button>
                     <button class="active">Accept All</button>
                 </div>
