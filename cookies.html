@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopPick</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .filter_img {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 133, 27, 0.16);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 120px;
+            margin: auto;
+        }
+
+        .filter_img img {
+            width: 70px;
+            height: 70px;
+        }
+
+
+
+        section.question_game {
+            background: url(../assets/images/latest_topics_bg.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .filter_outer {
+            background-size: cover;
+            margin-top: -8rem;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+            background-color: #fff;
+            border-radius: 7px;
+            box-shadow: 0px 0px 6px rgb(0 0 0 / 30%);
+        }
+
+        .filter_outer h2 {
+            font-family: 'sairaR';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 47px;
+        }
+
+        .filter_header {
+            display: flex;
+            padding: 7px 24px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .filter_header button {
+            margin-left: auto;
+            padding: 0px;
+            background: transparent;
+            border: transparent;
+            color: #ff851b;
+            height: unset;
+        }
+
+        .filter_header h2 a {
+            font-size: 22px;
+            color: #ffa030;
+        }
+
+        .filter_header button.filter_close {
+            position: absolute;
+            right: -20px;
+            top: -34px;
+            background: #fff;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            box-shadow: 0px 0px 14px rgba(0, 0, 0, 30%);
+        }
+
+        .filter_header button.filter_close img {
+            width: 17.69px;
+            height: 17.69px;
+        }
+
+        .filter_content h3 a {
+            font-family: 'sairaR';
+            color: #ff851b;
+            font-size: 22px;
+        }
+
+        .filter_content h3 {
+            font-family: 'sairaR';
+            color: #000;
+            font-size: 22px;
+        }
+
+        .filter_content {
+            padding: 15px 20px;
+        }
+
+        button.next_btn {
+            display: flex;
+            align-items: center;
+        }
+
+        button.next_btn {
+            font-family: 'sairaM';
+            font-size: 22px;
+        }
+
+        button.next_btn img {
+            width: 16px;
+            height: 30px;
+            margin-left: 3px;
+        }
+
+        .filter_content h4 {
+            font-family: 'montM';
+            font-size: 24px;
+        }
+
+
+        .loaders {
+            animation: rotate 1s infinite;
+            height: 50px;
+            width: 50px;
+            z-index: 2;
+        }
+
+        .loaders:before,
+        .loaders:after {
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: 20px;
+            width: 20px;
+        }
+
+        .loaders:before {
+            animation: ball1 1s infinite;
+            background-color: #000;
+            box-shadow: 30px 0 0 #ff851b;
+            margin-bottom: 10px;
+        }
+
+        .loaders:after {
+            animation: ball2 1s infinite;
+            background-color: #ff851b;
+            box-shadow: 30px 0 0 #000;
+        }
+
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg) scale(0.8);
+                -moz-transform: rotate(0deg) scale(0.8);
+            }
+
+            50% {
+                -webkit-transform: rotate(360deg) scale(1.2);
+                -moz-transform: rotate(360deg) scale(1.2);
+            }
+
+            100% {
+                -webkit-transform: rotate(720deg) scale(0.8);
+                -moz-transform: rotate(720deg) scale(0.8);
+            }
+        }
+
+        @keyframes ball1 {
+            0% {
+                box-shadow: 30px 0 0 #f8b334;
+            }
+
+            50% {
+                box-shadow: 0 0 0 #f8b334;
+                margin-bottom: 0;
+                -webkit-transform: translate(15px, 15px);
+                -moz-transform: translate(15px, 15px);
+            }
+
+            100% {
+                box-shadow: 30px 0 0 #f8b334;
+                margin-bottom: 10px;
+            }
+        }
+
+        @keyframes ball2 {
+            0% {
+                box-shadow: 30px 0 0 #000;
+            }
+
+            50% {
+                box-shadow: 0 0 0 #000;
+                margin-top: -20px;
+                -webkit-transform: translate(15px, 15px);
+                -moz-transform: translate(15px, 15px);
+            }
+
+            100% {
+                box-shadow: 30px 0 0 #000;
+                margin-top: 0;
+            }
+        }
+
+        .loader_outer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(255 255 255 / 71%);
+            z-index: 2;
+        }
+
+        /*
+ * Container - Button
+ */
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #ff851b;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            box-shadow: 2px 2px 3px rgb(153 150 153 / 56%);
+            z-index: 1000;
+            animation: bot-to-top 2s ease-out;
+        }
+
+        /*
+ * Submenu - Buttons
+ */
+        .floatings {
+            position: fixed;
+            right: 40px;
+            padding-bottom: 10px;
+            bottom: 90px;
+            z-index: 100;
+        }
+
+        .floatings li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .floatings li a {
+            min-width: 100px;
+            background-color: #ff851b;
+            color: #FFF;
+            text-align: center;
+            box-shadow: 2px 2px 3px #99999940;
+            display: block;
+            padding: 10px;
+            border-radius: 7px;
+        }
+
+        /* Hidden Buttons */
+        a.float+.floatings {
+            visibility: hidden;
+        }
+
+        /* Visible Buttons */
+        a.float:hover+.floatings {
+            visibility: visible;
+            animation: scale-in 0.5s;
+        }
+
+        .floatings:hover {
+            visibility: visible !important;
+        }
+
+        /* Center icons */
+        a i.icon {
+            font-size: 24px;
+            margin-top: 18px;
+        }
+
+        /*
+ * Animations
+ */
+        a.float i {
+            transition: ease all .3s;
+        }
+
+        a.float:hover {
+            color: #fff;
+        }
+
+        /*
+
+    a.float:hover>i {
+      animation: rotate-out 0.5s;
+    } */
+        a.float:hover i {
+            transform: rotate(135deg);
+            transition: ease all .3s;
+        }
+
+        @keyframes bot-to-top {
+            0% {
+                bottom: -60px
+            }
+
+            50% {
+                bottom: 40px
+            }
+        }
+
+        @keyframes scale-in {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate-in {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes rotate-out {
+            from {
+                transform: rotate(360deg);
+            }
+
+            to {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Start -->
+        <header class="header">
+            <!-- Topbar -->
+            <div class="topbar cm_bg">
+                <div class="container">
+                    <div class="ticker">
+                        <div class="title">
+                            <h5>Latest news</h5>
+                        </div>
+                        <div class="news">
+                            <marquee class="news-content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                    do eiusmod tempor incididunt ut labore et dolore magna
+                                    aliqua. Ut enim ad minim veniam, quis nostrud
+                                </p>
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit
+                                    voluptatem accusantium doloremque laudantium, totam rem
+                                    aperiam, eaque ipsa quae ab illo inventore veritatis et
+                                    quasi architecto
+                                </p>
+                                <p>
+                                    Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                                    amet, consectetur, adipisci velit, sed quia non numquam eius
+                                    modi tempora incidunt ut labore et dolore magnam aliquam
+                                    quaerat voluptatem. Ut enim ad minima veniam
+                                </p>
+                            </marquee>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Menu bar -->
+            <nav class="navbar navbar-expand-lg navbar-light py-3">
+                <div class="container">
+                    <a class="navbar-brand cm-color" href="index.html">TopPick</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="fa fa-reorder"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fa fa-remove"></span>
+                        </button>
+                        <div class="header_overlay"></div>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="menu_logo">
+                                <a href="index.html" class="text-white"> TopPick </a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Topics</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Dialogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blog.html">Blog</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/about.html">About</a>
+                            </li>
+                            <li class="nav-item btn">
+                                <a class="nav-link" href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                        class="img-fluid" /></a>
+                            </li>
+                            <li class="nav-item btn">
+                                <a class="nav-link" href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                        class="img-fluid" /></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Header End -->
+
+        <!-- Main Body Start -->
+        <div class="body_wrap about_page">
+            <!-- Hero section starts here -->
+            <section class="space about_hero inner_cmn_hero text-center">
+                <div class="container">
+                    <h1>Question Game</h1>
+
+                </div>
+            </section>
+            <!-- filter starts here -->
+            <section class="question_game">
+                <div class="container pb-5">
+                    <div class="filter_outer   mb-5">
+                        <div class="loader_outer">
+                            <!--   LOADER  -->
+                            <div class="loaders"></div>
+
+                            <!--  LOADER   -->
+                        </div>
+                        <div class="filter_header">
+                            <h2><a href="#">Speed Finding</a></h2> <button class="next_btn">Next <img
+                                    src="assets/images/fa-solid_angle-right.png" alt="" srcset=""></button>
+                            <button class="filter_close"><img src="assets/images/Vector.png" alt=""></button>
+                        </div>
+                        <div class="filter_content">
+                            <h3>Topic: <span><a href="#">Aging</a></span></h3>
+                            <h4 class="mt-3">Are young people generally more selfish than their parents and
+                                0grandparents?</h4>
+                            <div class="card-body">
+                                <div class="example_area">
+                                    <div class="topAccord_area">
+
+                                        <p class="cmn_topic_heading"><img src="assets/images/answer.svg" alt="">
+                                            <span class="tootle-tip">Answers explaination <button>here</button> </span>
+                                            Answer
+                                        </p>
+
+                                        <ul class="example_list">
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+                                            <li>
+                                                <div class="avtar">
+                                                    <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                        class="img-fluid">
+                                                </div>
+
+                                                <input type="text" class="exampleHidden" readonly
+                                                    value="Are young people generally more selfish than their parents and 0grandparents?">
+
+                                            </li>
+
+
+
+
+                                        </ul>
+
+
+
+                                    </div>
+                                </div>
+                                <div class="article_area">
+                                    <div class="topAccord_area">
+                                        <p class="cmn_topic_heading"><img src="assets/images/article-icon-orange.svg"
+                                                alt="">
+                                            Resources</p>
+                                        <div class="myarticle">
+                                            <div class="media">
+                                                <div class="aticle_image">
+                                                    <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                                        alt="Generic placeholder image">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">
+                                                        <div class="avtar">
+                                                            <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                                class="img-fluid">
+                                                        </div> How living with grandparents looks like
+                                                    </h5>
+                                                    <p>Are young people generally more selfish than their parents and
+                                                        0grandparents? Are
+                                                        young people generally more selfish than their parents and
+                                                        0grandparents? Are young
+                                                        people generally more selfish than their parents and
+                                                        0grandparents?</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="myarticle">
+                                            <div class="media">
+                                                <div class="aticle_image">
+                                                    <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                                        alt="Generic placeholder image">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">
+                                                        <div class="avtar">
+                                                            <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                                class="img-fluid">
+                                                        </div> How living with grandparents looks like
+                                                    </h5>
+                                                    <p>Are young people generally more selfish than their parents and
+                                                        0grandparents? Are
+                                                        young people generally more selfish than their parents and
+                                                        0grandparents? Are young
+                                                        people generally more selfish than their parents and
+                                                        0grandparents?</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="myarticle">
+                                            <div class="media">
+                                                <div class="aticle_image">
+                                                    <img class="mr-3" src="assets/images/blog-sidecate.png"
+                                                        alt="Generic placeholder image">
+                                                </div>
+                                                <div class="media-body">
+                                                    <h5 class="mt-0">
+                                                        <div class="avtar">
+                                                            <img src="assets/images/serch_dummy.png" alt="avtar"
+                                                                class="img-fluid">
+                                                        </div> How living with grandparents looks like
+                                                    </h5>
+                                                    <p>Are young people generally more selfish than their parents and
+                                                        0grandparents? Are
+                                                        young people generally more selfish than their parents and
+                                                        0grandparents? Are young
+                                                        people generally more selfish than their parents and
+                                                        0grandparents?</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </div>
+        <!-- floating -->
+
+
+        <!-- Buttons -->
+        <a href="#" class="float">
+            <i class="fa fa-plus icon"></i>
+        </a>
+        <ul class="floatings">
+            <li>
+                <a href="#">
+                    Question picker
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    Topic Picker
+                </a>
+            </li>
+
+        </ul>
+        <!-- End - Buttons -->
+        <!-- Main Body End -->
+        <!-- cookies -->
+        <style>
+            .cokies_card {
+                width: 80%;
+                margin: auto;
+                background: #fff;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+                border-radius: 10px;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+
+            .cookie_header {
+                padding: 20px;
+                display: flex;
+                position: relative;
+            }
+
+            .cookie_header h2 {
+                font-size: 20px;
+                font-family: 'sairaM';
+            }
+
+            .cookie_header i {
+                position: absolute;
+                right: 14px;
+                cursor: pointer;
+            }
+
+            .cookie_header {
+                border-bottom: 1px solid #ddd;
+
+            }
+
+            .cookies_body {
+                padding: 20px;
+            }
+
+            .cookies_text p {
+                font-size: 16px;
+                font-family: 'sairaR';
+            }
+
+            .cookies_text h6 {
+                font-size: 18px;
+                font-family: 'sairaM';
+                margin-right: auto;
+            }
+
+            .text_header {
+                display: flex;
+            }
+
+            p.active_text {
+                color: green;
+            }
+
+            /* switch */
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 24px;
+            }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+            .sliders {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            .sliders:before {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+            input:checked+.sliders {
+                background-color: #ff851b;
+            }
+
+            input:focus+.sliders {
+                box-shadow: 0 0 1px #ff851b;
+            }
+
+            input:checked+.sliders:before {
+                -webkit-transform: translateX(16px);
+                -ms-transform: translateX(16px);
+                transform: translateX(16px);
+            }
+
+            /* Rounded sliderss */
+            .sliders.round {
+                border-radius: 34px;
+            }
+
+            .sliders.round:before {
+                border-radius: 50%;
+            }
+
+            .cookies_button {
+                display: flex;
+                margin-top: 15px;
+            }
+
+            .cookies_button button {
+                background: transparent;
+                border: 2px solid #ff851b;
+                padding: 7px 30px;
+                color: #ff851b;
+                flex: 0 0 32.8%;
+                font-family: 'montM';
+            }
+
+            .cookies_button button:nth-child(2) {
+                margin: 0px 10px;
+            }
+
+            .cookies_button button.active {
+                background: #ff851b;
+                color: #fff;
+            }
+
+            .cookies_foot {
+                background: #fff;
+                padding: 20px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 30%);
+            }
+
+            .cookies_foot h5 {
+                font-size: 18px;
+                font-family: 'sairaM';
+                margin-right: auto;
+            }
+
+            .cookies_foot p {
+                font-size: 16px;
+                font-family: 'sairaR';
+            }
+
+            .cookie_foot_content button {
+                margin: 0px 5px;
+                background: transparent;
+                border: 2px solid #ff851b;
+                padding: 7px 0px;
+                color: #ff851b;
+                font-family: 'montM';
+                min-width: 110px;
+                font-size: 14px;
+            }
+
+            .cookie_foot_content {
+                display: flex;
+                align-items: flex-end;
+            }
+        </style>
+        <div class="cokies_card">
+            <div class="cookie_header">
+                <h2>Customize Conset Prefrences</h2>
+                <i class="fa fa-times" aria-hidden="true"></i>
+
+            </div>
+            <div class="cookies_body">
+                <div class="cookies_text border-bottom pb-3">
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s.... <a href="">Show more</a></p>
+                </div>
+                <div class="cookies_text border-bottom pb-3 pt-3">
+                    <div class="text_header mb-2">
+                        <h6><i class="fa fa-angle-right mr-2"></i> Necessary</h6>
+                        <p class="active_text">Always Active </p>
+                    </div>
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.</p>
+                </div>
+                <div class="cookies_text border-bottom pb-3 pt-3">
+                    <div class="text_header mb-2">
+                        <h6><i class="fa fa-angle-right mr-2"></i> Functional</h6>
+
+
+
+                    </div>
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.</p>
+                </div>
+                <div class="cookies_text border-bottom pb-3 pt-3">
+                    <div class="text_header mb-2">
+                        <h6><i class="fa fa-angle-right mr-2"></i> Analytics</h6>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="sliders round"></span>
+                        </label>
+
+
+                    </div>
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.</p>
+                </div>
+                <div class="cookies_text border-bottom pb-3 pt-3">
+                    <div class="text_header mb-2">
+                        <h6><i class="fa fa-angle-right mr-2"></i> Performance</h6>
+
+
+
+                    </div>
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.</p>
+                </div>
+                <div class="cookies_text  pb-3 pt-3">
+                    <div class="text_header mb-2">
+                        <h6><i class="fa fa-angle-right mr-2"></i> Advertisement</h6>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="sliders round"></span>
+                        </label>
+
+
+                    </div>
+                    <p class="mb-2">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s rem Ipsum is simply dummy text of the
+                        printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s psum is simply dummy text of the
+
+
+                    </p>
+                    <p> printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since the 1500s Lorem Ipsum is simply dummy text of the
+                        printing and typesetting industry.</p>
+                </div>
+                <div class="cookies_button">
+                    <button>Recject all</button>
+                    <button>Save My Prefrences </button>
+                    <button class="active">Accept All</button>
+                </div>
+            </div>
+        </div>
+        <div class="cookies_foot">
+            <h5>We Value Your Privacy</h5>
+            <div class="cookie_foot_content">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus officiis accusamus et neque sit,
+                    aliquam ducimus enim ex. Asperiores fugiat nulla a quae! Vel velit voluptatum nihil quae impedit
+                    saepe.</p>
+                <div class="d-flex">
+                    <button>Customize</button>
+                    <button>Recject All </button>
+                    <button class="active">Accept All</button>
+                </div>
+            </div>
+
+        </div>
+        <!-- cokies ends here -->
+        <!-- Footer Start -->
+        <footer class="footer">
+            <div class="footer_inner py-5">
+                <div class="container">
+                    <div class="footer_blocks">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="footer_box">
+                                    <a href="index.html" class="sairaM footer_logo">Top<span
+                                            class="cm-color">Pick</span></a>
+                                    <p>
+                                        These people envy me for having a lifestyle they don’t
+                                        have, but the truth is, sometimes I envy their lifestyle
+                                        instead. Struggling to sell one multi-million
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box">
+                                    <h5 class="sairaM footer_head">CATEGORIES</h5>
+                                    <ul class="footer_menu">
+                                        <li><a href="#">Fashion</a></li>
+                                        <li><a href="#">Food</a></li>
+                                        <li><a href="#">Sport</a></li>
+                                        <li><a href="#">Technology</a></li>
+                                        <li><a href="#">Politics</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box">
+                                    <h5 class="sairaM footer_head">INFORMATION</h5>
+                                    <ul class="footer_menu">
+                                        <li><a href="#">Site Map </a></li>
+                                        <li><a href="#">Search Terms </a></li>
+                                        <li><a href="#">Advanced Search</a></li>
+                                        <li><a href="/about.html">About Us</a></li>
+                                        <li><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col mb-4 footer_cmn_block">
+                                <div class="footer_box last_footer_box">
+                                    <h5 class="sairaM footer_head">Get the App</h5>
+                                    <ul class="footer_app_links">
+                                        <li>
+                                            <a href="#"><img src="assets/images/Google Play Badge.svg" alt=""
+                                                    class="img-fluid" /></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="assets/images/App Store Badge.svg" alt=""
+                                                    class="img-fluid" /></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="copyright cm_bg py-3">
+                <div class="container-fluid">
+                    <p class="text-center text-white montM">
+                        © 2021 All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer End -->
+        <!-- Floating links -->
+        <style>
+            .floatingUrl {
+                position: fixed;
+                top: 50%;
+                left: 0;
+                background: #fff;
+                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+                transform: translateX(-151px);
+                transition: .2s;
+            }
+
+            .floatingUrl.active {
+                transform: translateX(0);
+                transition: .2s;
+            }
+
+            .floatingUrl i {
+                position: absolute;
+                background: #ffa95d;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: #fff;
+                font-size: 18px;
+                right: -30px;
+                top: 0;
+                cursor: pointer;
+            }
+
+            .floatingUrl.active i.fa-angle-right:before {
+                content: "\f104";
+            }
+
+            .floatingUrl ul li a {
+                padding: 10px 20px;
+                display: block;
+                text-decoration: none;
+                font-size: 14px;
+                color: #000;
+            }
+
+            .floatingUrl ul li:not(:last-child) a {
+                border-bottom: 1px solid #eee;
+            }
+        </style>
+        <div class="floatingUrl">
+            <i class="fa fa-angle-right"></i>
+            <ul>
+                <li><a href="javascript:void(0)">Question Picker</a></li>
+                <li><a href="javascript:void(0)">Topic Picker</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let getFloatURL = document.querySelector(".floatingUrl");
+        getFloatURL.addEventListener("click", function () {
+            getFloatURL.classList.toggle("active");
+        })
+    </script>
+    <!-- Wrapper End -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="js/crousal.js"></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
