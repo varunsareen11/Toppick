@@ -863,6 +863,34 @@
                 position: absolute;
                 right: 20px;
             }
+
+            .modal.cookies_model {
+                transform: translateY(100%);
+            }
+
+            .modal-open .modal.cookies_model {
+                transform: translateY(0%);
+                animation: animatetop .5s ease;
+            }
+
+            .cookies_button {
+                position: fixed;
+                bottom: 43px;
+                left: 2px;
+                right: 17px;
+                padding: 15px;
+                background: #fff;
+            }
+
+            @keyframes animatetop {
+                0% {
+                    transform: translateY(100%);
+                }
+
+                100% {
+                    transform: translateY(0%);
+                }
+            }
         </style>
         <!-- model cookies -->
         <div class="modal fade bd-example-modal-lg  cookies_model" id="exampleModalCenter" tabindex="-1" role="dialog"
