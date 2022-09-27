@@ -127,6 +127,57 @@
     border-radius: 10px;
   }
 
+  .language {
+    position: relative;
+  }
+
+  #language_slector {
+    position: absolute;
+    right: 0;
+    width: 140px;
+    background: #fff;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 20%);
+    top: 36px;
+    border-radius: 7px;
+    overflow: hidden;
+  }
+
+  #language_slector ul li a {
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+    font-family: 'montM';
+    color: #000;
+  }
+
+  #language_slector ul li a.active {
+    background: #ff851b;
+    color: #fff;
+  }
+
+  #language_slector ul li a:hover {
+    background: #e9e9e9c2;
+    text-decoration: none;
+  }
+
+  #language_slector ul li a.active:hover {
+    background: #ff851b;
+    text-decoration: none;
+  }
+
+  a.language_selected span {
+    font-size: 16px;
+    font-family: 'sairaR';
+    color: #ff851b;
+    margin-left: 4px;
+  }
+
+  a.language_selected {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
   /* .blog_keywords {
     position: relative;
   } */
@@ -393,6 +444,20 @@
                         <div class="accord_hover_icons">
                           <!-- <button class="like cm-color"><i class="fa fa-heart-o like-icon"></i></button> -->
                           <!-- <a href="javascript:void(0)"><img src="assets/images/translation-icon.svg" alt=""></a> -->
+                          <div class="language">
+                            <a onclick="myLanguage()" class="language_selected"><img src="assets/images/globe.png"
+                                alt=""><span>En</span><img src="assets//images/arrow_down.png" class="arrow_down"
+                                alt=""></a>
+                            <div id="language_slector" style="display: none;">
+                              <ul>
+                                <li><a class="active" href="">English</a></li>
+                                <li><a href="">Hindi</a></li>
+                                <li><a href="">Punjabi</a></li>
+                              </ul>
+
+                            </div>
+
+                          </div>
                           <button class="copy"><img src="assets/images/copy-icon.svg" alt=""></button>
                           <a onclick="myFunction()"><img src="assets/images/three-dot-icon.svg" alt="">
                           </a>
@@ -1688,6 +1753,14 @@
   <script src="js/crousal.js"></script>
   <script src="js/custom.js"></script>
   <script>
+    function myLanguage() {
+      var x = document.getElementById("language_slector");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
     var seeMoreCard = document.getElementsByClassName("see_more");
     for (var i = 0; i < seeMoreCard.length; i++) {
       seeMoreCard[i].addEventListener('click', function () {
