@@ -1,44 +1,44 @@
-window.onload = function () {
-  setTimeout(function () {
-    var loader = document.getElementsByClassName("loader")[0];
-    loader.className = "loader fadeout";
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 1000);
-  }, 1000);
-};
+// window.onload = function () {
+//   setTimeout(function () {
+//     var loader = document.getElementsByClassName("loader")[0];
+//     loader.className = "loader fadeout";
+//     setTimeout(() => {
+//       loader.style.display = "none";
+//     }, 1000);
+//   }, 1000);
+// };
 
-// Home Page Crousal design
-const options1 = {
-  slidesPerView: 1,
-  spacing: 10,
-  loop: true,
-  transitionSpeed: 1500,
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-    },
-    1024: {
-      slidesPerView: 8,
-    },
-  },
-};
+// // Home Page Crousal design
+// const options1 = {
+//   slidesPerView: 1,
+//   spacing: 10,
+//   loop: true,
+//   transitionSpeed: 1500,
+//   breakpoints: {
+//     768: {
+//       slidesPerView: 2,
+//     },
+//     1024: {
+//       slidesPerView: 8,
+//     },
+//   },
+// };
 
-// INIT CAROUSEL
-const carousel1 = new CgCarousel("#js-carousel-1", options1, {});
+// // INIT CAROUSEL
+// const carousel1 = new CgCarousel("#js-carousel-1", options1, {});
 
-// Navigation
-const next1 = document.getElementById("js-carousel__next-1");
-next1.addEventListener("click", () => carousel1.next());
+// // Navigation
+// const next1 = document.getElementById("js-carousel__next-1");
+// next1.addEventListener("click", () => carousel1.next());
 
-const prev1 = document.getElementById("js-carousel__prev-1");
-prev1.addEventListener("click", () => carousel1.prev());
+// const prev1 = document.getElementById("js-carousel__prev-1");
+// prev1.addEventListener("click", () => carousel1.prev());
 
-function myFunction() {
-  var x = document.getElementById("report");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
+// function myFunction() {
+//   var x = document.getElementById("report");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }

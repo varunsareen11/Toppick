@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="./css/custom.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="/css/rte_theme_default.css" />
 </head>
 <style>
   /* 8 may 2022 */
@@ -40,6 +41,13 @@
 
   .keywords ul li a.active {
     font-weight: 600;
+  }
+
+  div#div_editor1 {
+    flex: 0 0 90%;
+    border: 1px solid #ff851b;
+    border-radius: 7px;
+    overflow: hidden;
   }
 
   .keywords ul li a {
@@ -500,9 +508,11 @@
                                 <div class="avtar">
                                   <img src="assets/images/tp_logo2.png" alt="avtar" class="img-fluid">
                                 </div>
+                                <div id="div_editor1" style="height: 200px">
+                                </div>
 
-                                <input type="text" class="exampleHidden" readonly
-                                  value="Are young people generally more selfish than their parents and 0grandparents?">
+                                <!-- <input type="text" class="exampleHidden" readonly
+                                  value="Are young people generally more selfish than their parents and 0grandparents?"> -->
                                 <button class="accord-item-edit"><img src="assets/images/pencil.svg" class="pencilEdit"
                                     alt=""></button>
                                 <!-- Are young people generally more selfish than their parents and 0grandparents? -->
@@ -1770,8 +1780,17 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/rte.js"></script>
+  <script type="text/javascript" src='./js/all_plugins.js'></script>
   <script src="js/crousal.js"></script>
   <script src="js/custom.js"></script>
+  <script>
+    var editor1cfg = {}
+    editor1cfg.toolbar = "mytoolbar";
+    editor1cfg.toolbar_mytoolbar = "{bold,italic}|{fontname,fontsize}|{forecolor,backcolor}|removeformat"
+      + "#{undo,redo,fullscreenenter,fullscreenexit,togglemore}";
+    var editor1 = new RichTextEditor("#div_editor1", editor1cfg);
+  </script>
   <script>
     function myLanguage() {
       var x = document.getElementById("language_slector");

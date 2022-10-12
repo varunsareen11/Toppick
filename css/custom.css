@@ -3128,6 +3128,7 @@ button.accord-item-edit {
   padding: 0;
   outline: none;
   margin-left: 12px;
+  height: 15px;
 }
 
 button.accord-item-edit .pencilEdit {
